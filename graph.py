@@ -1,129 +1,188 @@
-
-# /educationq_project/graph.py
-
 import os
-from typing import Literal, List, Dict
-
 from langchain_core.output_parsers import JsonOutputParser, StrOutputParser
 from langchain_core.prompts import PromptTemplate
-from langchain_core.pydantic_v1 import BaseModel
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langgraph.graph import StateGraph, END
 from langgraph.checkpoint.memory import MemorySaver
 
-from data_models import TeacherSessionState, DialogueExchange, EvaluationResult
-# Import the state definition from our data models
-from data_models import TeacherSessionState, EvaluationResult, DialogueExchange, TestResult
+from data_models import (
+    TutoringSessionState, ErrorAnalysis, SynthesizerReport,
+    TutoringPlan, CriticFeedback, DialogueExchange
+)
+from tools import get_student_profile
+from error_detectors import get_error_agent
+# --- Environment Setup ---
 import dotenv
 dotenv.load_dotenv()
 os.environ["GOOGLE_API_KEY"] = os.getenv("GEMINI_API")
-# --- Define Agent Actions as Nodes ---
-# --- Define Pydantic Models for Parsers ---
-# These tell the parser what structure to expect from the LLM.
 
-class EvaluationParser(BaseModel):
-    """Pydantic model for parsing the LLM's evaluation output."""
-    summary: str
-    errors: List[Dict[str, str]]
+DEFAULT_REASONING_MODEL = "models/gemma-3-27b-it"
+#models/gemini-2.5-flash
+DEFAULT_FAST_MODEL = "models/gemma-3-27b-it"
 
-class PlanParser(BaseModel):
-    """Pydantic model for parsing the LLM's teaching plan."""
-    plan: List[str]
+class TutoringWorkflow:
+    """
+    Implements the AI tutor workflow with specialized agents and monitoring loop.
+    Models can be customized for reasoning and creative tasks.
+    """
+    def __init__(self, reasoning_model=DEFAULT_REASONING_MODEL, fast_model=DEFAULT_FAST_MODEL):
+        self.llm_reasoning = ChatGoogleGenerativeAI(model=reasoning_model, temperature=0.2)
+        self.llm_creative = ChatGoogleGenerativeAI(model=fast_model, temperature=0.7)
 
-# --- Define Agent Actions as Nodes ---
+    def _create_chain(self, prompt_template: str, pydantic_object: any, llm, output_type="json"):
+        """Hàm trợ giúp tạo một chain hoàn chỉnh."""
+        prompt = PromptTemplate.from_template(prompt_template)
+        if output_type == "json" :
+            return prompt | llm | JsonOutputParser(pydantic_object=pydantic_object)
+        elif output_type == "str":
+            return prompt | llm | StrOutputParser()
+        
+    # --- NODE: Agent Lập kế hoạch ---
 
-class TeacherWorkflow:
-    def __init__(self, model_name="models/gemma-3-27b-it"):
-        self.llm = ChatGoogleGenerativeAI(model=model_name, temperature=0.7)
+    def planner(self, state: TutoringSessionState) -> dict:
+        """Create or update the teaching plan."""
+        print("--- NODE: Planner ---")
+        try:
+            student_profile = get_student_profile(state.student_id)
+        except Exception as e:
+            print(f"Error getting student profile: {e}")
+            student_profile = "N/A"
 
-        # --- Create Chains with Integrated Parsers ---
-
-        # Chain for the initial, deep evaluation of student work
-        self.evaluation_chain = ( PromptTemplate.from_template( """You are an expert math teacher. Analyze the student's initial work to find all errors. Return ONLY a valid JSON object with "summary" and "errors" keys. Student's Incorrect Explanation: "{student_explanation}" Output format: summary: str errors: List[Dict[str, str]] = Field(default_factory=list)""" ) | self.llm | JsonOutputParser(pydantic_object=EvaluationParser) ) 
-        # Chain for creating/updating the teaching plan 
-        self.plan_chain = ( PromptTemplate.from_template( """You are an Vietnamese math instructional designer. Create a concise, step-by-step teaching plan to help a student solve the problem with respect Vietnamese education system. Problem: "{question}" Initial Error: "{initial_error}" Conversation History: {history} Output should be like json like this: "plan": [ "Step 1: Read the question carefully before solving.", "Step 2: Identify the first operation.", "Step 3: Perform the multiplication.", "Step 4: Then perform the addition.", "Step 5: Check your result with the order of operations." ] ⚠️ Important: Output must be valid JSON with ONLY a list of strings, not objects.""" ) | self.llm | JsonOutputParser(pydantic_object=PlanParser) ) 
-        # Chain for lightweight evaluation of a student's answer to a probing question
-        self.probing_evaluation_chain = ( 
-            PromptTemplate.from_template( 
-                """You are a teacher assistant. 
-                Does the student's answer correctly address the teacher's question with respect to the plan step? 
-                Teacher's Question: "{teacher_question}" 
-                Student's Answer: "{student_response}"
-                Plan: "{plan}"
-                Return a json that contains following fields""" 
-                ) | self.llm | JsonOutputParser() )
-
-    def initial_analysis(self, state: TeacherSessionState) -> dict:
-        print("--- Node: initial_analysis ---")
-        # FIXED: Use dot notation to access attributes of the state object
-        evaluation_data = self.evaluation_chain.invoke(
-            {"student_explanation": state.initial_student_answer.student_explanation}
-        )
-        evaluation = EvaluationResult(round=0, **evaluation_data)
-        new_plan_data = self._create_plan(state, [])
+        prompt_template = """Bạn là Agent Lập kế hoạch Sư phạm. 
+Dựa trên phân tích lỗi và phản hồi của học sinh, hãy đề xuất chiến thuật phản hồi để hỗ trợ học sinh theo hướng "scaffolding" (luôn giúp học sinh tiến bộ nhưng KHÔNG bao giờ cho đáp án trực tiếp).  
+Bài toán: {problem}  
+Các lỗi chính trong bài làm ban đầu của học sinh cần khắc phục: {initial_mistakes}  
+Lịch sử hội thoại gần nhất: {history}  
+Hồ sơ học sinh: {student_profile}  
+Bạn chỉ được chọn **1 trong các chiến thuật feedback** sau:  
+1. **Positive feedback**  
+   - Nhấn mạnh phần học sinh đã làm đúng, giải thích ngắn gọn vì sao đúng.  
+   - Giúp củng cố kiến thức đúng và tạo động lực.  
+   - Không tiết lộ đáp án phần sai.  
+2. **Knowledge about concepts**  
+   - Cung cấp gợi ý và giải thích về các khái niệm, định nghĩa, công thức liên quan.  
+   - Giúp học sinh bổ sung nền tảng kiến thức còn thiếu.  
+   - Không áp dụng trực tiếp để ra đáp án.  
+3. **Procedural feedback**  
+   - Định hướng học sinh theo các bước giải quyết vấn đề.  
+   - Gợi ý bước tiếp theo, quy tắc cần dùng.  
+   - Không thực hiện tính toán thay học sinh.  
+4. **Error-specific feedback**  
+   - Chỉ ra rõ loại sai sót (sai dấu, nhầm công thức, nhầm đơn vị, …).  
+   - Giúp học sinh tự sửa lỗi.  
+   - Không đưa đáp án đúng.  
+5. **Knowledge on metacognition**  
+   - Khuyến khích học sinh tự nhìn lại quá trình suy nghĩ.  
+   - Đặt câu hỏi phản tư: "Em có chắc bước này hợp lý không?"  
+   - Không giải thích chi tiết hộ học sinh.  
+Hãy trả về một đối tượng JSON với các trường:  
+    objectives: str = Field(description="chiến thuật feedback và định nghĩa của nó lấy đúng theo danh sách trên.")
+    rationale: str = Field(description="Giải thích ngắn gọn tại sao phù hợp với học sinh.")
+Ví dụ:
+    objectives: Procedural feedback-Định hướng học sinh theo các bước giải quyết vấn đề. Gợi ý bước tiếp theo, quy tắc cần dùng. Không thực hiện tính toán thay học sinh.  
+    rationale: Học sinh đã hiểu khái niệm nhưng sai ở bước tính toán, nên cần hướng dẫn quy trình giải đúng hơn.
+"""
+        chain = self._create_chain(prompt_template, TutoringPlan, self.llm_creative)
+        # Robust extraction of initial mistakes
+        initial_mistakes = "N/A"
+        if getattr(state, "synthesizer_history", None):
+            first_report = state.synthesizer_history[0]
+            initial_mistakes = getattr(first_report, "detailed_analysis", "N/A")
+        try:
+            plan = chain.invoke({
+                "problem": state.problem_statement,
+                "history": state.dialogue_history[-1] if state.dialogue_history else "N/A",
+                "student_profile": student_profile,
+                "initial_mistakes": initial_mistakes,
+            })
+        except Exception as e:
+            print(f"Error invoking planner chain: {e}")
+            plan = None
+        print(f"Generated Plan: {plan}")
         return {
-            "evaluation_history": state.evaluation_history + [evaluation],
-            "current_teaching_plan": new_plan_data,
-            "current_plan_step": 0
+            "current_teaching_plan": plan,
+            "latest_critic_feedback": None,
+            "regeneration_attempts": 0
         }
 
-    def evaluate_response(self, state: TeacherSessionState) -> dict:
-        print("--- Node: evaluate_response ---")
-        # FIXED: Use dot notation
-        last_exchange = state.dialogue_history[-1]
-        response = self.probing_evaluation_chain.invoke(
-            {"teacher_question": last_exchange.teacher_question, "student_response": last_exchange.student_response, "plan": state.current_teaching_plan[state.current_plan_step]}
-        )
-        is_correct = 'true' in response.lower()
-        print("response:", response)
-        print(f"Evaluation: {'Correct' if is_correct else 'Incorrect'}")
-        return {"last_evaluation_correct": is_correct}
-
-    def replan(self, state: TeacherSessionState) -> dict:
-        print("--- Node: replan ---")
-        # FIXED: Use dot notation
-        history = [f"T: {ex.teacher_question} S: {ex.student_response}" for ex in state.dialogue_history]
-        new_plan_data = self._create_plan(state, history)
-        return {"current_teaching_plan": new_plan_data, "current_plan_step": 0}
-
-    def generate_question(self, state: TeacherSessionState) -> dict:
-        print("--- Node: generate_question ---")
-        # FIXED: Use dot notation
-        step = state.current_plan_step
-        if step >= len(state.current_teaching_plan):
-            question = "Excellent. How would you solve the original problem now?"
+    # --- NODE: Agent Sinh nội dung ---
+    
+    def content_generator(self, state: TutoringSessionState) -> dict:
+        """Generate question/hint for student based on current plan objectives."""
+        print("--- NODE: Content Generator ---")
+        objectives = getattr(state.current_teaching_plan, "objectives", [])
+        prompt_template = """Dựa trên mục tiêu dạy học sau đây, hãy tạo ra phản hồi nội dung bằng tiếng Việt.
+Đề bài: {problem}
+Mục tiêu: {objectives}
+Lịch sử hội thoại: {history}
+Lỗi trong bai làm ban đầu của học sinh mà cần khắc phục: {initial_solution}
+"""
+        prompt = PromptTemplate.from_template(prompt_template)
+        chain = prompt | self.llm_reasoning
+        initial_mistakes = "N/A"
+        if getattr(state, "synthesizer_history", None):
+            first_report = state.synthesizer_history[0]
+            initial_mistakes = getattr(first_report, "detailed_analysis", "N/A")
+        try:
+            question = chain.invoke({
+                "problem": state.problem_statement,
+                "initial_solution": initial_mistakes,
+                "objectives": objectives,
+                "history": state.dialogue_history[-1] if state.dialogue_history else "N/A",
+            }).content
+        except Exception as e:
+            print(f"Error invoking content generator chain: {e}")
+            question = "(Không thể sinh câu hỏi)"
+        # Simplified dialogue history update
+        exchange = DialogueExchange(round=state.round, teacher_question=question)
+        if not state.dialogue_history or getattr(state.dialogue_history[-1], "student_response", None):
+            history = state.dialogue_history + [exchange]
         else:
-            guideline = state.current_teaching_plan[step]
-            prompt = PromptTemplate.from_template("Your goal is: \"{guideline}\". Ask one simple question. The question must be in Vietnamese")
-            chain = prompt | self.llm | StrOutputParser()
-            question = chain.invoke({"guideline": guideline})
-        exchange = DialogueExchange(round=state.round + 1, teacher_question=question, student_response="")
-        return {"dialogue_history": state.dialogue_history + [exchange], "round": state.round + 1}
+            history = state.dialogue_history[:-1] + [exchange]
+        return {"dialogue_history": history, "latest_critic_feedback": None}
 
-    def _create_plan(self, state, history) -> dict:
-        # FIXED: Use dot notation
-        return self.plan_chain.invoke(
-            {"question": state.question.question, "initial_error": state.initial_student_answer.student_explanation, "history": history}
-        )
+# --- Xây dựng Graph ---
 
-def should_replan(state: TeacherSessionState) -> Literal["replan", "advance_plan"]:
-    # FIXED: Use dot notation
-    print(f"--- Edge: should_replan (Correct: {state.last_evaluation_correct}) ---")
-    return "replan" if not state.last_evaluation_correct else "advance_plan"
-
-def get_graph():
-    workflow = TeacherWorkflow()
-    graph_builder = StateGraph(TeacherSessionState)
-    graph_builder.add_node("initial_analysis", workflow.initial_analysis)
-    graph_builder.add_node("evaluate_response", workflow.evaluate_response)
-    graph_builder.add_node("replan", workflow.replan)
-    graph_builder.add_node("generate_question", workflow.generate_question)
-    graph_builder.add_node("advance_plan", lambda state: {"current_plan_step": state.current_plan_step + 1})
-    graph_builder.set_entry_point("initial_analysis")
-    graph_builder.add_edge("initial_analysis", "generate_question")
-    graph_builder.add_edge("replan", "generate_question")
-    graph_builder.add_edge("advance_plan", "generate_question")
-    graph_builder.add_edge("generate_question", "evaluate_response")
-    graph_builder.add_conditional_edges("evaluate_response", should_replan, {"replan": "replan", "advance_plan": "advance_plan"})
+def get_tutoring_graph(reasoning_model=DEFAULT_REASONING_MODEL, fast_model=DEFAULT_FAST_MODEL):
+    workflow = TutoringWorkflow(reasoning_model=reasoning_model, fast_model=fast_model)
+    builder = StateGraph(TutoringSessionState)
+    builder.add_node("planner", workflow.planner)
+    builder.add_node("content_generator", workflow.content_generator)
+    builder.set_entry_point("planner")
+    builder.add_edge("planner", "content_generator")
+    builder.add_edge("content_generator", END)
     memory = MemorySaver()
-    return graph_builder.compile(checkpointer=memory, interrupt_before=["evaluate_response"])
+    return builder.compile(checkpointer=memory)
+
+# --- Chạy thử nghiệm ---
+if __name__ == "__main__":
+    app = get_tutoring_graph()
+    error_agent = get_error_agent()
+    config = {"configurable": {"thread_id": "session_001"}}
+    import pandas as pd
+    df = pd.read_csv("Student_error.csv")
+    initial_state = {
+        "session_id": "session_001",
+        "student_id": "student_123",
+        "problem_statement": df.iloc[0]["Problem"],
+        "initial_student_solution": df.iloc[0]["Student_solution"],
+        "round": 0
+    }
+    print("\n--- TURN 1: Initial Student Solution ---")
+    final_state = error_agent.invoke(initial_state, config=config)
+    current_state = final_state
+    final_state_2 = app.invoke(current_state, config=config)
+    teacher_question_2 = final_state_2['dialogue_history'][-1].teacher_question
+    print("\n--- AGENT TO STUDENT ---")
+    print(teacher_question_2)
+    while True:
+        user_input = input("Student: ")
+        if user_input.lower() == "quit":
+            break
+        current_state = final_state_2
+        current_state['dialogue_history'][-1].student_response = user_input
+        current_state['round'] += 1
+        final_state_2 = app.invoke(current_state, config=config)
+        teacher_question_2 = final_state_2['dialogue_history'][-1].teacher_question
+        print("\n--- AGENT TO STUDENT ---")
+        print(teacher_question_2)
