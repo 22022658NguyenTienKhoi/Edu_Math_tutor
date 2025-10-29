@@ -8,8 +8,8 @@ from datetime import datetime
 
 class ErrorAnalysis(BaseModel):
     """Mô hình cơ sở cho kết quả của một node detector."""
-    contains_error: bool = Field(description="True nếu phát hiện có lỗi thuộc loại này.")
-    explanation: str = Field(description="Giải thích ngắn gọn về lỗi được tìm thấy.")
+    contains_error: Optional[bool] = Field(description="True nếu phát hiện có lỗi thuộc loại này.")
+    explanation: Optional[str] = Field(description="Giải thích ngắn gọn về lỗi được tìm thấy.")
     sub_error: Optional[str] = Field(default=None, description="Loại lỗi phân loại chi tiết.")
 
 # --- Mô hình cho các Node Giám sát (Critic) ---
@@ -25,8 +25,9 @@ class SynthesizerReport(BaseModel):
     """
     Báo cáo tổng hợp từ Synthesizer, dựa trên kết quả của tất cả các detector.
     """
-    detailed_analysis: str = Field(description="Phân tích chi tiết tất cả các lỗi và hiểu lầm của học sinh.")
-    primary_error_type: Optional[Literal["calculation", "conceptual", "logic", "comprehension", "multiple", "none"]] = Field(description="Loại lỗi chính cần được ưu tiên xử lý.")
+    detailed_analysis: Optional[str] = Field(description="Phân tích chi tiết tất cả các lỗi và hiểu lầm của học sinh.")
+    primary_error_type: List[Literal['CAL', 'CO', 'OP', 'FC', 'KNOW', 'CV', 'REAS', 'MS', 'CS', 'HA', 'MIS']]
+    #Optional[Literal['CAL','CO', 'OP', 'FC', 'KNOW', 'CV', 'REAS', 'MS', 'CS', 'HA', 'MIS']] = Field(description="Loại lỗi chính cần được ưu tiên xử lý.")
 class TutoringPlan(BaseModel):
     """Kế hoạch dạy học được tạo ra bởi Planner."""
     objectives: str = Field(description="Chiến thuật feedback")
