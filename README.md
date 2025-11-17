@@ -2,7 +2,7 @@
 ***
 
 ### Scenario: Adaptive AI Tutoring Session
-> **Question:** Hãy phát biểu mệnh đề đảo của mệnh đề: "Nếu tam giác ABC là tam giác đều thì tam giác ABC là tam giác cân" và xác định tính đúng sai của mệnh đề đảo này.
+> **Question:** Hãy phát biểu mệnh đề đảo của mệnh đề: "Nếu tam giác ABC là tam giác đều thì tam giác ABC là tam giác cân" và xác định tính đúng sai của mệnh đề đảo này.  
 > **My Solution:** Mệnh đề đảo: "Nếu tam giác ABC không đều thì tam giác ABC không cân hoặc không có góc nào bằng 60° ". Mệnh đề này đúng.
 #### **1. System & Learner Pre-Interaction State**
 
@@ -30,16 +30,23 @@ This profile exists within the tutoring system to track An's progress.
 
 The LLM is configured with the following persona and instructions before the interaction begins:
 
-> You are **"Thầy Tích Hợp"**, an expert AI Math Tutor. Your pedagogical approach is Socratic and encouraging through feedback.
-> **Requirements:** The specific context is provided in instructional context.
-> **Representation of standards and competencies:** from the instructional context
-> **Level of instructional design expertise** / **Diagnostic expertise / accuracy** / **Level of the relevant competencies:** depends on LLM and prompts. However using Gemini/GPT - high
-> **Method:**
+> You are **"Thầy Tích Hợp"**, an expert AI Math Tutor. Your pedagogical approach is Socratic and encouraging through feedback.  
+> **Requirements:** The specific context is provided in instructional context.  
+> **Representation of standards and competencies:** from the instructional context.  
+> **Level of instructional design expertise** / **Diagnostic expertise / accuracy** / **Level of the relevant competencies:** depends on LLM and prompts. However using Gemini/GPT - high  
+> **Jobs:**
 > 1.  When a student provides an incorrect solution, first identify the gap between student represent and golden represent, student skill vs golden skill.
 > 2.  Do not give the answer directly. Start with a **metacognitive** prompt, guiding the student to reflect on the required knowledge or definition from their textbook.
 > 3.  Use a combination of evaluative statements ("That's not quite right, but it's a common mistake"), guiding questions, and hints.
 > 4.  Adapt your feedback based on the student's subsequent response. If they are still stuck, provide more direct explanations or reference a worked example.
 > 5.  Always maintain a motivational and patient tone.
+
+**D. Feedback content delivery configuration**
+*   **Feedback Content & Presentation:**
+    *   **Evaluative component:** Was present in every response from the AI, clearly stating what was correct and incorrect.
+    *   **Tutoring component:** A sequence was used: started with a *guiding question* to promote self-correction, then moved to a direct *explanation* when a smaller error persisted.
+    *   **Presentation (Codes & Modes):** Feedback was delivered as immediate **text in chat**. It also used **highlighting** to visually pinpoint the exact location of the error in the student's original text.
+    *   **Presentation (Scheduling):** The system was configured for a **multiple-try** approach, allowing the student to refine their answer until it was correct.
 ---
 
 #### **2. The Interactive Tutoring Scenario**
@@ -119,12 +126,6 @@ The LLM is configured with the following persona and instructions before the int
 *   **Feedback Function:**
     *   **Thầy Tích Hợp (Turn 1):** Primarily **metacognitive** (asking An to recall the definition) and **motivational** (normalizing the error).
     *   **Thầy Tích Hợp (Turn 2):** Primarily **cognitive** (explaining the specific rule about not adding negation) and **motivational** (praising the progress).
-
-*   **Feedback Content & Presentation:**
-    *   **Evaluative component:** Was present in every response from the AI, clearly stating what was correct and incorrect.
-    *   **Tutoring component:** A sequence was used: started with a *guiding question* to promote self-correction, then moved to a direct *explanation* when a smaller error persisted.
-    *   **Presentation (Codes & Modes):** Feedback was delivered as immediate **text in chat**. It also used **highlighting** to visually pinpoint the exact location of the error in the student's original text.
-    *   **Presentation (Scheduling):** The system was configured for a **multiple-try** approach, allowing the student to refine their answer until it was correct.
 
 *   **Adaptation Strategy:**
     *   The feedback was highly **adaptive**. The second piece of feedback from "Thầy Tích Hợp" was entirely different from the first, as it targeted the new, more subtle error An made in their second attempt. This demonstrates a system that adapts to each specific learner response rather than giving generic advice.
