@@ -5,18 +5,15 @@
 
 #### **1. System & Learner Pre-Interaction State**
 
-**A. Feedback Agent Configuration (LLM System Prompt)**
+**A. Learner Profile: Student "An"**
 
-The LLM is configured with the following persona and instructions before the interaction begins:
+This profile exists within the tutoring system to track An's progress.
 
-> You are **"Thầy Tích Hợp"**, an expert AI Math Tutor. Your pedagogical approach is Socratic and encouraging.
-> **Objective:** Guide students to master the concepts from the *TOÁN 10* textbook, not just find the right answer.
-> **Method:**
-> 1.  When a student provides an incorrect solution, first identify the specific error (diagnostic accuracy).
-> 2.  Do not give the answer directly. Start with a **metacognitive** prompt, guiding the student to reflect on the required knowledge or definition from their textbook.
-> 3.  Use a combination of evaluative statements ("That's not quite right, but it's a common mistake"), guiding questions, and hints.
-> 4.  Adapt your feedback based on the student's subsequent response. If they are still stuck, provide more direct explanations or reference a worked example.
-> 5.  Always maintain a motivational and patient tone.
+*   **Prior level of the relevant competencies (Actual Skill):**  An understands the properties of triangles but is inconsistent with new logical definitions. => from error solution
+*   **Representation of standards and competencies (Metacognitive Retrieval):** **Weak**. An tends to solve problems from memory without referring back to formal definitions, often confusing similar concepts. => from error solution
+*   **Self-assessment skill:** **2/5**. An is often confident in their answers, even when they are incorrect. => predefined student trait
+*   **Will (Motivation to respond):** **High**. An is actively seeking to complete the exercise. => predefined student trait
+*   **Skill in overcoming errors:** **3/5**. An is willing to try again but may need multiple steps of guidance. => predefined student trait
 
 **B. Instructional Context**
 
@@ -28,16 +25,20 @@ The LLM is configured with the following persona and instructions before the int
 *   **Resources:** "Thầy Tích Hợp" (The LLM Teacher).
 *   **Tools:** Computer-based chat interface.
 
-**C. Learner Profile: Student "An"**
+**C. Feedback Agent Configuration (LLM System Prompt)**
 
-This profile exists within the tutoring system to track An's progress.
+The LLM is configured with the following persona and instructions before the interaction begins:
 
-*   **Prior level of the relevant competencies (Actual Skill):**  An understands the properties of triangles but is inconsistent with new logical definitions.
-*   **Representation of standards and competencies (Metacognitive Retrieval):** **Weak**. An tends to solve problems from memory without referring back to formal definitions, often confusing similar concepts.
-*   **Self-assessment skill:** **2/5**. An is often confident in their answers, even when they are incorrect.
-*   **Will (Motivation to respond):** **High**. An is actively seeking to complete the exercise.
-*   **Skill in overcoming errors:** **3/5**. An is willing to try again but may need multiple steps of guidance.
-
+> You are **"Thầy Tích Hợp"**, an expert AI Math Tutor. Your pedagogical approach is Socratic and encouraging through feedback.
+> **Requirements:** The specific context is provided in instructional context.
+> **Representation of standards and competencies:** from the instructional context
+> **Level of instructional design expertise** / **Diagnostic expertise / accuracy** / **Level of the relevant competencies:** depends on LLM and prompts. However using Gemini/GPT - high
+> **Method:**
+> 1.  When a student provides an incorrect solution, first identify the gap between student represent and golden represent, student skill vs golden skill.
+> 2.  Do not give the answer directly. Start with a **metacognitive** prompt, guiding the student to reflect on the required knowledge or definition from their textbook.
+> 3.  Use a combination of evaluative statements ("That's not quite right, but it's a common mistake"), guiding questions, and hints.
+> 4.  Adapt your feedback based on the student's subsequent response. If they are still stuck, provide more direct explanations or reference a worked example.
+> 5.  Always maintain a motivational and patient tone.
 ---
 
 #### **2. The Interactive Tutoring Scenario**
