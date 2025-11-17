@@ -2,7 +2,8 @@
 ***
 
 ### Scenario: Adaptive AI Tutoring Session
-
+> **Question:** Hãy phát biểu mệnh đề đảo của mệnh đề: "Nếu tam giác ABC là tam giác đều thì tam giác ABC là tam giác cân" và xác định tính đúng sai của mệnh đề đảo này.
+> **My Solution:** Mệnh đề đảo: "Nếu tam giác ABC không đều thì tam giác ABC không cân hoặc không có góc nào bằng 60° ". Mệnh đề này đúng.
 #### **1. System & Learner Pre-Interaction State**
 
 **A. Learner Profile: Student "An"**
