@@ -21,7 +21,7 @@ The LLM is configured with the following persona and instructions before the int
 **B. Instructional Context**
 
 *   **Instructional Topic:** §1. MỆNH ĐỀ (Lesson 1: Propositions).
-*   **Instructional Goals:**Luyện tập kỹ năng  "Thiết lập và phát biểu mệnh đề đảo" (Establish and state a converse proposition), "Xác định tính đúng sai của một mệnh đề" (Determine the truth value of a proposition).
+*   **Instructional Goals:** Luyện tập kỹ năng  "Thiết lập và phát biểu mệnh đề đảo" (Establish and state a converse proposition), "Xác định tính đúng sai của một mệnh đề" (Determine the truth value of a proposition).
 *   **Method:** Solving exercises of "Dạng 3. Mệnh đề kéo theo, mệnh đề đảo: "Mệnh đề “nếu P thì Q” gọi là mệnh đề kéo theo. Ký hiệu là P ⇒ Q. Mệnh đề P ⇒ Q chỉ sai khi P đúng Q sai. Mệnh đề Q ⇒ P gọi là mệnh đề đảo của P ⇒ Q. Mệnh đề “P nếu và chỉ nếu Q” gọi là mệnh đề tương đương. Ký hiệu là P ⇔ Q. Mệnh đề P ⇔ Q đúng khi cả P ⇒ Q và Q ⇒ P cùng đúng."
 "
 *   **Material:** *TOÁN 10* textbook content, specifically the definition and "Ví dụ 4" on page 8.
