@@ -2,6 +2,18 @@
 
 import json
 from typing import Dict
+import json
+from datetime import datetime
+import os
+
+def save_conversation_json(history, folder="logs"):
+    os.makedirs(folder, exist_ok=True)
+    filename = f"{folder}/{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+
+    with open(filename, "w", encoding="utf-8") as f:
+        json.dump(history, f, ensure_ascii=False, indent=2)
+
+    return filename
 
 def read_json(filepath: str) -> Dict:
     """Đọc và phân tích cú pháp một tệp JSON."""

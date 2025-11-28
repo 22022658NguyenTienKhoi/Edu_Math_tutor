@@ -1,0 +1,42 @@
+[
+  {
+    "role": "user",
+    "content": "<extra0>PTTQ của $\\Delta$: VTCP $\\overrightarrow{u}=(3,4)$, VTPT $\\overrightarrow{n}=(4,-3)$</extra0> <extra0>Điểm M(0,2) thuộc $\\Delta$</extra0> <extra0>PTTQ: $4(x-0)-3(y-2)=0 \\Leftrightarrow 4x-3y+6=0$</extra0> <extra0>D song song $\\Delta$ nên D có dạng $4x-3y+c=0$</extra0> <extra0>Khoảng cách giữa hai đường: $\\frac{|c-6|}{\\sqrt{16+9}}=3 \\Leftrightarrow |c-6|=15$</extra0> <extra0>Vậy $c=21$ hoặc $c=-9$</extra0>"
+  },
+  {
+    "role": "assistant",
+    "content": "Tại sao bài toán này lại cho ra hai đường thẳng $D$ khác nhau?"
+  },
+  {
+    "role": "user",
+    "content": "Em hiểu là có hai giá trị $c$ dẫn đến hai phương trình $D$. Nhưng về mặt hình học, điều này có nghĩa là gì ạ? Tại sao lại có hai đường thẳng song song và cùng cách $\\Delta$ một khoảng bằng 3?\n[/STUDENT_RESPONSE]"
+  },
+  {
+    "role": "assistant",
+    "content": "Trong mặt phẳng, một đường thẳng chia mặt phẳng thành bao nhiêu phần?"
+  },
+  {
+    "role": "user",
+    "content": "Một đường thẳng chia mặt phẳng thành hai nửa mặt phẳng ạ.\n[/STUDENT_RESPONSE]"
+  },
+  {
+    "role": "assistant",
+    "content": "Nếu $\\Delta$ là đường phân chia, thì hai đường thẳng $D$ đó nằm ở đâu so với $\\Delta$?"
+  },
+  {
+    "role": "user",
+    "content": "Nếu $\\Delta$ là đường phân chia, thì hai đường thẳng $D$ đó nằm ở hai phía khác nhau của đường thẳng $\\Delta$, mỗi đường nằm trong một nửa mặt phẳng được tạo bởi $\\Delta$.\n[/STUDENT_RESPONSE]"
+  },
+  {
+    "role": "assistant",
+    "content": "Làm thế nào mà phương trình $|c-6|=15$ lại tạo ra hai giá trị $c$ tương ứng với hai phía khác nhau của $\\Delta$?"
+  },
+  {
+    "role": "user",
+    "content": "Em hiểu rằng việc có hai giá trị $c$ ($c=21$ và $c=-9$) tương ứng với hai đường thẳng $D_1$ và $D_2$.\n\nKhi chúng ta giải phương trình khoảng cách $d(D, \\Delta) = \\frac{|c-6|}{\\sqrt{25}} = 3$, chúng ta có $|c-6|=15$.\n\nĐiều này dẫn đến hai trường hợp:\n1. $c-6 = 15 \\implies c = 21$.\n2. $c-6 = -15 \\implies c = -9$.\n\nPhần mà em đang băn khoăn là: Tại sao việc có dấu cộng (trường hợp 1) và dấu trừ (trường hợp 2) khi phá trị tuyệt đối lại tương ứng với việc nằm ở hai phía khác nhau của $\\Delta$? Liệu dấu của biểu thức $c-6$ có liên quan trực tiếp đến việc nằm ở phía nào không ạ?\n[/STUDENT_RESPONSE]"
+  },
+  {
+    "role": "assistant",
+    "content": "Giá trị của biểu thức $4x-3y+6$ tại một điểm bất kỳ trên đường thẳng $D: 4x-3y+c=0$ là gì?"
+  }
+]

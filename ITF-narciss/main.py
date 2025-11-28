@@ -1,6 +1,6 @@
 # /thay_tich_hop/main.py
 
-from graph_initialization import create_error_analysis_agent
+from error_detection_analysis import create_error_analysis_agent
 from graph_conversation import create_tutoring_graph
 import warnings
 
@@ -14,7 +14,7 @@ if __name__ == "__main__":
     tutoring_graph = create_tutoring_graph()
 
     # 2. Thiết lập trạng thái ban đầu đầy đủ
-    initial_solution = "Mệnh đề đảo: 'Nếu tam giác ABC không cân thì tam giác ABC không đều'."
+    initial_solution = "<extra0>Tâm đường tròn I(-2;3)</extra0> <extra0>Véc-tơ chỉ phương của tiếp tuyến là $\overrightarrow{IM}=(1, -2)$</extra0> <extra0>Phương trình tổng quát là $2(x+1)+1(y-1)=0 \Leftrightarrow 2x+y+1=0$</extra0>"
     
     initial_state = {
         "student_id": "An",
@@ -45,6 +45,7 @@ if __name__ == "__main__":
     
     # Trạng thái hiện tại bắt đầu từ kết quả của giai đoạn phân tích
     current_state = analysis_state
+    #analysis_state
     #print(f"\n--- Trạng thái ban đầu cho hội thoại dạy kèm: {current_state} ---\n")
     # Thêm bài làm ban đầu của học sinh vào lịch sử để gia sư có thể "nhìn thấy"
     # Điều này rất quan trọng cho lượt gọi invoke() đầu tiên của tutoring_graph
@@ -54,7 +55,7 @@ if __name__ == "__main__":
         # 1. Gọi đồ thị dạy kèm với trạng thái hiện tại
         # Lượt đầu tiên, nó sẽ bắt đầu từ entry_point và chạy evaluator -> teacher
         output_state = tutoring_graph.invoke(current_state)
-        #print(f"\n--- Trạng thái sau khi gọi đồ thị dạy kèm: {output_state['conversation_history']} ---\n")
+        print(f"\n--- Trạng thái sau khi gọi đồ thị dạy kèm: {output_state['conversation_history']} ---\n")
         # 2. Lấy câu hỏi của gia sư và hiển thị
         # === SỬA LỖI Ở ĐÂY ===
         # Thay thế 'parts' bằng 'content' để khớp với định dạng dữ liệu mới

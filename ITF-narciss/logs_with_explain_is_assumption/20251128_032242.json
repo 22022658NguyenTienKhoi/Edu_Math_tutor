@@ -1,0 +1,10 @@
+[
+  {
+    "role": "user",
+    "content": "<extra0>(1) \\(k=1/5\\)</extra0> <extra0>(2) \\(MB = AB - AM = 1 - 1/5 = 4/5\\).</extra0> <extra0>\\(MA = 1/5\\)</extra0> <extra0>Tỉ lệ là \\(MA/MB = (1/5)/(4/5) = 1/4\\)</extra0> <extra0>Do ngược hướng nên \\(k = -1/4\\)</extra0> <extra0>(3) \\(\\overrightarrow{MA}\\) và \\(\\overrightarrow{AB}\\) ngược hướng.</extra0> <extra0>\\(MA = 1/5 AB\\)</extra0> <extra0>Vậy \\(k= -5\\)</extra0>"
+  },
+  {
+    "role": "assistant",
+    "content": "Bạn đã làm rất tốt khi xác định mối quan hệ về hướng và độ lớn giữa các vectơ trong các phần (1) và (2)!\n\nỞ phần (3), bạn đã nhận định chính xác rằng $\\overrightarrow{MA}$ và $\\overrightarrow{AB}$ ngược hướng, và độ lớn $MA$ bằng $\\frac{1}{5}$ độ lớn $AB$.\n\nNếu ta có $\\overrightarrow{MA} = k \\overrightarrow{AB}$, thì mối quan hệ giữa độ lớn $MA$ và $AB$ có giúp bạn xác định giá trị tuyệt đối của $k$ không? Bạn hãy xem xét lại bước chuyển từ $MA = \\frac{1}{5} AB$ sang giá trị của $k$ nhé."
+  }
+]

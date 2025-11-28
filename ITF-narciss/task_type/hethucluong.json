@@ -1,0 +1,44 @@
+[
+  {
+    "topic": "GIÁ TRỊ LƯỢNG GIÁC, HỆ THỨC LƯỢNG TRONG TAM GIÁC VÀ GIẢI TAM GIÁC",
+    "lesson": "Bài 1. GIÁ TRỊ LƯỢNG GIÁC CỦA MỘT GÓC TỪ 0° ĐẾN 180°. ĐỊNH LÍ COSIN, SIN TRONG TAM GIÁC",
+    "task type": "Dạng 1. Giá trị lượng giác của một góc từ 0° đến 180°",
+    "task type solving strategies": "Để tìm giá trị lượng giác của một góc, ta sử dụng định nghĩa trên nửa đường tròn đơn vị và các tính chất của các góc có liên quan đặc biệt (bù nhau, phụ nhau)."
+  },
+  {
+    "topic": "GIÁ TRỊ LƯỢNG GIÁC, HỆ THỨC LƯỢNG TRONG TAM GIÁC VÀ GIẢI TAM GIÁC",
+    "lesson": "Bài 1. GIÁ TRỊ LƯỢNG GIÁC CỦA MỘT GÓC TỪ 0° ĐẾN 180°. ĐỊNH LÍ COSIN, SIN TRONG TAM GIÁC",
+    "task type": "Dạng 2. Định lí cosin",
+    "task type solving strategies": "Sử dụng các công thức của định lí cosin để tìm độ dài cạnh hoặc số đo góc trong một tam giác khi biết các yếu tố cần thiết (biết hai cạnh và góc xen giữa, hoặc biết ba cạnh)."
+  },
+  {
+    "topic": "GIÁ TRỊ LƯỢNG GIÁC, HỆ THỨC LƯỢNG TRONG TAM GIÁC VÀ GIẢI TAM GIÁC",
+    "lesson": "Bài 1. GIÁ TRỊ LƯỢNG GIÁC CỦA MỘT GÓC TỪ 0° ĐẾN 180°. ĐỊNH LÍ COSIN, SIN TRONG TAM GIÁC",
+    "task type": "Dạng 3. Định lí sin",
+    "task type solving strategies": "Sử dụng các công thức của định lí sin để tìm độ dài cạnh, số đo góc, hoặc bán kính đường tròn ngoại tiếp của một tam giác khi biết các yếu tố cần thiết."
+  },
+  {
+    "topic": "GIÁ TRỊ LƯỢNG GIÁC, HỆ THỨC LƯỢNG TRONG TAM GIÁC VÀ GIẢI TAM GIÁC",
+    "lesson": "Bài 2. GIẢI TAM GIÁC",
+    "task type": "Dạng 1. Giải tam giác",
+    "task type solving strategies": "Giải tam giác là tính các cạnh và các góc của tam giác dựa trên những dữ kiện cho trước. Áp dụng định lí sin và cosin tùy thuộc vào các yếu tố đã biết:\n- Biết hai cạnh và góc xen giữa.\n- Biết ba cạnh.\n- Biết một cạnh và hai góc kề."
+  },
+  {
+    "topic": "GIÁ TRỊ LƯỢNG GIÁC, HỆ THỨC LƯỢNG TRONG TAM GIÁC VÀ GIẢI TAM GIÁC",
+    "lesson": "Bài 2. GIẢI TAM GIÁC",
+    "task type": "Dạng 2. Tính diện tích tam giác",
+    "task type solving strategies": "Sử dụng các công thức tính diện tích tam giác:\n- S = 1/2 * a * h_a\n- S = 1/2 * b * c * sin(A)\n- S = abc / 4R\n- S = p * r\n- S = sqrt(p(p-a)(p-b)(p-c)) (Công thức Heron)"
+  },
+  {
+    "topic": "GIÁ TRỊ LƯỢNG GIÁC, HỆ THỨC LƯỢNG TRONG TAM GIÁC VÀ GIẢI TAM GIÁC",
+    "lesson": "Bài 2. GIẢI TAM GIÁC",
+    "task type": "Dạng 3. Áp dụng vào bài toán thực tiễn",
+    "task type solving strategies": "Mô hình hóa bài toán thực tế bằng một tam giác. Xác định các yếu tố đã biết và yếu tố cần tìm. Áp dụng định lí sin, cosin và các công thức giải tam giác để tìm ra kết quả."
+  },
+  {
+    "topic": "GIÁ TRỊ LƯỢNG GIÁC, HỆ THỨC LƯỢNG TRONG TAM GIÁC VÀ GIẢI TAM GIÁC",
+    "lesson": "Bài 2. GIẢI TAM GIÁC",
+    "task type": "Dạng 4. Nhận dạng tam giác",
+    "task type solving strategies": "Sử dụng các hệ thức lượng trong tam giác, các định lí sin, cosin để biến đổi các đẳng thức đã cho. Từ đó suy ra các mối quan hệ đặc biệt giữa các cạnh hoặc các góc (ví dụ: a^2 = b^2 + c^2, a=b, A=B,...) để kết luận về dạng của tam giác (vuông, cân, đều,...)."
+  }
+]

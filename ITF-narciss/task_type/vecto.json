@@ -1,0 +1,98 @@
+[
+  {
+    "topic": "VECTƠ",
+    "lesson": "Bài 3. KHÁI NIỆM VECTƠ",
+    "task type": "Các bài toán về khái niệm vectơ",
+    "task type solving strategies": "Áp dụng các định nghĩa cơ bản về vectơ: điểm đầu, điểm cuối, giá của vectơ, độ dài, hai vectơ cùng phương, cùng hướng, ngược hướng, hai vectơ bằng nhau, vectơ-không."
+  },
+  {
+    "topic": "VECTƠ",
+    "lesson": "Bài 4. TỔNG VÀ HIỆU HAI VECTƠ",
+    "task type": "Dạng 1. Cộng trừ véc tơ",
+    "task type solving strategies": "Sử dụng quy tắc ba điểm, quy tắc hình bình hành, và tính chất của các hình hình học để cộng, trừ các vectơ."
+  },
+  {
+    "topic": "VECTƠ",
+    "lesson": "Bài 4. TỔNG VÀ HIỆU HAI VECTƠ",
+    "task type": "Dạng 2. Xác định điểm thỏa mãn điều kiện",
+    "task type solving strategies": "Biến đổi đẳng thức vectơ về dạng AM = v, trong đó A là điểm cố định và v là vectơ cố định. Từ đó suy ra vị trí của điểm M."
+  },
+  {
+    "topic": "VECTƠ",
+    "lesson": "Bài 4. TỔNG VÀ HIỆU HAI VECTƠ",
+    "task type": "Dạng 3. Tính độ dài véc tơ",
+    "task type solving strategies": "Rút gọn biểu thức vectơ về một vectơ duy nhất. Sau đó tính độ dài của vectơ đó dựa vào các tính chất hình học."
+  },
+  {
+    "topic": "VECTƠ",
+    "lesson": "Bài 5. TÍCH CỦA MỘT SỐ VỚI MỘT VECTƠ",
+    "task type": "Dạng 1. Dựng và tính độ dài véc – tơ",
+    "task type solving strategies": "Sử dụng định nghĩa và tính chất của phép nhân vectơ với một số để dựng hình và tính toán độ dài."
+  },
+  {
+    "topic": "VECTƠ",
+    "lesson": "Bài 5. TÍCH CỦA MỘT SỐ VỚI MỘT VECTƠ",
+    "task type": "Dạng 2. Phân tích véc-tơ",
+    "task type solving strategies": "Sử dụng các tính chất phép toán véc-tơ, ba quy tắc phép toán véc-tơ (quy tắc ba điểm, quy tắc hình bình hành, quy tắc hiệu) và tính chất trung điểm, trọng tâm trong tam giác để biểu diễn một vectơ qua các vectơ khác."
+  },
+  {
+    "topic": "VECTƠ",
+    "lesson": "Bài 5. TÍCH CỦA MỘT SỐ VỚI MỘT VECTƠ",
+    "task type": "Dạng 3. Chứng minh đẳng thức véc-tơ",
+    "task type solving strategies": "Sử dụng kiến thức sau để biến đổi vế này thành vế kia hoặc cả hai biểu thức ở hai vế cùng bằng biểu thức thứ ba hoặc biến đổi tương đương về đẳng thức đúng:\n- Các tính chất phép toán véc-tơ\n- Các quy tắc: quy tắc ba điểm, quy tắc hình bình hành và quy tắc phép trừ.\n- Tính chất trung điểm\n- Tính chất trọng tâm"
+  },
+  {
+    "topic": "VECTƠ",
+    "lesson": "Bài 5. TÍCH CỦA MỘT SỐ VỚI MỘT VECTƠ",
+    "task type": "Dạng 4. Chứng minh một biểu thức véc – tơ không phụ thuộc vào điểm di động",
+    "task type solving strategies": "Biến đổi biểu thức vectơ đã cho bằng cách sử dụng các quy tắc và tính chất của vectơ để loại bỏ sự phụ thuộc vào điểm di động, đưa về một biểu thức chỉ chứa các điểm cố định."
+  },
+  {
+    "topic": "VECTƠ",
+    "lesson": "Bài 5. TÍCH CỦA MỘT SỐ VỚI MỘT VECTƠ",
+    "task type": "Dạng 5. Chứng minh hai điểm trùng nhau, hai tam giác có cùng trọng tâm",
+    "task type solving strategies": "Để chứng minh hai điểm A1, A2 trùng nhau, ta lựa chọn một trong hai cách sau:\nCách 1. Chứng minh A1A2 = 0.\nCách 2. Chứng minh OA1 = OA2 với O là điểm tùy ý.\nĐể chứng minh hai tam giác ABC và A’B’C’ có cùng trọng tâm ta làm như sau:\nCách 1. Chứng minh G là trọng tâm ∆ABC trùng với G’ là trọng tâm ∆A'B'C'.\nCách 2. Gọi G là trọng tâm ∆ABC ( tức là có GA+GB+GC = 0) ta đi chứng minh G'A+G'B+G'C = 0."
+  },
+  {
+    "topic": "VECTƠ",
+    "lesson": "Bài 5. TÍCH CỦA MỘT SỐ VỚI MỘT VECTƠ",
+    "task type": "Dạng 6: Thẳng hàng, cố định, đồng qui",
+    "task type solving strategies": "- Ba điểm A, B, C thẳng hàng khi AB = k.AC\n- Hai đường thẳng AB và MN song song khi AB = k.MN và điểm A không thuộc đường thẳng MN\nChú ý: Việc chọn cơ sở để biểu diễn là 2 véc- tơ cùng gốc và không cùng phương"
+  },
+  {
+    "topic": "VECTƠ",
+    "lesson": "Bài 5. TÍCH CỦA MỘT SỐ VỚI MỘT VECTƠ",
+    "task type": "Dạng 7. Xác định điểm, tập hợp điểm thỏa mãn đẳng thức vec tơ.",
+    "task type solving strategies": "Để tìm tập hợp điểm M thoả mãn điều kiện vecto ta quy về một trong các dạng sau:\n- Nếu |MA|=|MB|, với A, B phân biệt cho trước thì M thuộc đường trung trực của đoạn AB.\n- Nếu |MC|=k|AB|, với A, B, C phân biệt cho trước thì M thuộc đường tròn tâm C, bán kính bằng k|AB|.\n- Nếu MA = k.BC, với A, B, C phân biệt và k là số thực thay đổi thì:\n  + M thuộc đường thẳng qua A song song với BC với k ∈ R.\n  + M thuộc nửa đường thẳng qua A song song với BC và cùng hướng với BC với k > 0.\n  + M thuộc nửa đường thẳng qua A song song với BC và ngược hướng với BC với k < 0.\n- Nếu MA=k.BC, B ≠ C với A, B, C thẳng hàng và k thay đổi thì tập hợp điểm M là đường thẳng BC."
+  },
+  {
+    "topic": "VECTƠ",
+    "lesson": "Bài 6. TÍCH VÔ HƯỚNG CỦA HAI VECTƠ",
+    "task type": "Dạng 1. Tính tích vô hướng của hai vectơ, tính góc giữa hai vectơ",
+    "task type solving strategies": "Sử dụng công thức định nghĩa a.b = |a|.|b|.cos(a,b) và các tính chất của tích vô hướng."
+  },
+  {
+    "topic": "VECTƠ",
+    "lesson": "Bài 6. TÍCH VÔ HƯỚNG CỦA HAI VECTƠ",
+    "task type": "Dạng 2. Tính độ dài của một đoạn thẳng",
+    "task type solving strategies": "Sử dụng tính chất AB^2 = vector(AB)^2. Bình phương vô hướng một biểu thức vectơ để tính độ dài."
+  },
+  {
+    "topic": "VECTƠ",
+    "lesson": "Bài 6. TÍCH VÔ HƯỚNG CỦA HAI VECTƠ",
+    "task type": "Dạng 3. Chứng minh đẳng thức về tích vô hướng",
+    "task type solving strategies": "Sử dụng định nghĩa a.b = |a|.|b|.cos(a,b). Sử dụng quy tắc chèn điểm, quy tắc cộng trừ các vectơ và một số quy tắc trung điểm, trọng tâm, tính chất hình bình hành… Tính chất giao hoán và phân phối về tích vô hướng. Nếu trong đẳng thức chứa bình phương độ dài của đoạn thẳng, ta chú ý có thể chuyển về vectơ nhờ đẳng thức AB^2 = vector(AB)^2."
+  },
+  {
+    "topic": "VECTƠ",
+    "lesson": "Bài 6. TÍCH VÔ HƯỚNG CỦA HAI VECTƠ",
+    "task type": "Dạng 4. Chứng minh sự vuông góc của hai vectơ, hai đường thẳng",
+    "task type solving strategies": "Điều kiện a ⊥ b ⇔ a.b=0. Điều kiện AB ⊥ CD ⇔ vector(AB).vector(CD)=0. Lưu ý chọn gốc, chọn hệ cơ sở để biểu diễn và chứng minh vuông góc."
+  },
+  {
+    "topic": "VECTƠ",
+    "lesson": "Bài 6. TÍCH VÔ HƯỚNG CỦA HAI VECTƠ",
+    "task type": "Dạng 5. Tập hợp điểm",
+    "task type solving strategies": "Biến đổi đẳng thức vectơ đã cho về các dạng quen thuộc:\n- Dạng 1: MA.MB = k (A, B là hai điểm cố định).\n- Dạng 2: AM.v = k (A cố định, v có hướng, độ dài xác định).\n- Dạng 3: αMA^2 + βMB^2 = k (A, B cố định α, β là hằng số và α + β ≠ 0)."
+  }
+]

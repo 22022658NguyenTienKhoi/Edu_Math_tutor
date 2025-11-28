@@ -2,10 +2,12 @@
 
 import time
 import warnings
-from graph_initialization import create_error_analysis_agent
+from error_detection_analysis import create_error_analysis_agent
 from graph_conversation import create_tutoring_graph
 from student_simulation import generate_simulated_student_response, parse_simulation_output
-
+from utils import save_conversation_json
+import pandas as pd
+import random
 # Tắt cảnh báo không cần thiết
 warnings.filterwarnings("ignore", message="Convert_system_message_to_human will be deprecated!")
 
@@ -16,8 +18,13 @@ if __name__ == "__main__":
     tutoring_graph = create_tutoring_graph()
 
     # 2. Dữ liệu ban đầu
-    question_text = "Cho mệnh đề P: 'Tam giác ABC đều thì tam giác ABC cân'. Hãy phát biểu mệnh đề đảo của P."
-    initial_solution = f"Question: {question_text}. Student solution : Mệnh đề đảo: 'Nếu tam giác ABC không cân thì tam giác ABC không đều'." # Lỗi sai
+    #question_text = "Viết phương trình tiếp tuyến của đường tròn (C): $(x+2)^2 + (y-3)^2 = 5$ tại điểm M(-1;1)."
+    input_solution_df = pd.read_csv('final_dataset_with_topic.csv')
+    rand = random.randint(0, len(input_solution_df)-1)
+    print(f"Selected input index: {rand}")
+    input_solution = input_solution_df.iloc[rand]
+    question_text = input_solution['question']
+    initial_solution = input_solution['wrong_solution']
     
     initial_state = {
         "student_id": "An (Simulated)",
@@ -36,7 +43,7 @@ if __name__ == "__main__":
 
     # 3. Chạy Phân tích lỗi (Giai đoạn 1)
     print("="*50 + "\n🤖 BẮT ĐẦU MÔ PHỎNG VỚI HỌC SINH AI\n" + "="*50)
-    print(f"📝 Đề bài: {question_text}")
+    print(f"📝 Đề bài: {input_solution['question']}")
     print(f"❌ Bài làm sai ban đầu: {initial_solution}\n")
     
     print("--- Đang phân tích lỗi... ---")
@@ -50,7 +57,7 @@ if __name__ == "__main__":
     # prompt_crafter (trong bước phân tích) ĐÃ thêm bài làm đầu tiên vào history.
     # Vì vậy, ta cần xóa student_input tạm thời để node 'format_input' trong đồ thị 
     # không thêm nó vào lần nữa trong lần chạy đầu tiên.
-    current_state["student_input"] = "" 
+    #current_state["student_input"] = "" 
     
     MAX_ROUNDS = 5 
 
@@ -82,13 +89,13 @@ if __name__ == "__main__":
         # --- B. HỌC SINH AI (ITF SIMULATION) ---
         print("\n🧠 [ITF Internal Processing] Học sinh đang xử lý thông tin...")
         time.sleep(1) # Delay nhỏ tạo cảm giác thực
-        
+        print(f"Bloom level:{input_solution['bloom_level']}")
         raw_simulation = generate_simulated_student_response(
             conversation_history=output_state["conversation_history"],
             question_text=question_text,
-            current_misconception="Nghĩ rằng Mệnh đề đảo giống Mệnh đề phản đảo (thêm 'không')",
-            competency_level="Yếu",
-            motivation_level="Trung bình"
+            current_misconception=input_solution['explanation'],
+            competency_level=input_solution['bloom_level'],
+            motivation_level="disengaged"
         )
         
         sim_data = parse_simulation_output(raw_simulation)
@@ -96,7 +103,10 @@ if __name__ == "__main__":
         print(f"   💭 Suy nghĩ: {sim_data['thought']}")
         print(f"   ⚙️ Hành động: {sim_data['action']}")
         print(f"🧑‍🎓 An nói: {sim_data['response']}")
-
+        if sim_data['action'] == "CORRECTING":
+            save_conversation_json(output_state["conversation_history"])
+            print("\n🎉 [HỆ THỐNG]: Student understand. Break")
+            break
         # --- C. CẬP NHẬT TRẠNG THÁI CHO VÒNG SAU ---
         current_state = output_state
         
@@ -112,4 +122,5 @@ if __name__ == "__main__":
         # Vì node 'format_input' trong đồ thị sẽ tự động làm việc này khi invoke lại.
 
     if current_state["round"] >= MAX_ROUNDS:
+        save_conversation_json(output_state["conversation_history"])
         print("\n⚠️ Đã đạt giới hạn số vòng lặp. Kết thúc mô phỏng.")

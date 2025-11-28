@@ -1,0 +1,80 @@
+[
+  {
+    "topic": "Quy tắc đếm",
+    "lesson": "Quy tắc cộng và nhân",
+    "task type": "Bài toán lựa chọn cơ bản",
+    "task type solving strategies": "- Phân tích công việc thành các phương án độc lập, riêng biệt (quy tắc cộng 'HOẶC').\n- Phân tích công việc thành các công đoạn nối tiếp, phụ thuộc (quy tắc nhân 'VÀ').\n- Đối với bài toán phức tạp, kết hợp cả hai quy tắc: chia thành các trường hợp lớn (cộng), và mỗi trường hợp lại chia thành các bước nhỏ (nhân)."
+  },
+  {
+    "topic": "Quy tắc đếm",
+    "lesson": "Bài toán đếm số",
+    "task type": "Lập số tự nhiên từ một tập hợp cho trước",
+    "task type solving strategies": "- Sử dụng phương pháp các ô trống tương ứng với các chữ số của số cần lập.\n- Ưu tiên xét các vị trí có điều kiện ràng buộc trước: chữ số hàng đơn vị (cho tính chẵn/lẻ), chữ số hàng đầu tiên (phải khác 0).\n- Nếu một chữ số (như số 0) có thể ảnh hưởng đến nhiều vị trí, hãy chia thành các trường hợp riêng biệt để xét (ví dụ: trường hợp chữ số cuối là 0 và trường hợp chữ số cuối khác 0).\n- Áp dụng các quy tắc về dấu hiệu chia hết (cho 2, 3, 4, 5, 9, 11) để giới hạn các lựa chọn."
+  },
+  {
+    "topic": "Quy tắc đếm",
+    "lesson": "Bài toán chọn và sắp xếp",
+    "task type": "Bài toán chọn đồ vật hoặc người",
+    "task type solving strategies": "- Xác định rõ số lượng cần chọn và tổng số đối tượng.\n- Chia bài toán thành các trường hợp nếu có các điều kiện loại trừ hoặc các lựa chọn khác nhau (ví dụ: chọn đủ 3 màu, chọn ít nhất 1 nam).\n- Sử dụng quy tắc nhân để chọn các đối tượng từ các nhóm khác nhau (chọn 1 sách Toán VÀ 1 sách Lý).\n- Sử dụng quy tắc cộng để tính tổng kết quả từ các trường hợp riêng biệt."
+  },
+  {
+    "topic": "Quy tắc đếm",
+    "lesson": "Bài toán chọn và sắp xếp",
+    "task type": "Bài toán sắp xếp vị trí",
+    "task type solving strategies": "- Sắp xếp cơ bản n người vào n vị trí có n! cách.\n- Nếu có điều kiện 'A và B ngồi cạnh nhau', coi (A, B) là một 'khối'. Hoán vị khối này với các phần tử khác, sau đó hoán vị các phần tử trong khối.\n- Nếu có điều kiện 'A và B không ngồi cạnh nhau', dùng phương pháp phần bù: lấy tổng số cách xếp trừ đi số cách xếp mà A và B ngồi cạnh nhau.\n- Nếu xếp xen kẽ (nam-nữ), xếp một nhóm trước để tạo ra các 'khe', sau đó xếp nhóm còn lại vào các 'khe' đó."
+  },
+  {
+    "topic": "Hoán vị - Chỉnh hợp - Tổ hợp",
+    "lesson": "Hoán vị",
+    "task type": "Bài toán đại số (Phương trình, Bất phương trình, Chứng minh)",
+    "task type solving strategies": "- Sử dụng công thức hoán vị Pn = n! và các tính chất của giai thừa để biến đổi biểu thức.\n- Giải phương trình, bất phương trình đại số thu được sau khi rút gọn.\n- Luôn kiểm tra điều kiện của biến (phải là số nguyên không âm)."
+  },
+  {
+    "topic": "Hoán vị - Chỉnh hợp - Tổ hợp",
+    "lesson": "Hoán vị",
+    "task type": "Hoán vị lặp và Hoán vị vòng quanh",
+    "task type solving strategies": "- Đối với hoán vị lặp (sắp xếp n phần tử trong đó có n₁, n₂, ... nk phần tử giống nhau): áp dụng công thức Pn(n₁; n₂; ...) = n! / (n₁!n₂!...nk!).\n- Đối với hoán vị vòng quanh (sắp xếp n phần tử quanh một bàn tròn): cố định một phần tử, hoán vị (n-1) phần tử còn lại, có (n-1)! cách."
+  },
+  {
+    "topic": "Hoán vị - Chỉnh hợp - Tổ hợp",
+    "lesson": "Chỉnh hợp",
+    "task type": "Bài toán đại số (Phương trình, Bất phương trình)",
+    "task type solving strategies": "- Sử dụng công thức chỉnh hợp Aₖⁿ = n! / (n-k)! để khai triển biểu thức.\n- Rút gọn và giải phương trình/bất phương trình đại số.\n- Đối chiếu nghiệm với điều kiện n ≥ k và n, k là số nguyên."
+  },
+  {
+    "topic": "Hoán vị - Chỉnh hợp - Tổ hợp",
+    "lesson": "Chỉnh hợp",
+    "task type": "Bài toán đếm (Chọn có thứ tự)",
+    "task type solving strategies": "- Xác định bài toán yêu cầu chọn k phần tử từ n phần tử VÀ sắp xếp chúng theo một thứ tự nhất định.\n- Áp dụng công thức chỉnh hợp Aₖⁿ hoặc quy tắc nhân.\n- Các bài toán như lập số có các chữ số khác nhau, xếp người vào các vị trí cụ thể, trao giải thưởng (nhất, nhì, ba) là các ứng dụng điển hình."
+  },
+  {
+    "topic": "Hoán vị - Chỉnh hợp - Tổ hợp",
+    "lesson": "Tổ hợp",
+    "task type": "Bài toán đại số (Phương trình, Bất phương trình, Hệ phương trình)",
+    "task type solving strategies": "- Sử dụng công thức tổ hợp Cₖⁿ = n! / (k!(n-k)!) và các tính chất quan trọng: Cₖⁿ = Cₙ₋ₖⁿ, Cₖⁿ + Cₖ₊₁ⁿ = Cₖ₊₁ⁿ⁺¹ (công thức Pascal).\n- Biến đổi và giải các phương trình, bất phương trình, hệ phương trình.\n- Luôn kiểm tra điều kiện n ≥ k ≥ 0."
+  },
+  {
+    "topic": "Hoán vị - Chỉnh hợp - Tổ hợp",
+    "lesson": "Tổ hợp",
+    "task type": "Bài toán đếm (Chọn không có thứ tự)",
+    "task type solving strategies": "- Xác định bài toán yêu cầu chọn k phần tử từ n phần tử mà KHÔNG quan tâm đến thứ tự.\n- Áp dụng công thức tổ hợp Cₖⁿ.\n- Kết hợp quy tắc cộng (cho các trường hợp loại trừ nhau) và quy tắc nhân (cho các bước lựa chọn liên tiếp).\n- Sử dụng phương pháp phần bù cho các bài toán có cụm từ 'ít nhất một'."
+  },
+  {
+    "topic": "Hoán vị - Chỉnh hợp - Tổ hợp",
+    "lesson": "Tổ hợp",
+    "task type": "Bài toán hình học",
+    "task type solving strategies": "- Tạo một đường thẳng từ n điểm: C₂ⁿ.\n- Tạo một vector từ n điểm: A₂ⁿ.\n- Tạo một tam giác từ n điểm không đồng phẳng: C₃ⁿ.\n- Tính số đường chéo của đa giác n cạnh: C₂ⁿ - n.\n- Nếu có các điểm thẳng hàng, sử dụng phương pháp phần bù: trừ đi số tổ hợp các điểm thẳng hàng."
+  },
+  {
+    "topic": "Nhị thức Newton",
+    "lesson": "Khai triển và Tìm hệ số/số hạng",
+    "task type": "Tìm hệ số hoặc số hạng thỏa mãn điều kiện",
+    "task type solving strategies": "- Viết ra số hạng tổng quát của khai triển (a+b)ⁿ là Tₖ₊₁ = Cₖⁿ * aⁿ⁻ᵏ * bᵏ.\n- Rút gọn số hạng tổng quát để đưa về dạng (hệ số) * xᵐ.\n- Dựa vào yêu cầu bài toán (tìm hệ số của xᵖ, tìm số hạng không chứa x,...) để lập phương trình với số mũ m (ví dụ: m = p, m = 0).\n- Giải phương trình tìm k, sau đó thay k trở lại để tìm hệ số hoặc toàn bộ số hạng."
+  },
+  {
+    "topic": "Nhị thức Newton",
+    "lesson": "Tính tổng và Chứng minh đẳng thức",
+    "task type": "Tính tổng các biểu thức chứa tổ hợp",
+    "task type solving strategies": "- Nhận dạng tổng cần tính là một dạng đặc biệt của khai triển (1+x)ⁿ.\n- Thay các giá trị đặc biệt của x (thường là 1, -1, hoặc các số khác) vào khai triển.\n- Sử dụng đạo hàm hai vế của khai triển (1+x)ⁿ để tạo ra các tổng có dạng k*Cₖⁿ.\n- Sử dụng tích phân hai vế của khai triển (1+x)ⁿ để tạo ra các tổng có dạng (1/(k+1))*Cₖⁿ.\n- Để tính tổng các số hạng chẵn (C₀, C₂, C₄,...) hoặc lẻ (C₁, C₃, C₅,...), cộng hoặc trừ vế theo vế của khai triển (1+1)ⁿ và (1-1)ⁿ."
+  }
+]

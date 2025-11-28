@@ -1,0 +1,54 @@
+[
+  {
+    "topic": "BẤT PHƯƠNG TRÌNH VÀ HỆ BẤT PHƯƠNG TRÌNH BẬC NHẤT HAI ẨN",
+    "lesson": "BÀI 1: BẤT PHƯƠNG TRÌNH BẬC NHẤT HAI ẨN",
+    "task type": "Kiểm tra một cặp số có phải là nghiệm của bất phương trình hay không",
+    "task type solving strategies": [
+      "Bước 1: Thay giá trị của cặp số (x₀; y₀) vào bất phương trình đã cho.",
+      "Bước 2: Kiểm tra tính đúng đắn của mệnh đề sau khi thay. Nếu mệnh đề đúng, cặp số đó là nghiệm. Nếu mệnh đề sai, cặp số đó không phải là nghiệm."
+    ]
+  },
+  {
+    "topic": "BẤT PHƯƠNG TRÌNH VÀ HỆ BẤT PHƯƠNG TRÌNH BẬC NHẤT HAI ẨN",
+    "lesson": "BÀI 1: BẤT PHƯƠNG TRÌNH BẬC NHẤT HAI ẨN",
+    "task type": "Xác định miền nghiệm của bất phương trình bậc nhất hai ẩn (Biểu diễn hình học tập nghiệm)",
+    "task type solving strategies": [
+      "Bước 1: Trên mặt phẳng tọa độ, vẽ đường thẳng (d): ax + by + c = 0.",
+      "Bước 2: Xét một điểm M(x₀; y₀) không nằm trên đường thẳng (d) (thường lấy gốc tọa độ O(0;0) nếu đường thẳng không đi qua gốc).",
+      "Bước 3: Thay toạ độ điểm M vào biểu thức ax + by + c.",
+      "Bước 4: Kết luận: Nếu ax₀ + by₀ + c < 0 thì nửa mặt phẳng chứa điểm M là miền nghiệm của bất phương trình ax + by + c < 0. Nếu ax₀ + by₀ + c > 0 thì nửa mặt phẳng không chứa điểm M là miền nghiệm của bất phương trình ax + by + c < 0.",
+      "Lưu ý: Đối với các bất phương trình dạng ≤ hoặc ≥ thì miền nghiệm sẽ bao gồm cả đường thẳng bờ (d)."
+    ]
+  },
+  {
+    "topic": "BẤT PHƯƠNG TRÌNH VÀ HỆ BẤT PHƯƠNG TRÌNH BẬC NHẤT HAI ẨN",
+    "lesson": "BÀI 1: BẤT PHƯƠNG TRÌNH BẬC NHẤT HAI ẨN",
+    "task type": "Xác định một bất phương trình khi biết miền nghiệm",
+    "task type solving strategies": [
+      "Bước 1: Từ hình vẽ, xác định tọa độ của hai điểm thuộc đường thẳng bờ (d) để viết phương trình đường thẳng y = ax + b, sau đó đưa về dạng tổng quát Ax + By + C = 0.",
+      "Bước 2: Lấy một điểm M(x₀; y₀) nằm trong miền nghiệm (phần không bị gạch).",
+      "Bước 3: Thay tọa độ điểm M vào biểu thức Ax + By + C và so sánh với 0 để xác định dấu của bất phương trình (> , < , ≥, ≤).",
+      "Bước 4: Kết hợp phương trình đường thẳng và dấu để viết bất phương trình hoàn chỉnh."
+    ]
+  },
+  {
+    "topic": "BẤT PHƯƠNG TRÌNH VÀ HỆ BẤT PHƯƠNG TRÌNH BẬC NHẤT HAI ẨN",
+    "lesson": "BÀI 2: HỆ BẤT PHƯƠNG TRÌNH BẬC NHẤT HAI ẨN",
+    "task type": "Xác định miền nghiệm của hệ bất phương trình bậc nhất hai ẩn",
+    "task type solving strategies": [
+      "Bước 1: Trên cùng một mặt phẳng tọa độ, biểu diễn miền nghiệm của từng bất phương trình trong hệ bằng cách gạch bỏ phần không phải là nghiệm.",
+      "Bước 2: Phần mặt phẳng không bị gạch chính là miền nghiệm của hệ bất phương trình đã cho."
+    ]
+  },
+  {
+    "topic": "BẤT PHƯƠNG TRÌNH VÀ HỆ BẤT PHƯƠNG TRÌNH BẬC NHẤT HAI ẨN",
+    "lesson": "BÀI 2: HỆ BẤT PHƯƠNG TRÌNH BẬC NHẤT HAI ẨN (BÀI TOÁN TỐI ƯU)",
+    "task type": "Tìm giá trị lớn nhất, giá trị nhỏ nhất của biểu thức F(x, y) = ax + by trên một miền đa giác (miền nghiệm của hệ bất phương trình)",
+    "task type solving strategies": [
+      "Bước 1: Xác định miền nghiệm (S) của hệ bất phương trình. Miền nghiệm thường là một đa giác.",
+      "Bước 2: Xác định tọa độ các đỉnh của đa giác miền nghiệm (S).",
+      "Bước 3: Tính giá trị của biểu thức F(x,y) tại các đỉnh của đa giác.",
+      "Bước 4: So sánh các giá trị đã tính. Giá trị lớn nhất tìm được là giá trị lớn nhất của F, và giá trị nhỏ nhất tìm được là giá trị nhỏ nhất của F trên miền nghiệm."
+    ]
+  }
+]

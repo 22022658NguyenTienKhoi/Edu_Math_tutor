@@ -8,7 +8,7 @@ class GraphState(TypedDict):
     """
     # === Session Data ===
     student_id: str
-    question_id: str
+    question: str
     initial_student_solution: str
     round: int
 
@@ -20,7 +20,7 @@ class GraphState(TypedDict):
     error_analysis: Optional[str]         # CHANGED: Direct text analysis
     learner_profile: Optional[str]        # CHANGED: Direct text assessment
     master_prompt: Optional[str]          # Direct text prompt
-
+    presentation: Optional[str]          # CHANGED: Direct text presentation
     # === Conversation Management ===
     conversation_history: Annotated[list, operator.add]
     is_correct: bool

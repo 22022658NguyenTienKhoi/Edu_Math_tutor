@@ -1,17 +1,17 @@
 # /thay_tich_hop/graph_conversation.py
-
+# agent danh chan, chan hong tutor lai khi danh gia duoc hoc sinh da nam duoc phuong phap va kien thuc giai
+#chan hong tutor de khong tien the cham luon bai hoc sinh
 import json
 import os
 from langgraph.graph import StateGraph, END
 from state_definitions import GraphState 
 from google.genai import types
 from google import genai
-from langchain.schema import SystemMessage, HumanMessage, AIMessage
 from dotenv import load_dotenv
-
+from utils import save_conversation_json
 load_dotenv()
 client = genai.Client()
-model="models/gemini-flash-lite-latest"
+model="models/gemini-flash-latest"
 # --- CẤU HÌNH MÔ HÌNH ---
 # Sử dụng model Flash để phản hồi nhanh (Immediate feedback timing)
 def invoke(prompt, system_prompt):
@@ -26,7 +26,7 @@ def invoke(prompt, system_prompt):
                             tools=[
                                 types.Tool(
                                     file_search=types.FileSearch(
-                                    file_search_store_names=['fileSearchStores/test-74i34u8q50m2']
+                                    file_search_store_names=['fileSearchStores/math10tasktypes-6ywhsgmh52fd']
                         )
                     )
                 ]
@@ -37,27 +37,25 @@ def invoke(prompt, system_prompt):
 # Đây là phần "Non-fixable part" bạn yêu cầu, được gắn cứng vào logic của giáo viên.
 
 FIXED_ITF_PROMPT = """
-=== TIÊU CHUẨN THIẾT KẾ FEEDBACK (BẮT BUỘC TUÂN THỦ) ===
-Bạn phải tuân thủ nghiêm ngặt các nguyên tắc phản hồi sau đây trong mọi câu trả lời:
+You are a Socratic tutor.
+Your role is to guide the student in reflecting on their own thinking and planning an approach, not to teach or solve problems for them.
 
-1. CHỨC NĂNG CỦA FEEDBACK (FEEDBACK FUNCTIONS)(Optional cho từng trường hợp):
-   - **Cognitive (Nhận thức):** Tập trung sửa đổi các lỗi sai về kiến thức, khái niệm hoặc quy trình tính toán.
-   - **Metacognitive (Siêu nhận thức):** Nếu học sinh đoán mò hoặc không có chiến lược, hãy đặt câu hỏi để họ tự kiểm tra lại cách suy nghĩ của mình (VD: "Tại sao em lại chọn công thức đó?").
-   - **Motivational (Động lực):** LUÔN LUÔN duy trì giọng điệu tích cực, kiên nhẫn. Công nhận nỗ lực của học sinh ngay cả khi họ làm sai (mục đích động viên là chính).
+Goal:
+Help the student recognize correct concepts, reasoning patterns, and strategies through metacognitive questioning upon their errors. 
+Your purpose is to stimulate awareness—not to complete the task.
 
-2. NỘI DUNG FEEDBACK (ELABORATED CONTENT)(Optional cho từng trường hợp):
-   - **Knowledge of Result (KR):** Cho biết hướng đi của học sinh là đúng hay sai một cách rõ ràng (nhưng không đưa đáp án cuối cùng).
-   - **Knowledge about Mistakes (Lỗi sai):** PHẢI bôi đen/làm đậm vị trí lỗi sai trong câu trả lời của học sinh. Sử dụng định dạng markdown **như thế này** để highlight lỗi.
-   - **Knowledge about Concepts (Khái niệm):** Nhắc lại các thuộc tính của khái niệm bị hiểu sai (gợi ý dựa trên thuộc tính).
-   - **Knowledge about Processing (Quy trình):** Cung cấp gợi ý về bước tiếp theo hoặc quy trình cần thực hiện.
-   - **Knowledge about Task Constraints:** Nhắc lại các quy tắc hoặc yêu cầu của đề bài nếu học sinh đi lạc hướng.
+Resources:
+1.Student error analysis records provided.
+2.Do not introduce new concepts, definitions, formulas, or problem-solving methods that the student has not already mentioned.
+Your questions must arise strictly from what the student has already expressed.
 
-3. HÌNH THỨC TRÌNH BÀY (PRESENTATION):
-   - **Highlighting:** Bắt buộc sử dụng **in đậm** để chỉ ra các từ khóa quan trọng hoặc các lỗi sai trong bài làm của học sinh.
-   - **Scheduling:** Áp dụng chiến lược "Answer until correct" (Trả lời cho đến khi đúng). KHÔNG BAO GIỜ đưa ra đáp án đúng ngay lập tức. Hãy chia nhỏ vấn đề và hướng dẫn từng bước.
-   - **Content Length:** Giới hạn độ dài phản hồi phù hợp, không quá dài để tránh gây nhàm chán hoặc quá ngắn để thiếu thông tin.
-   - **Language:** Vietnamese
-=== KẾT THÚC TIÊU CHUẨN ===
+Behavior Constraints:
+1.Maintain a supportive, encouraging tone throughout.
+2.Never perform the requested task or solve the problem.
+3.Your questions must guide the student’s thinking—helping them examine assumptions, evaluate strategies, or clarify reasoning.
+4.Your questions should not require the student to finish solving the problem; they should stimulate reflection.
+Stopping Condition:
+End the dialogue immediately when the student demonstrates that their metacognitive understanding—how they plan, reason, or conceptualize—aligns with the task-type solving strategy, even if fewer than five questions have been asked.
 """
 
 # --- CÁC NÚT (NODES) ---
@@ -76,14 +74,14 @@ def teacher_agent_node(state: GraphState) -> dict:
     print("\n---(Conv) Đang chạy Teacher Agent Node---")
     
     history = state["conversation_history"]
-    master_prompt_dynamic = state.get("master_prompt", "")
-
+    master_prompt_dynamic = state.get("error_analysis", "")
+    #{master_prompt_dynamic}
     # 1. Xây dựng System Prompt hỗn hợp
     # Kết hợp Prompt được craft từ bước phân tích + Các tiêu chuẩn cố định
     combined_system_prompt = f"""
-    {master_prompt_dynamic}
-    
     {FIXED_ITF_PROMPT}
+    Additionally, consider the following context from prior analysis:
+    {master_prompt_dynamic}
     """
     #print(f"---(Conv) Combined System Prompt: {combined_system_prompt}---") # In gọn
     # 2. Chuẩn bị danh sách tin nhắn để gửi cho LLM

@@ -1,0 +1,104 @@
+[
+  {
+    "topic": "THỐNG KÊ VÀ XÁC SUẤT",
+    "lesson": "Bài 1. SỐ GẦN ĐÚNG VÀ SAI SỐ",
+    "task type": "Dạng 1. Xác định sai số tuyệt đối của số gần đúng",
+    "task type solving strategies": "- Xác định giá trị đúng ā và giá trị gần đúng a.\n- Áp dụng công thức tính sai số tuyệt đối: ∆a = |a − ā|.\n- Trong trường hợp không biết giá trị đúng ā nhưng biết số gần đúng có độ chính xác d (cho dưới dạng a ± d), thì sai số tuyệt đối không vượt quá d, tức là ∆a ≤ d."
+  },
+  {
+    "topic": "THỐNG KÊ VÀ XÁC SUẤT",
+    "lesson": "Bài 1. SỐ GẦN ĐÚNG VÀ SAI SỐ",
+    "task type": "Dạng 2. Xác định sai số tương đối của số gần đúng",
+    "task type solving strategies": "- Xác định giá trị gần đúng a và sai số tuyệt đối ∆a (hoặc độ chính xác d).\n- Áp dụng công thức tính sai số tương đối: δa = ∆a / |a|.\n- Để ước lượng sai số tương đối khi biết độ chính xác d, ta dùng công thức δa ≤ d / |a|. Sai số tương đối càng nhỏ thì chất lượng đo đạc hoặc tính toán càng cao."
+  },
+  {
+    "topic": "THỐNG KÊ VÀ XÁC SUẤT",
+    "lesson": "Bài 1. SỐ GẦN ĐÚNG VÀ SAI SỐ",
+    "task type": "Dạng 3. Xác định số quy tròn của số gần đúng với độ chính xác cho trước",
+    "task type solving strategies": "- Xác định hàng làm tròn dựa vào độ chính xác d: Nếu độ chính xác đến hàng phần nghìn (ví dụ 0,001) thì làm tròn đến hàng phần trăm. Nếu độ chính xác đến hàng trăm (ví dụ 300) thì làm tròn đến hàng nghìn.\n- Áp dụng quy tắc làm tròn số thập phân: Nếu chữ số đầu tiên ở phần bỏ đi nhỏ hơn 5 thì giữ nguyên bộ phận còn lại. Nếu chữ số đó lớn hơn hoặc bằng 5 thì cộng thêm 1 vào chữ số cuối cùng của bộ phận còn lại."
+  },
+  {
+    "topic": "THỐNG KÊ VÀ XÁC SUẤT",
+    "lesson": "Bài 2. CÁC SỐ ĐẶC TRƯNG ĐO XU THẾ TRUNG TÂM",
+    "task type": "Dạng 1. Xác định số trung bình của mẫu số liệu",
+    "task type solving strategies": "- Đối với mẫu số liệu không phân nhóm: Tính tổng tất cả các giá trị trong mẫu rồi chia cho số lượng các giá trị. Công thức: x̄ = (x₁ + x₂ + ... + xn) / n.\n- Đối với mẫu số liệu cho dưới dạng bảng tần số: Lấy từng giá trị nhân với tần số tương ứng, cộng tất cả các kết quả đó lại rồi chia cho tổng số các giá trị (tổng các tần số). Công thức: x̄ = (n₁x₁ + n₂x₂ + ... + nₖxₖ) / n, với n là cỡ mẫu."
+  },
+  {
+    "topic": "THỐNG KÊ VÀ XÁC SUẤT",
+    "lesson": "Bài 2. CÁC SỐ ĐẶC TRƯNG ĐO XU THẾ TRUNG TÂM",
+    "task type": "Dạng 2. Xác định số trung vị của mẫu số liệu",
+    "task type solving strategies": "Bước 1: Sắp xếp mẫu số liệu theo thứ tự không giảm.\nBước 2: Tìm giá trị ở vị trí chính giữa của mẫu số liệu.\n- Nếu cỡ mẫu n là số lẻ, số trung vị (Me) là giá trị đứng ở vị trí thứ (n + 1) / 2.\n- Nếu cỡ mẫu n là số chẵn, số trung vị (Me) là trung bình cộng của hai giá trị đứng ở vị trí n/2 và n/2 + 1."
+  },
+  {
+    "topic": "THỐNG KÊ VÀ XÁC SUẤT",
+    "lesson": "Bài 2. CÁC SỐ ĐẶC TRƯNG ĐO XU THẾ TRUNG TÂM",
+    "task type": "Dạng 3. Xác định tứ phân vị dựa vào mẫu số liệu",
+    "task type solving strategies": "Bước 1: Sắp xếp mẫu số liệu theo thứ tự không giảm và tìm số trung vị, giá trị này là tứ phân vị thứ hai (Q₂).\nBước 2: Tìm tứ phân vị thứ nhất (Q₁) bằng cách tìm trung vị của nửa dãy số liệu phía dưới Q₂ (không bao gồm Q₂ nếu cỡ mẫu lẻ).\nBước 3: Tìm tứ phân vị thứ ba (Q₃) bằng cách tìm trung vị của nửa dãy số liệu phía trên Q₂ (không bao gồm Q₂ nếu cỡ mẫu lẻ)."
+  },
+  {
+    "topic": "THỐNG KÊ VÀ XÁC SUẤT",
+    "lesson": "Bài 2. CÁC SỐ ĐẶC TRƯNG ĐO XU THẾ TRUNG TÂM",
+    "task type": "Dạng 4. Xác định mốt dựa vào mẫu số liệu",
+    "task type solving strategies": "- Xác định tần số của mỗi giá trị trong mẫu số liệu.\n- Mốt (Mₒ) là giá trị có tần số xuất hiện lớn nhất trong bảng phân bố tần số.\n- Lưu ý: Một mẫu số liệu có thể có một hoặc nhiều mốt."
+  },
+  {
+    "topic": "THỐNG KÊ VÀ XÁC SUẤT",
+    "lesson": "Bài 3. CÁC SỐ ĐẶC TRƯNG ĐO ĐỘ PHÂN TÁN",
+    "task type": "Dạng 1. Xác định khoảng biến thiên dựa vào mẫu số liệu",
+    "task type solving strategies": "- Xác định giá trị lớn nhất (max) và giá trị nhỏ nhất (min) trong mẫu số liệu.\n- Khoảng biến thiên (R) được tính bằng hiệu số giữa giá trị lớn nhất và giá trị nhỏ nhất: R = max - min."
+  },
+  {
+    "topic": "THỐNG KÊ VÀ XÁC SUẤT",
+    "lesson": "Bài 3. CÁC SỐ ĐẶC TRƯNG ĐO ĐỘ PHÂN TÁN",
+    "task type": "Dạng 2. Xác định khoảng tứ phân vị dựa vào mẫu số liệu",
+    "task type solving strategies": "Bước 1: Xác định các tứ phân vị Q₁ và Q₃ của mẫu số liệu.\nBước 2: Khoảng tứ phân vị (∆Q) được tính bằng hiệu số giữa Q₃ và Q₁: ∆Q = Q₃ − Q₁."
+  },
+  {
+    "topic": "THỐNG KÊ VÀ XÁC SUẤT",
+    "lesson": "Bài 3. CÁC SỐ ĐẶC TRƯNG ĐO ĐỘ PHÂN TÁN",
+    "task type": "Dạng 3. Xác định phương sai, độ lệch chuẩn dựa vào mẫu số liệu",
+    "task type solving strategies": "Bước 1: Tính số trung bình (x̄) của mẫu số liệu.\nBước 2: Tính phương sai (s²) bằng cách lấy tổng bình phương của các độ lệch từ mỗi giá trị đến số trung bình, rồi chia cho cỡ mẫu n. Công thức: s² = [Σ(xᵢ − x̄)²] / n.\nBước 3: Tính độ lệch chuẩn (s) bằng cách lấy căn bậc hai của phương sai: s = √s²."
+  },
+  {
+    "topic": "THỐNG KÊ VÀ XÁC SUẤT",
+    "lesson": "Bài 4. BIẾN CỐ VÀ CÁC PHÉP TOÁN TRÊN BIẾN CỐ",
+    "task type": "Dạng 1. Mô tả không gian mẫu",
+    "task type solving strategies": "- Không gian mẫu (Ω): Liệt kê tất cả các kết quả có thể xảy ra của phép thử. Có thể dùng sơ đồ cây hoặc các quy tắc đếm (quy tắc cộng, quy tắc nhân).\n- Đếm số phần tử của không gian mẫu, ký hiệu là n(Ω)."
+  },
+  {
+    "topic": "THỐNG KÊ VÀ XÁC SUẤT",
+    "lesson": "Bài 4. BIẾN CỐ VÀ CÁC PHÉP TOÁN TRÊN BIẾN CỐ",
+    "task type": "Dạng 2. Mô tả biến cố",
+    "task type solving strategies": "- Biến cố (A): Xác định tập hợp con của không gian mẫu bao gồm các kết quả thuận lợi cho một sự kiện cụ thể.\n- Đếm số phần tử của biến cố A, tức là số kết quả thuận lợi n(A)."
+  },
+  {
+    "topic": "THỐNG KÊ VÀ XÁC SUẤT",
+    "lesson": "Bài 4. BIẾN CỐ VÀ CÁC PHÉP TOÁN TRÊN BIẾN CỐ",
+    "task type": "Dạng 3. Các phép toán trên biến cố",
+    "task type solving strategies": "- Biến cố đối (Ā): Tập hợp các kết quả không thuận lợi cho A.\n- Hợp hai biến cố (A ∪ B): Biến cố \"Ít nhất một trong hai biến cố A hoặc B xảy ra\".\n- Giao hai biến cố (A ∩ B hoặc AB): Biến cố \"Cả hai biến cố A và B đồng thời xảy ra\".\n- Biến cố xung khắc: Hai biến cố A và B được gọi là xung khắc nếu chúng không thể cùng xảy ra (A ∩ B = ∅)."
+  },
+  {
+    "topic": "THỐNG KÊ VÀ XÁC SUẤT",
+    "lesson": "Bài 5. XÁC SUẤT CỦA BIẾN CỐ",
+    "task type": "Dạng 1. Tính xác suất bằng định nghĩa cổ điển",
+    "task type solving strategies": "Bước 1: Xác định không gian mẫu Ω và tính số phần tử của nó là n(Ω).\nBước 2: Xác định biến cố A và đếm số phần tử của A, tức là số kết quả thuận lợi n(A).\nBước 3: Áp dụng công thức xác suất cổ điển: P(A) = n(A) / n(Ω)."
+  },
+  {
+    "topic": "THỐNG KÊ VÀ XÁC SUẤT",
+    "lesson": "Bài 5. XÁC SUẤT CỦA BIẾN CỐ",
+    "task type": "Dạng 2. Tính xác suất bằng quy tắc cộng",
+    "task type solving strategies": "- Phân tích sự kiện cần tính xác suất thành hợp của các biến cố (A ∪ B).\n- Nếu A và B xung khắc: P(A ∪ B) = P(A) + P(B).\n- Nếu A và B không xung khắc: P(A ∪ B) = P(A) + P(B) - P(A ∩ B)."
+  },
+  {
+    "topic": "THỐNG KÊ VÀ XÁC SUẤT",
+    "lesson": "Bài 5. XÁC SUẤT CỦA BIẾN CỐ",
+    "task type": "Dạng 3. Tính xác suất bằng quy tắc nhân",
+    "task type solving strategies": "- Phân tích sự kiện cần tính xác suất thành giao của các biến cố (A ∩ B hoặc AB).\n- Nếu A và B độc lập, áp dụng quy tắc nhân: P(AB) = P(A) · P(B)."
+  },
+  {
+    "topic": "THỐNG KÊ VÀ XÁC SUẤT",
+    "lesson": "Bài 5. XÁC SUẤT CỦA BIẾN CỐ",
+    "task type": "Dạng 4. Sử dụng biến cố đối để tính xác suất",
+    "task type solving strategies": "Bước 1: Xác định biến cố A cần tính xác suất (Thường áp dụng cho các bài toán có cụm từ 'ít nhất một').\nBước 2: Xác định biến cố đối Ā (thường là trường hợp 'không có ... nào').\nBước 3: Tính xác suất của biến cố đối P(Ā).\nBước 4: Tính xác suất của biến cố A bằng công thức: P(A) = 1 - P(Ā)."
+  }
+]

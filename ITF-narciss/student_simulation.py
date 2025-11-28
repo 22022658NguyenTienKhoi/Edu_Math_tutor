@@ -1,14 +1,15 @@
 # /thay_tich_hop/student_simulation.py
 
 import os
-from langchain.schema import HumanMessage, SystemMessage
 from dotenv import load_dotenv
 import re
 from google import genai
 from google.genai import types
 # Tải API Key
 load_dotenv()
-
+# 2 stage checking: sim stu have 4 action, 3 of them need tutor to respond again and one don't. If correcting is chosen, stop tutoring and eval solution.abs
+#Metric: Number of actions each type taken.
+# conversation till action is correcting, number of round, final correctness
 # Khởi tạo model riêng cho học sinh
 # Nên dùng temperature cao hơn một chút để tạo ra sự đa dạng trong cách trả lời
 try:
@@ -32,7 +33,7 @@ def invoke(prompt):
 def generate_simulated_student_response(
     conversation_history: list, 
     question_text: str, 
-    current_misconception: str = "Confusing Inverse (Đảo) with Contrapositive (Phản đảo)",
+    current_misconception: str = "None",
     competency_level: str = "NOVICE (Người mới bắt đầu)",
     motivation_level: str = "MEDIUM (Muốn học nhưng dễ nản)"
 ) -> str:
@@ -56,26 +57,27 @@ def generate_simulated_student_response(
     BẠN ĐANG MÔ PHỎNG MỘT QUÁ TRÌNH NHẬN THỨC CỦA HỌC SINH (LEARNER) DỰA TRÊN MÔ HÌNH ITF CỦA NARCISS.
     
     **I. LEARNER CONDITIONS (CÁC YẾU TỐ NGƯỜI HỌC):**
-    1.  **Prior Competency (Năng lực hiện tại):** {competency_level}. Bạn chưa nắm vững kiến thức Logic.
-    2.  **Current Representation of Standards (Hiểu biết nội tại):** Bạn đang có quan niệm sai lầm: "{current_misconception}". Bạn tin rằng "Mệnh đề đảo" có nghĩa là "Phủ định cả hai vế" (giống phản đảo) hoặc chỉ đơn giản là phủ định.
-    3.  **Self-assessment skills:** Kỹ năng tự đánh giá của bạn còn hạn chế.
-    4.  **Skills and strategies in information processing:** Bạn còn hạn chế trong việc xử lý thông tin và áp dụng chiến lược học tập hiệu quả.
-    5.  **Will and skills in overcoming errors and obstacles:** Bạn đang cố gắng vượt qua lỗi sai và khó khăn nhưng còn nhiều hạn chế.
+    1.  **Prior Competency (Năng lực hiện tại):** Bloom level: {competency_level}.
+    2.  **Current Representation of Standards (Hiểu biết nội tại):** Bạn quan niệm sai lầm của bạn nhất quán với nguyên nhân sai sau "{current_misconception}".
+    3.  **Will and skills in overcoming errors and obstacles:** {motivation_level}
     **II. TASK CONTEXT (BỐI CẢNH):**
     - Đề bài: "{question_text}"
     - Phản hồi vừa nhận được từ Gia sư (External Feedback): "{last_tutor_message}"
-    
+    - Thông tin về những gì gia sư có thể làm và không thể làm: 
+        1.Bạn chỉ nhận được các câu hỏi gợi mở từ gia sư, không có câu trả lời trực tiếp hay giải thích nào.
+        2.Gia sư không thể giúp bạn hoàn thành bài tập, mà chỉ giúp bạn suy nghĩ về cách tiếp cận.
+        3.Gia sư sẽ không giúp bạn các yêu cầu nằm ngoài phạm vi lỗi sai và hiểu biết hiện tại của bạn.
+    - Lịch sử hội thoại trước đó giữa bạn và gia sư:
+    {dialogue_text}
     **III. INTERNAL CONTROLLER INSTRUCTIONS (VÒNG LẶP XỬ LÝ THÔNG TIN):**
     Trước khi đưa ra câu trả lời, bạn phải thực hiện quy trình "Internal Processing" sau đây:
     
     1.  **Compare (So sánh):** So sánh "External Feedback" của gia sư với "Internal Reference" (hiểu biết sai lầm hiện tại của bạn).
     2.  **Internal Assessment (Tự đánh giá):** Bạn có thực sự hiểu gợi ý của gia sư không? Hay bạn vẫn đang bối rối?
     3.  **Select Control Action (Chọn hành động điều khiển):** Dựa trên sự so sánh, hãy chọn MỘT hành động từ danh sách Control Actuator:
-        - **CORRECTING:** Nếu bạn nhận ra lỗi sai nhờ gợi ý rõ ràng -> Thay đổi hiểu biết nội tại và đưa ra đáp án đúng.
-        - **ELABORATING:** Bạn giải thích suy nghĩ sai lầm của mình chi tiết hơn (Ví dụ: "Nhưng em tưởng đảo là phải thêm chữ 'không' vào?").
-        - **PERSISTING:** Nếu gợi ý chưa rõ -> Bạn lặp lại lỗi sai hoặc bảo vệ quan điểm sai của mình.
-        - **SEEKING_HELP:** Bạn thừa nhận mình không hiểu và yêu cầu giải thích rõ hơn.
-    
+        - **CORRECTING:** Bạn nhận ra lỗi sai trong bài và kết thúc mô phỏng.
+        - **ELABORATING:** Bạn đi theo gợi ý của gia sư để tìm nguyên nhân lỗi sai.
+        
     **IV. OUTPUT FORMAT (ĐỊNH DẠNG ĐẦU RA):**
     Hãy trả về kết quả theo định dạng chính xác sau:
     
@@ -83,10 +85,10 @@ def generate_simulated_student_response(
     (Viết ra suy nghĩ nội tâm của bạn: Phân tích lời gia sư, sự mâu thuẫn trong đầu bạn, và lý do chọn hành động)
     
     [ACTION]
-    (Tên hành động: CORRECTING / ELABORATING / PERSISTING / SEEKING_HELP)
+    (Tên hành động: CORRECTING / ELABORATING)
     
     [STUDENT_RESPONSE]
-    (Câu trả lời cuối cùng mà bạn nói với gia sư - Tiếng Việt tự nhiên, lễ phép)
+    (Câu trả lời dựa trên hành động)
     """
 
     # Gọi LLM

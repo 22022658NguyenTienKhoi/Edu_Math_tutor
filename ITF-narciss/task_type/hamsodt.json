@@ -1,0 +1,68 @@
+[
+  {
+    "topic": "HÀM SỐ BẬC HAI & ĐỒ THỊ",
+    "lesson": "Bài 1. HÀM SỐ & ĐỒ THỊ",
+    "task type": "Dạng 1. Tìm tập xác định của hàm số",
+    "task type solving strategies": "Để tìm tập xác định của hàm số, cần nhớ:\n+ 1/f(x) xác định ⇔ f(x)≠0\n+ √f(x) xác định ⇔ f(x)≥0\n+ f(x)/√g(x) xác định ⇔ g(x)>0"
+  },
+  {
+    "topic": "HÀM SỐ BẬC HAI & ĐỒ THỊ",
+    "lesson": "Bài 1. HÀM SỐ & ĐỒ THỊ",
+    "task type": "Dạng 2. Tập xác định của hàm số chứa tham số",
+    "task type solving strategies": "Bài toán. Cho hàm y = f(x,m). Tìm tất cả các giá trị tham số m để hàm số xác định trên tập K.\n» Bước (1): Tìm điều kiện xác định của hàm số (theo m). Gọi D là tập xác định của hàm số.\n» Bước (2): Hàm số xác định trên tập K khi và chỉ khi K ⊂ D.\n▶ Chú ý: Cho A là biểu thức luôn có nghĩa\n▶ Hàm số y=A/f(x,m) xác định trên K ⇔ f(x,m)=0 vô nghiệm trên K.\n▶ Hàm số y=√f(x,m) xác định trên K ⇔ f(x,m)≥0 ∀x∈K\n▶ Hàm số y=A/√f(x,m) xác định trên K ⇔ f(x,m)>0 ∀x∈K"
+  },
+  {
+    "topic": "HÀM SỐ BẬC HAI & ĐỒ THỊ",
+    "lesson": "Bài 1. HÀM SỐ & ĐỒ THỊ",
+    "task type": "Dạng 3. Sự đồng biến, nghịch biến của hàm số",
+    "task type solving strategies": "Phương pháp 1.\n» Bước (1): Tìm tập xác định D của hàm số.\n» Bước (2): Với mọi x₁,x₂ ∈ D, x₁ ≠ x₂. Tính f(x₁) - f(x₂).\n▫ Nếu x₁ < x₂ ⇒ f(x₁) < f(x₂) thì hàm số đã cho đồng biến (tăng).\n▫ Nếu x₁ < x₂ ⇒ f(x₁) > f(x₂) thì hàm số đã cho nghịch biến (giảm).\nPhương pháp 2.\n» Bước (1): Tìm tập xác định D của hàm số.\n» Bước (2): Với mọi x₁,x₂ ∈ D, x₁ ≠ x₂. Lập tỉ số (f(x₁) - f(x₂))/(x₁ - x₂).\n▫ Nếu (f(x₁) - f(x₂))/(x₁ - x₂) > 0 thì hàm số đã cho đồng biến (tăng).\n▫ Nếu (f(x₁) - f(x₂))/(x₁ - x₂) < 0 thì hàm số đã cho nghịch biến (giảm)."
+  },
+  {
+    "topic": "HÀM SỐ BẬC HAI & ĐỒ THỊ",
+    "lesson": "Bài 1. HÀM SỐ & ĐỒ THỊ",
+    "task type": "Dạng 4. Sự đồng biến, nghịch biến của hàm số chứa tham số",
+    "task type solving strategies": "Ta xét (f(x₁) - f(x₂))/(x₁ - x₂) với mọi x₁,x₂ ∈ D, x₁ ≠ x₂.\n» Bước (1): Tính (f(x₁) - f(x₂))/(x₁ - x₂).\n» Bước (2):\n▫ Để hàm số đồng biến thì (f(x₁) - f(x₂))/(x₁ - x₂) > 0 → m\n▫ Để hàm số nghich biến thì (f(x₁) - f(x₂))/(x₁ - x₂) < 0 → m"
+  },
+  {
+    "topic": "HÀM SỐ BẬC HAI & ĐỒ THỊ",
+    "lesson": "Bài 2. HÀM SỐ BẬC HAI",
+    "task type": "Dạng 1. Xác định hàm số bậc 2",
+    "task type solving strategies": "Để xác định hàm số bậc hai y = f(x) = ax² + bx + c (xác định các tham số a, b, c). Dựa vào giả thiết để lập nên các phương trình (hệ phương trình) ẩn là a, b, c . Việc lập nên các phương trình nêu ở trên thường sử dụng đến các kết quả sau:\n» Đồ thị hàm số đi qua điểm M(x₀, y₀) ⇔ y₀ = f(x₀).\n» Đồ thị hàm số có trục đối xứng x = x₀ ⇔ -b/(2a) = x₀.\n» Đồ thị hàm số có đỉnh là I(xᵢ; yᵢ) ⇔ {xᵢ = -b/(2a), yᵢ = -Δ/(4a)}.\n» Trên ℝ, ta có:\n1. f(x) có giá trị lớn nhất ⇔ a < 0. Lúc này giá trị lớn nhất f(x) là -Δ/(4a) = f(-b/(2a)).\n2. f(x) có giá trị nhỏ nhất ⇔ a > 0. Lúc này giá trị nhỏ nhất f(x) là -Δ/(4a) = f(-b/(2a))."
+  },
+  {
+    "topic": "HÀM SỐ BẬC HAI & ĐỒ THỊ",
+    "lesson": "Bài 2. HÀM SỐ BẬC HAI",
+    "task type": "Dạng 2. Vẽ đồ thị hàm số bậc 2",
+    "task type solving strategies": "Để vẽ đồ thị hàm số bậc hai y = f(x) = ax² + bx + c ta thực hiện theo các bước sau:\n» Bước 1. Xác định tọa độ đỉnh I(-b/(2a); -Δ/(4a)).\n» Bước 2. Vẽ trục đối xứng x = -b/(2a).\n» Bước 3. Lập bảng giá trị\n» Bước 4. Vẽ Parabol\nLưu ý:\n▫ Khi vẽ cần chú ý dấu của hệ số a (bề lõm lên trên nếu a > 0 , xuống dưới nếu a < 0 )\n▫ Đồ thị của hàm số cắt trục tung tại điểm (0;c)\n▫ Đồ thị của hàm số cắt trục hoành (nếu có) tại điểm (x₀;0) với x₀ là nghiệm của phương trình ax² + bx + c = 0"
+  },
+  {
+    "topic": "HÀM SỐ BẬC HAI & ĐỒ THỊ",
+    "lesson": "Bài 2. HÀM SỐ BẬC HAI",
+    "task type": "Dạng 3. Tìm tham số để hàm số bậc 2 đơn điệu",
+    "task type solving strategies": "» Trường hợp a = 0: Yêu cầu của bài toán.\n» Trường hợp a > 0: Yêu cầu của bài toán ⇔ (m;n) ⊂ [-b/(2a); +∞).\n» Trường hợp a < 0: Yêu cầu của bài toán ⇔ (m;n) ⊂ (-∞; -b/(2a)].\nLưu ý:\n» Việc tìm điều kiện để hàm số y = ax² + bx + c nghịch biến trên khoảng (m;n) được làm tương tự.\n» Có thể dựa vào định nghĩa tính đồng biến, nghịch biến của hàm số để thực hiện các bài toán trên."
+  },
+  {
+    "topic": "HÀM SỐ BẬC HAI & ĐỒ THỊ",
+    "lesson": "Bài 2. HÀM SỐ BẬC HAI",
+    "task type": "Dạng 4. Các yếu tố liên quan đồ thị hàm số bậc hai",
+    "task type solving strategies": "Loại 1: Cho parabol (P): y=ax²+bx+c.\n» Xác định trục đối xứng, tọa độ đỉnh của (P).\n» Tương giao của (P) với trục Ox.\n» Tìm điều kiện để các giao điểm của (P) và trục Ox thỏa mãn điều kiện nào đó.\nThường dùng đến các kết quả sau:\n» Đường thẳng x=-b/(2a) là trục đối xứng của (P), điểm I(-b/(2a); -Δ/(4a)) là đỉnh của (P).\n» Nghiệm của phương trình ax²+bx+c=0 là hoành độ giao điểm của (P) và Ox.\n» Giả sử A(x_A; y_A), B(x_B; y_B) là hai giao điểm của (P) và trục Ox. Khi đó:\n▫ A, B cùng ở bên trái đối với trục Oy ⇔ {Δ≥0, x_A+x_B<0, x_A*x_B>0}.\n▫ A, B cùng ở bên phải đối với trục Oy ⇔ {Δ≥0, x_A+x_B>0, x_A*x_B>0}.\n▫ A, B cùng ở một bên đối với trục Oy ⇔ {Δ≥0, x_A*x_B>0}.\n▫ A, B không ở cùng một bên đối với trục Oy ⇔ x_A*x_B<0.\nLoại 2: Cho parabol (P): y=ax²+bx+c và đường thẳng d: y=mx+n.\n» Biện luận số điểm chung của (P) và trục hoành.\n» Tìm điều kiện để đường thẳng d tiếp xúc với (P).\nThường dùng đến các kết quả sau: Xét phương trình ax²+bx+c=0 (*).\n» (P) cắt Ox tại hai điểm phân biệt ⇔ (*) có hai nghiệm phân biệt.\n» (P) và Ox có một điểm chung (còn gọi là tiếp xúc với nhau) ⇔ (*) có một nghiệm.\n» (P) và trục hoành không có điểm chung ⇔ (*) vô nghiệm.\n» d và (P) tiếp xúc với nhau ⇔ ax²+bx+c = mx+n có nghiệm kép."
+  },
+  {
+    "topic": "HÀM SỐ BẬC HAI & ĐỒ THỊ",
+    "lesson": "Bài 2. HÀM SỐ BẬC HAI",
+    "task type": "Dạng 5. Sự tương giao",
+    "task type solving strategies": "Loại 1: Dựa vào đồ thị của hàm số y=f(x) biện luận theo tham số m số nghiệm của f(x)=g(m).\n» Vẽ đồ thị (C) của hàm số y=f(x).\n» Tùy vào giá trị của m để chỉ ra số giao điểm của d:y=g(m) và (C).\n» Số giao điểm của d và (C) cũng chính là số nghiệm của phương trình f(x)=g(m).\nLưu ý: d:y=g(m) là đường thẳng có phương ngang và cắt Oy tại điểm có tung độ g(m).\nLoại 2: Sự tương giao của đồ thị hàm số bậc nhất và bậc hai\nCho đồ thị (P) của hàm số y=ax²+bx+c và đồ thị d của hàm số y=kx+m.\nToạ độ giao điểm của hai đồ thị (P) và d là nghiệm của {y=ax²+bx+c, y=kx+m} (1)\nPhương trình hoành độ giao điểm của (P) và d là ax²+bx+c=kx+m ⇔ ax²+(b-k)x+c-m=0 (2)\nNhận xét:\n1. Số giao điểm của (P) và d bằng số nghiệm của hệ phương trình và cũng bằng số nghiệm của phương trình (2).\n2. Nếu phương trình (2) vô nghiệm thì ta nói d và (P) không giao nhau.\n3. Nếu phương trình (2) có nghiệm kép thì ta nói d và (P) tiếp xúc với nhau. Lúc này ta nói d là tiếp tuyến của (P).\n4. Nếu phương trình (2) có 2 nghiệm phân biệt thì ta nói d và (P) cắt nhau."
+  },
+  {
+    "topic": "HÀM SỐ BẬC HAI & ĐỒ THỊ",
+    "lesson": "Bài 2. HÀM SỐ BẬC HAI",
+    "task type": "Dạng 6. Giá trị lớn nhất – Giá trị nhỏ nhất",
+    "task type solving strategies": "Loại 1: Tìm giá trị lớn nhất, giá trị nhỏ nhất của hàm số trên 1 tập cho trước\n» Lập bảng biến thiên\n» Xác định tập bài toán yêu cầu\n» Kết luận.\nLoại 2: Tìm điều kiện để hàm số bậc hai đạt giá trị lớn nhất/nhỏ nhất.\nCho hàm số bậc hai: y=ax²+bx+c (a≠0)\n» Nếu a>0 thì min y = f(-b/(2a)) = -Δ/(4a) đạt tại hoành độ đỉnh xᵢ = -b/(2a).\n» Nếu a<0 thì max y = f(-b/(2a)) = -Δ/(4a) đạt tại hoành độ đỉnh xᵢ = -b/(2a).\nTrường hợp tập xác định khác ℝ, ta kẻ bảng biến thiên của hàm số trên tập đó để có được giá trị lớn nhất, giá trị nhỏ nhất."
+  },
+  {
+    "topic": "HÀM SỐ BẬC HAI & ĐỒ THỊ",
+    "lesson": "Bài 2. HÀM SỐ BẬC HAI",
+    "task type": "Dạng 7. Bài toán thực tế",
+    "task type solving strategies": "Bài toán: Các bài toán thực tế mà mô hình thực tiễn chưa chuyển về mô hình toán học. Các bước làm như sau:\n» Bước 1: Dựa vào giả thiết của đề bài, xây dựng mô hình toán học cho vấn đề đang xét, tức diễn tả dưới “dạng ngôn ngữ toán học” cho mô hình mô phỏng thực tiễn. Căn cứ vào các yếu tố bài ra ta chọn biến số, tìm điều kiện tồn tại, đơn vị.\n» Bước 2: Dựa vào các mối liên hệ ràng buộc giữa biến số với các giả thiết của đề bài cũng như các kiến thức liên quan đến thực tế, ta thiết lập hàm số bậc hai. Chuyển yêu cầu đặt ra đối với bài toán thực tiễn thành yêu cầu bài toán hàm số bậc hai.\n» Bước 3: Dùng tính chất hàm số bậc hai để giải quyết bài toán hình thành ở bước 2. Lưu ý kiểm tra điều kiện, và kết quả thu được có phù hợp với bài toán thực tế đã cho chưa."
+  }
+]

@@ -1,0 +1,600 @@
+[
+  {
+    "topic": "BẤT PHƯƠNG TRÌNH VÀ HỆ BẤT PHƯƠNG TRÌNH BẬC NHẤT HAI ẨN",
+    "lesson": "BÀI 1: BẤT PHƯƠNG TRÌNH BẬC NHẤT HAI ẨN",
+    "task type": "Kiểm tra một cặp số có phải là nghiệm của bất phương trình hay không",
+    "task type solving strategies": [
+      "Bước 1: Thay giá trị của cặp số (x₀; y₀) vào bất phương trình đã cho.",
+      "Bước 2: Kiểm tra tính đúng đắn của mệnh đề sau khi thay. Nếu mệnh đề đúng, cặp số đó là nghiệm. Nếu mệnh đề sai, cặp số đó không phải là nghiệm."
+    ]
+  },
+  {
+    "topic": "BẤT PHƯƠNG TRÌNH VÀ HỆ BẤT PHƯƠNG TRÌNH BẬC NHẤT HAI ẨN",
+    "lesson": "BÀI 1: BẤT PHƯƠNG TRÌNH BẬC NHẤT HAI ẨN",
+    "task type": "Xác định miền nghiệm của bất phương trình bậc nhất hai ẩn (Biểu diễn hình học tập nghiệm)",
+    "task type solving strategies": [
+      "Bước 1: Trên mặt phẳng tọa độ, vẽ đường thẳng (d): ax + by + c = 0.",
+      "Bước 2: Xét một điểm M(x₀; y₀) không nằm trên đường thẳng (d) (thường lấy gốc tọa độ O(0;0) nếu đường thẳng không đi qua gốc).",
+      "Bước 3: Thay toạ độ điểm M vào biểu thức ax + by + c.",
+      "Bước 4: Kết luận: Nếu ax₀ + by₀ + c < 0 thì nửa mặt phẳng chứa điểm M là miền nghiệm của bất phương trình ax + by + c < 0. Nếu ax₀ + by₀ + c > 0 thì nửa mặt phẳng không chứa điểm M là miền nghiệm của bất phương trình ax + by + c < 0.",
+      "Lưu ý: Đối với các bất phương trình dạng ≤ hoặc ≥ thì miền nghiệm sẽ bao gồm cả đường thẳng bờ (d)."
+    ]
+  },
+  {
+    "topic": "BẤT PHƯƠNG TRÌNH VÀ HỆ BẤT PHƯƠNG TRÌNH BẬC NHẤT HAI ẨN",
+    "lesson": "BÀI 1: BẤT PHƯƠNG TRÌNH BẬC NHẤT HAI ẨN",
+    "task type": "Xác định một bất phương trình khi biết miền nghiệm",
+    "task type solving strategies": [
+      "Bước 1: Từ hình vẽ, xác định tọa độ của hai điểm thuộc đường thẳng bờ (d) để viết phương trình đường thẳng y = ax + b, sau đó đưa về dạng tổng quát Ax + By + C = 0.",
+      "Bước 2: Lấy một điểm M(x₀; y₀) nằm trong miền nghiệm (phần không bị gạch).",
+      "Bước 3: Thay tọa độ điểm M vào biểu thức Ax + By + C và so sánh với 0 để xác định dấu của bất phương trình (> , < , ≥, ≤).",
+      "Bước 4: Kết hợp phương trình đường thẳng và dấu để viết bất phương trình hoàn chỉnh."
+    ]
+  },
+  {
+    "topic": "BẤT PHƯƠNG TRÌNH VÀ HỆ BẤT PHƯƠNG TRÌNH BẬC NHẤT HAI ẨN",
+    "lesson": "BÀI 2: HỆ BẤT PHƯƠNG TRÌNH BẬC NHẤT HAI ẨN",
+    "task type": "Xác định miền nghiệm của hệ bất phương trình bậc nhất hai ẩn",
+    "task type solving strategies": [
+      "Bước 1: Trên cùng một mặt phẳng tọa độ, biểu diễn miền nghiệm của từng bất phương trình trong hệ bằng cách gạch bỏ phần không phải là nghiệm.",
+      "Bước 2: Phần mặt phẳng không bị gạch chính là miền nghiệm của hệ bất phương trình đã cho."
+    ]
+  },
+  {
+    "topic": "BẤT PHƯƠNG TRÌNH VÀ HỆ BẤT PHƯƠNG TRÌNH BẬC NHẤT HAI ẨN",
+    "lesson": "BÀI 2: HỆ BẤT PHƯƠNG TRÌNH BẬC NHẤT HAI ẨN (BÀI TOÁN TỐI ƯU)",
+    "task type": "Tìm giá trị lớn nhất, giá trị nhỏ nhất của biểu thức F(x, y) = ax + by trên một miền đa giác (miền nghiệm của hệ bất phương trình)",
+    "task type solving strategies": [
+      "Bước 1: Xác định miền nghiệm (S) của hệ bất phương trình. Miền nghiệm thường là một đa giác.",
+      "Bước 2: Xác định tọa độ các đỉnh của đa giác miền nghiệm (S).",
+      "Bước 3: Tính giá trị của biểu thức F(x,y) tại các đỉnh của đa giác.",
+      "Bước 4: So sánh các giá trị đã tính. Giá trị lớn nhất tìm được là giá trị lớn nhất của F, và giá trị nhỏ nhất tìm được là giá trị nhỏ nhất của F trên miền nghiệm."
+    ]
+  },
+  {
+    "topic": "HÀM SỐ BẬC HAI & ĐỒ THỊ",
+    "lesson": "Bài 1. HÀM SỐ & ĐỒ THỊ",
+    "task type": "Dạng 1. Tìm tập xác định của hàm số",
+    "task type solving strategies": "Để tìm tập xác định của hàm số, cần nhớ:\n+ 1/f(x) xác định ⇔ f(x)≠0\n+ √f(x) xác định ⇔ f(x)≥0\n+ f(x)/√g(x) xác định ⇔ g(x)>0"
+  },
+  {
+    "topic": "HÀM SỐ BẬC HAI & ĐỒ THỊ",
+    "lesson": "Bài 1. HÀM SỐ & ĐỒ THỊ",
+    "task type": "Dạng 2. Tập xác định của hàm số chứa tham số",
+    "task type solving strategies": "Bài toán. Cho hàm y = f(x,m). Tìm tất cả các giá trị tham số m để hàm số xác định trên tập K.\n» Bước (1): Tìm điều kiện xác định của hàm số (theo m). Gọi D là tập xác định của hàm số.\n» Bước (2): Hàm số xác định trên tập K khi và chỉ khi K ⊂ D.\n▶ Chú ý: Cho A là biểu thức luôn có nghĩa\n▶ Hàm số y=A/f(x,m) xác định trên K ⇔ f(x,m)=0 vô nghiệm trên K.\n▶ Hàm số y=√f(x,m) xác định trên K ⇔ f(x,m)≥0 ∀x∈K\n▶ Hàm số y=A/√f(x,m) xác định trên K ⇔ f(x,m)>0 ∀x∈K"
+  },
+  {
+    "topic": "HÀM SỐ BẬC HAI & ĐỒ THỊ",
+    "lesson": "Bài 1. HÀM SỐ & ĐỒ THỊ",
+    "task type": "Dạng 3. Sự đồng biến, nghịch biến của hàm số",
+    "task type solving strategies": "Phương pháp 1.\n» Bước (1): Tìm tập xác định D của hàm số.\n» Bước (2): Với mọi x₁,x₂ ∈ D, x₁ ≠ x₂. Tính f(x₁) - f(x₂).\n▫ Nếu x₁ < x₂ ⇒ f(x₁) < f(x₂) thì hàm số đã cho đồng biến (tăng).\n▫ Nếu x₁ < x₂ ⇒ f(x₁) > f(x₂) thì hàm số đã cho nghịch biến (giảm).\nPhương pháp 2.\n» Bước (1): Tìm tập xác định D của hàm số.\n» Bước (2): Với mọi x₁,x₂ ∈ D, x₁ ≠ x₂. Lập tỉ số (f(x₁) - f(x₂))/(x₁ - x₂).\n▫ Nếu (f(x₁) - f(x₂))/(x₁ - x₂) > 0 thì hàm số đã cho đồng biến (tăng).\n▫ Nếu (f(x₁) - f(x₂))/(x₁ - x₂) < 0 thì hàm số đã cho nghịch biến (giảm)."
+  },
+  {
+    "topic": "HÀM SỐ BẬC HAI & ĐỒ THỊ",
+    "lesson": "Bài 1. HÀM SỐ & ĐỒ THỊ",
+    "task type": "Dạng 4. Sự đồng biến, nghịch biến của hàm số chứa tham số",
+    "task type solving strategies": "Ta xét (f(x₁) - f(x₂))/(x₁ - x₂) với mọi x₁,x₂ ∈ D, x₁ ≠ x₂.\n» Bước (1): Tính (f(x₁) - f(x₂))/(x₁ - x₂).\n» Bước (2):\n▫ Để hàm số đồng biến thì (f(x₁) - f(x₂))/(x₁ - x₂) > 0 → m\n▫ Để hàm số nghich biến thì (f(x₁) - f(x₂))/(x₁ - x₂) < 0 → m"
+  },
+  {
+    "topic": "HÀM SỐ BẬC HAI & ĐỒ THỊ",
+    "lesson": "Bài 2. HÀM SỐ BẬC HAI",
+    "task type": "Dạng 1. Xác định hàm số bậc 2",
+    "task type solving strategies": "Để xác định hàm số bậc hai y = f(x) = ax² + bx + c (xác định các tham số a, b, c). Dựa vào giả thiết để lập nên các phương trình (hệ phương trình) ẩn là a, b, c . Việc lập nên các phương trình nêu ở trên thường sử dụng đến các kết quả sau:\n» Đồ thị hàm số đi qua điểm M(x₀, y₀) ⇔ y₀ = f(x₀).\n» Đồ thị hàm số có trục đối xứng x = x₀ ⇔ -b/(2a) = x₀.\n» Đồ thị hàm số có đỉnh là I(xᵢ; yᵢ) ⇔ {xᵢ = -b/(2a), yᵢ = -Δ/(4a)}.\n» Trên ℝ, ta có:\n1. f(x) có giá trị lớn nhất ⇔ a < 0. Lúc này giá trị lớn nhất f(x) là -Δ/(4a) = f(-b/(2a)).\n2. f(x) có giá trị nhỏ nhất ⇔ a > 0. Lúc này giá trị nhỏ nhất f(x) là -Δ/(4a) = f(-b/(2a))."
+  },
+  {
+    "topic": "HÀM SỐ BẬC HAI & ĐỒ THỊ",
+    "lesson": "Bài 2. HÀM SỐ BẬC HAI",
+    "task type": "Dạng 2. Vẽ đồ thị hàm số bậc 2",
+    "task type solving strategies": "Để vẽ đồ thị hàm số bậc hai y = f(x) = ax² + bx + c ta thực hiện theo các bước sau:\n» Bước 1. Xác định tọa độ đỉnh I(-b/(2a); -Δ/(4a)).\n» Bước 2. Vẽ trục đối xứng x = -b/(2a).\n» Bước 3. Lập bảng giá trị\n» Bước 4. Vẽ Parabol\nLưu ý:\n▫ Khi vẽ cần chú ý dấu của hệ số a (bề lõm lên trên nếu a > 0 , xuống dưới nếu a < 0 )\n▫ Đồ thị của hàm số cắt trục tung tại điểm (0;c)\n▫ Đồ thị của hàm số cắt trục hoành (nếu có) tại điểm (x₀;0) với x₀ là nghiệm của phương trình ax² + bx + c = 0"
+  },
+  {
+    "topic": "HÀM SỐ BẬC HAI & ĐỒ THỊ",
+    "lesson": "Bài 2. HÀM SỐ BẬC HAI",
+    "task type": "Dạng 3. Tìm tham số để hàm số bậc 2 đơn điệu",
+    "task type solving strategies": "» Trường hợp a = 0: Yêu cầu của bài toán.\n» Trường hợp a > 0: Yêu cầu của bài toán ⇔ (m;n) ⊂ [-b/(2a); +∞).\n» Trường hợp a < 0: Yêu cầu của bài toán ⇔ (m;n) ⊂ (-∞; -b/(2a)].\nLưu ý:\n» Việc tìm điều kiện để hàm số y = ax² + bx + c nghịch biến trên khoảng (m;n) được làm tương tự.\n» Có thể dựa vào định nghĩa tính đồng biến, nghịch biến của hàm số để thực hiện các bài toán trên."
+  },
+  {
+    "topic": "HÀM SỐ BẬC HAI & ĐỒ THỊ",
+    "lesson": "Bài 2. HÀM SỐ BẬC HAI",
+    "task type": "Dạng 4. Các yếu tố liên quan đồ thị hàm số bậc hai",
+    "task type solving strategies": "Loại 1: Cho parabol (P): y=ax²+bx+c.\n» Xác định trục đối xứng, tọa độ đỉnh của (P).\n» Tương giao của (P) với trục Ox.\n» Tìm điều kiện để các giao điểm của (P) và trục Ox thỏa mãn điều kiện nào đó.\nThường dùng đến các kết quả sau:\n» Đường thẳng x=-b/(2a) là trục đối xứng của (P), điểm I(-b/(2a); -Δ/(4a)) là đỉnh của (P).\n» Nghiệm của phương trình ax²+bx+c=0 là hoành độ giao điểm của (P) và Ox.\n» Giả sử A(x_A; y_A), B(x_B; y_B) là hai giao điểm của (P) và trục Ox. Khi đó:\n▫ A, B cùng ở bên trái đối với trục Oy ⇔ {Δ≥0, x_A+x_B<0, x_A*x_B>0}.\n▫ A, B cùng ở bên phải đối với trục Oy ⇔ {Δ≥0, x_A+x_B>0, x_A*x_B>0}.\n▫ A, B cùng ở một bên đối với trục Oy ⇔ {Δ≥0, x_A*x_B>0}.\n▫ A, B không ở cùng một bên đối với trục Oy ⇔ x_A*x_B<0.\nLoại 2: Cho parabol (P): y=ax²+bx+c và đường thẳng d: y=mx+n.\n» Biện luận số điểm chung của (P) và trục hoành.\n» Tìm điều kiện để đường thẳng d tiếp xúc với (P).\nThường dùng đến các kết quả sau: Xét phương trình ax²+bx+c=0 (*).\n» (P) cắt Ox tại hai điểm phân biệt ⇔ (*) có hai nghiệm phân biệt.\n» (P) và Ox có một điểm chung (còn gọi là tiếp xúc với nhau) ⇔ (*) có một nghiệm.\n» (P) và trục hoành không có điểm chung ⇔ (*) vô nghiệm.\n» d và (P) tiếp xúc với nhau ⇔ ax²+bx+c = mx+n có nghiệm kép."
+  },
+  {
+    "topic": "HÀM SỐ BẬC HAI & ĐỒ THỊ",
+    "lesson": "Bài 2. HÀM SỐ BẬC HAI",
+    "task type": "Dạng 5. Sự tương giao",
+    "task type solving strategies": "Loại 1: Dựa vào đồ thị của hàm số y=f(x) biện luận theo tham số m số nghiệm của f(x)=g(m).\n» Vẽ đồ thị (C) của hàm số y=f(x).\n» Tùy vào giá trị của m để chỉ ra số giao điểm của d:y=g(m) và (C).\n» Số giao điểm của d và (C) cũng chính là số nghiệm của phương trình f(x)=g(m).\nLưu ý: d:y=g(m) là đường thẳng có phương ngang và cắt Oy tại điểm có tung độ g(m).\nLoại 2: Sự tương giao của đồ thị hàm số bậc nhất và bậc hai\nCho đồ thị (P) của hàm số y=ax²+bx+c và đồ thị d của hàm số y=kx+m.\nToạ độ giao điểm của hai đồ thị (P) và d là nghiệm của {y=ax²+bx+c, y=kx+m} (1)\nPhương trình hoành độ giao điểm của (P) và d là ax²+bx+c=kx+m ⇔ ax²+(b-k)x+c-m=0 (2)\nNhận xét:\n1. Số giao điểm của (P) và d bằng số nghiệm của hệ phương trình và cũng bằng số nghiệm của phương trình (2).\n2. Nếu phương trình (2) vô nghiệm thì ta nói d và (P) không giao nhau.\n3. Nếu phương trình (2) có nghiệm kép thì ta nói d và (P) tiếp xúc với nhau. Lúc này ta nói d là tiếp tuyến của (P).\n4. Nếu phương trình (2) có 2 nghiệm phân biệt thì ta nói d và (P) cắt nhau."
+  },
+  {
+    "topic": "HÀM SỐ BẬC HAI & ĐỒ THỊ",
+    "lesson": "Bài 2. HÀM SỐ BẬC HAI",
+    "task type": "Dạng 6. Giá trị lớn nhất – Giá trị nhỏ nhất",
+    "task type solving strategies": "Loại 1: Tìm giá trị lớn nhất, giá trị nhỏ nhất của hàm số trên 1 tập cho trước\n» Lập bảng biến thiên\n» Xác định tập bài toán yêu cầu\n» Kết luận.\nLoại 2: Tìm điều kiện để hàm số bậc hai đạt giá trị lớn nhất/nhỏ nhất.\nCho hàm số bậc hai: y=ax²+bx+c (a≠0)\n» Nếu a>0 thì min y = f(-b/(2a)) = -Δ/(4a) đạt tại hoành độ đỉnh xᵢ = -b/(2a).\n» Nếu a<0 thì max y = f(-b/(2a)) = -Δ/(4a) đạt tại hoành độ đỉnh xᵢ = -b/(2a).\nTrường hợp tập xác định khác ℝ, ta kẻ bảng biến thiên của hàm số trên tập đó để có được giá trị lớn nhất, giá trị nhỏ nhất."
+  },
+  {
+    "topic": "HÀM SỐ BẬC HAI & ĐỒ THỊ",
+    "lesson": "Bài 2. HÀM SỐ BẬC HAI",
+    "task type": "Dạng 7. Bài toán thực tế",
+    "task type solving strategies": "Bài toán: Các bài toán thực tế mà mô hình thực tiễn chưa chuyển về mô hình toán học. Các bước làm như sau:\n» Bước 1: Dựa vào giả thiết của đề bài, xây dựng mô hình toán học cho vấn đề đang xét, tức diễn tả dưới “dạng ngôn ngữ toán học” cho mô hình mô phỏng thực tiễn. Căn cứ vào các yếu tố bài ra ta chọn biến số, tìm điều kiện tồn tại, đơn vị.\n» Bước 2: Dựa vào các mối liên hệ ràng buộc giữa biến số với các giả thiết của đề bài cũng như các kiến thức liên quan đến thực tế, ta thiết lập hàm số bậc hai. Chuyển yêu cầu đặt ra đối với bài toán thực tiễn thành yêu cầu bài toán hàm số bậc hai.\n» Bước 3: Dùng tính chất hàm số bậc hai để giải quyết bài toán hình thành ở bước 2. Lưu ý kiểm tra điều kiện, và kết quả thu được có phù hợp với bài toán thực tế đã cho chưa."
+  },
+  {
+    "topic": "GIÁ TRỊ LƯỢNG GIÁC, HỆ THỨC LƯỢNG TRONG TAM GIÁC VÀ GIẢI TAM GIÁC",
+    "lesson": "Bài 1. GIÁ TRỊ LƯỢNG GIÁC CỦA MỘT GÓC TỪ 0° ĐẾN 180°. ĐỊNH LÍ COSIN, SIN TRONG TAM GIÁC",
+    "task type": "Dạng 1. Giá trị lượng giác của một góc từ 0° đến 180°",
+    "task type solving strategies": "Để tìm giá trị lượng giác của một góc, ta sử dụng định nghĩa trên nửa đường tròn đơn vị và các tính chất của các góc có liên quan đặc biệt (bù nhau, phụ nhau)."
+  },
+  {
+    "topic": "GIÁ TRỊ LƯỢNG GIÁC, HỆ THỨC LƯỢNG TRONG TAM GIÁC VÀ GIẢI TAM GIÁC",
+    "lesson": "Bài 1. GIÁ TRỊ LƯỢNG GIÁC CỦA MỘT GÓC TỪ 0° ĐẾN 180°. ĐỊNH LÍ COSIN, SIN TRONG TAM GIÁC",
+    "task type": "Dạng 2. Định lí cosin",
+    "task type solving strategies": "Sử dụng các công thức của định lí cosin để tìm độ dài cạnh hoặc số đo góc trong một tam giác khi biết các yếu tố cần thiết (biết hai cạnh và góc xen giữa, hoặc biết ba cạnh)."
+  },
+  {
+    "topic": "GIÁ TRỊ LƯỢNG GIÁC, HỆ THỨC LƯỢNG TRONG TAM GIÁC VÀ GIẢI TAM GIÁC",
+    "lesson": "Bài 1. GIÁ TRỊ LƯỢNG GIÁC CỦA MỘT GÓC TỪ 0° ĐẾN 180°. ĐỊNH LÍ COSIN, SIN TRONG TAM GIÁC",
+    "task type": "Dạng 3. Định lí sin",
+    "task type solving strategies": "Sử dụng các công thức của định lí sin để tìm độ dài cạnh, số đo góc, hoặc bán kính đường tròn ngoại tiếp của một tam giác khi biết các yếu tố cần thiết."
+  },
+  {
+    "topic": "GIÁ TRỊ LƯỢNG GIÁC, HỆ THỨC LƯỢNG TRONG TAM GIÁC VÀ GIẢI TAM GIÁC",
+    "lesson": "Bài 2. GIẢI TAM GIÁC",
+    "task type": "Dạng 1. Giải tam giác",
+    "task type solving strategies": "Giải tam giác là tính các cạnh và các góc của tam giác dựa trên những dữ kiện cho trước. Áp dụng định lí sin và cosin tùy thuộc vào các yếu tố đã biết:\n- Biết hai cạnh và góc xen giữa.\n- Biết ba cạnh.\n- Biết một cạnh và hai góc kề."
+  },
+  {
+    "topic": "GIÁ TRỊ LƯỢNG GIÁC, HỆ THỨC LƯỢNG TRONG TAM GIÁC VÀ GIẢI TAM GIÁC",
+    "lesson": "Bài 2. GIẢI TAM GIÁC",
+    "task type": "Dạng 2. Tính diện tích tam giác",
+    "task type solving strategies": "Sử dụng các công thức tính diện tích tam giác:\n- S = 1/2 * a * h_a\n- S = 1/2 * b * c * sin(A)\n- S = abc / 4R\n- S = p * r\n- S = sqrt(p(p-a)(p-b)(p-c)) (Công thức Heron)"
+  },
+  {
+    "topic": "GIÁ TRỊ LƯỢNG GIÁC, HỆ THỨC LƯỢNG TRONG TAM GIÁC VÀ GIẢI TAM GIÁC",
+    "lesson": "Bài 2. GIẢI TAM GIÁC",
+    "task type": "Dạng 3. Áp dụng vào bài toán thực tiễn",
+    "task type solving strategies": "Mô hình hóa bài toán thực tế bằng một tam giác. Xác định các yếu tố đã biết và yếu tố cần tìm. Áp dụng định lí sin, cosin và các công thức giải tam giác để tìm ra kết quả."
+  },
+  {
+    "topic": "GIÁ TRỊ LƯỢNG GIÁC, HỆ THỨC LƯỢNG TRONG TAM GIÁC VÀ GIẢI TAM GIÁC",
+    "lesson": "Bài 2. GIẢI TAM GIÁC",
+    "task type": "Dạng 4. Nhận dạng tam giác",
+    "task type solving strategies": "Sử dụng các hệ thức lượng trong tam giác, các định lí sin, cosin để biến đổi các đẳng thức đã cho. Từ đó suy ra các mối quan hệ đặc biệt giữa các cạnh hoặc các góc (ví dụ: a^2 = b^2 + c^2, a=b, A=B,...) để kết luận về dạng của tam giác (vuông, cân, đều,...)."
+  },
+  {
+    "topic": "MỆNH ĐỀ VÀ TẬP HỢP",
+    "lesson": "§1. MỆNH ĐỀ",
+    "task type": "Dạng 1. Nhận diện, xét tính đúng sai của mệnh đề, mệnh đề chứa biến",
+    "task type solving strategies": "Mệnh đề phải là một câu khẳng định có tính đúng – sai rõ ràng. Có thể chưa biết nó đúng hay là sai, nhưng chắc chắn nó chỉ có thể đúng hay là sai. Có những mệnh đề mà tính đúng – sai của nó gắn với một thời gian, địa điểm cụ thể. Mệnh đề chứa biến là câu phụ thuộc vào biến x. Mệnh đề chứa biến chưa phải là mệnh đề."
+  },
+  {
+    "topic": "MỆNH ĐỀ VÀ TẬP HỢP",
+    "lesson": "§1. MỆNH ĐỀ",
+    "task type": "Dạng 2. Phủ định của một mệnh đề",
+    "task type solving strategies": "Thêm (hoặc bớt) từ “không” (hoặc “không phải”) vào trước vị ngữ của mệnh đề đó."
+  },
+  {
+    "topic": "MỆNH ĐỀ VÀ TẬP HỢP",
+    "lesson": "§1. MỆNH ĐỀ",
+    "task type": "Dạng 3. Mệnh đề kéo theo, mệnh đề đảo, mệnh đề tương đương",
+    "task type solving strategies": "Mệnh đề “nếu P thì Q” gọi là mệnh đề kéo theo. Ký hiệu là P ⇒ Q. Mệnh đề P ⇒ Q chỉ sai khi P đúng Q sai. Mệnh đề Q ⇒ P gọi là mệnh đề đảo của P ⇒ Q. Mệnh đề “P nếu và chỉ nếu Q” gọi là mệnh đề tương đương. Ký hiệu là P ⇔ Q. Mệnh đề P ⇔ Q đúng khi cả P ⇒ Q và Q ⇒ P cùng đúng."
+  },
+  {
+    "topic": "MỆNH ĐỀ VÀ TẬP HỢP",
+    "lesson": "§1. MỆNH ĐỀ",
+    "task type": "Dạng 4. Mệnh đề với kí hiệu ∀ và ∃ và phủ định",
+    "task type solving strategies": "Ta đọc ∀x ∈ X, ∃x ∈ X lần lượt là: Với mọi x thuộc X, tồn tại (có ít nhất) x thuộc X. Phủ định của mệnh đề “∀x ∈ X, P(x)” là mệnh đề “∃x ∈ X, P(x)”. Phủ định của mệnh đề “∃x ∈ X, P(x)” là mệnh đề “∀x ∈ X, P(x)”."
+  },
+  {
+    "topic": "MỆNH ĐỀ VÀ TẬP HỢP",
+    "lesson": "§2. TẬP HỢP",
+    "task type": "Dạng 1. Tập hợp và phần tử của tập hợp",
+    "task type solving strategies": "Liệt kê các phần tử của tập hợp (giải phương trình nếu cần). Nêu đặc trưng của tập hợp."
+  },
+  {
+    "topic": "MỆNH ĐỀ VÀ TẬP HỢP",
+    "lesson": "§2. TẬP HỢP",
+    "task type": "Dạng 2. Tập con. Tập bằng nhau",
+    "task type solving strategies": "Tập hợp A là tập con của tập hợp B nếu mọi phần tử của A đều có trong B. A ⊂ B ⇔ (∀x ∈ A ⇒ x ∈ B). Ø ⊂ A, với mọi tập hợp A. A ⊂ A, với mọi tập hợp A. Có tập A gồm có n phần tử (n ∈ N). Khi đó, tập A có 2ⁿ tập con."
+  },
+  {
+    "topic": "MỆNH ĐỀ VÀ TẬP HỢP",
+    "lesson": "§2. TẬP HỢP",
+    "task type": "Dạng 3. Thực hiện các phép toán trên tập hợp",
+    "task type solving strategies": "Dựa vào định nghĩa các phép toán trên tập hợp để tìm kết quả. Chú ý: Nếu A ⊂ B thì B\\A = C_B A. Nếu A = Ø thì A\\B = Ø với mọi tập hợp B."
+  },
+  {
+    "topic": "MỆNH ĐỀ VÀ TẬP HỢP",
+    "lesson": "§2. TẬP HỢP",
+    "task type": "Dạng 4. Dùng biểu đồ Ven và công thức tính số phần tử của tập hợp A ∪ B",
+    "task type solving strategies": "Phương pháp biểu đồ Ven: Sử dụng các biểu đồ Ven để mô tả các đại lượng và mối quan hệ giữa chúng. Biểu đồ Ven cho ta cách nhìn trực quan về mối quan hệ giữa các đại lượng, từ đó tìm ra các yếu tố chưa biết. Công thức tính số phần tử n(A ∪ B) = n(A) + n(B) – n(A ∩ B)."
+  },
+  {
+    "topic": "MỆNH ĐỀ VÀ TẬP HỢP",
+    "lesson": "§2. TẬP HỢP",
+    "task type": "Dạng 5. Xác định giao - hợp của hai tập hợp.",
+    "task type solving strategies": "a) Xác định giao của hai tập hợp ta làm như sau: Biểu diễn các tập hợp lên trục số. Dùng định nghĩa giao để xác định các phần tử của tập hợp. b) Cho hai tập con của tập số thực A và B. Tìm A ∪ B ta làm như sau: Biểu diễn tập A trên trục số, gạch chéo phần không thuộc A. Làm tương tự đối với tập B. Phần không gạch chéo trên hình là A ∪ B. c) Đối với hai tập A và B khác rỗng để tìm A ∪ B ta nhớ rằng x ∈ A ∪ B ⇔ {x ∈ A hoặc x ∈ B}."
+  },
+  {
+    "topic": "MỆNH ĐỀ VÀ TẬP HỢP",
+    "lesson": "§2. TẬP HỢP",
+    "task type": "Dạng 6. Xác định hiệu và phần bù của hai tập hợp.",
+    "task type solving strategies": "Biểu diễn các tập hợp lên trục số. Dùng định nghĩa các phép toán hiệu, phần bù để xác định các phần tử của tập hợp."
+  },
+  {
+    "topic": "PHƯƠNG PHÁP TỌA ĐỘ TRONG MẶT PHẲNG",
+    "lesson": "Bài 1: Tọa độ vectơ trong mặt phẳng",
+    "task type": "Dạng 1: Tọa độ trên trục",
+    "task type solving strategies": "Tọa độ trên trục của điểm & vecto:\n» Cho vectơ u⃗ nằm trên trục (O;i⃗) khi đó số a được gọi là tọa độ của vectơ u⃗ trên trục (O;i⃗) khi và chỉ khi u⃗=a.i⃗.\n» Cho điểm M nằm trên trục (O;i⃗) khi đó số m được gọi là tọa độ của điểm M trên trục (O;i⃗) khi và chỉ khi OM−→−=mi⃗.\nNhư vậy tọa điểm M là tọa độ vectơ OM−→−."
+  },
+  {
+    "topic": "PHƯƠNG PHÁP TỌA ĐỘ TRONG MẶT PHẲNG",
+    "lesson": "Bài 1: Tọa độ vectơ trong mặt phẳng",
+    "task type": "Dạng 2: Tọa độ trên hệ trục",
+    "task type solving strategies": "⑴ M là trung điểm của đoạn AB ⇔ { xM = (xA+xB)/2, yM = (yA+yB)/2 }.\n⑵ G là trọng tâm tam giác ABC ⇔ { xG = (xA+xB+xC)/3, yG = (yA+yB+yC)/3 }.\n» Cho u⃗=(x;y);u'⃗=(x';y') và số thực k. Khi đó ta có:\n⑴ u⃗=u'⃗⇔{x=x', y=y'}.\n⑵ u⃗±u'⃗=(x±x';y±y').\n⑶ ku⃗=(kx;ky).\n⑷ u⃗ cùng phương với u'⃗ (u'⃗≠0⃗) ⇔ tồn tại số k sao cho {x'=kx, y'=ky}.\n⑸ u⃗⊥u'⃗⇔u⃗.u'⃗=0⇔x.x'+y.y'=0.\n⑹ cos(u⃗,u'⃗) = (u⃗.u'⃗)/(|u⃗|.|u'⃗|) = (x.x'+y.y')/(√(x²+y²)√(x'²+y'²)) (u⃗,u'⃗ đều khác 0⃗).\n⑺ Cho hai điểm A(xA;yA), B(xB;yB) thì AB−→−=(xB−xA;yB−yA).\n⑻ AB = |AB−→−| = √((xB−xA)²+(yB−yA)²)."
+  },
+  {
+    "topic": "PHƯƠNG PHÁP TỌA ĐỘ TRONG MẶT PHẲNG",
+    "lesson": "Bài 2: Phương trình đường thẳng",
+    "task type": "Dạng 1: Viết phương trình tham số của đường thẳng",
+    "task type solving strategies": "Để lập phương trình tham số của đường thẳng ∆, ta cần xác định một điểm M(x₀;y₀) ∈ ∆ và một véc-tơ chỉ phương u⃗ = (u₁;u₂). Vậy phương trình tham số đường thẳng ∆: { x = x₀ + tu₁, y = y₀ + tu₂ }."
+  },
+  {
+    "topic": "PHƯƠNG PHÁP TỌA ĐỘ TRONG MẶT PHẲNG",
+    "lesson": "Bài 2: Phương trình đường thẳng",
+    "task type": "Dạng 2: Viết phương trình tổng quát của đường thẳng",
+    "task type solving strategies": "Để lập phương trình tổng quát của đường thẳng ∆, ta cần xác định một điểm M(x₀;y₀) ∈ ∆ và một véc-tơ pháp tuyến n⃗ = (A;B). Vậy phương trình đường thẳng ∆: A(x-x₀) + B(y-y₀) = 0. Vậy phương trình tổng quát đường thẳng ∆: Ax + By + C = 0 với C = -(Ax₀ + By₀)."
+  },
+  {
+    "topic": "PHƯƠNG PHÁP TỌA ĐỘ TRONG MẶT PHẲNG",
+    "lesson": "Bài 2: Phương trình đường thẳng",
+    "task type": "Dạng 3: Vị trí tương đối và góc giữa hai đường thẳng",
+    "task type solving strategies": "Cho các đường thẳng ∆: Ax + By + C = 0 và ∆': A'x + B'y + C' = 0. Khi đó ta có n⃗=(A,B) và n'⃗=(A',B') lần lượt là véc-tơ pháp tuyến của ∆ và ∆'.\na) Để xét vị trí tương đối của ∆ và ∆' trước hết ta dựa vào các véc-tơ n⃗ và n'⃗. Nếu các véc-tơ n⃗ và n'⃗ không cùng phương thì ∆ và ∆' cắt nhau. Nếu véc-tơ n⃗ và n'⃗ cùng phương, nghĩa là A/A' = B/B' thì ∆ và ∆' là hai đường thẳng song song hoặc trùng nhau. Cụ thể ta có:\n- ∆ cắt ∆' khi và chỉ khi A/A' ≠ B/B', hơn nữa nếu AA' + BB' = 0 thì ∆ ⊥ ∆'.\n- ∆ ≡ ∆' khi và chỉ khi A/A' = B/B' = C/C'.\n- ∆ || ∆' khi và chỉ khi A/A' = B/B' ≠ C/C'.\nb) Nếu ∆ cắt ∆' và gọi φ là góc giữa các đường thẳng ∆, ∆' thì cosφ = |cos(n⃗, n'⃗)|.\nChú ý rằng việc xét vị trí tương đối của hai đường thẳng cũng được xét qua số điểm chung của ∆ và ∆'. Việc xét vị trí tương đối và tính góc giữa hai đường thẳng cắt nhau cũng được thực hiện qua các véc-tơ chỉ phương của ∆ và ∆'."
+  },
+  {
+    "topic": "PHƯƠNG PHÁP TỌA ĐỘ TRONG MẶT PHẲNG",
+    "lesson": "Bài 2: Phương trình đường thẳng",
+    "task type": "Dạng 4: Khoảng cách từ một điểm đến một đường thẳng",
+    "task type solving strategies": "Cho điểm M(x₀;y₀) và đường thẳng ∆: Ax + By + C = 0. Khi đó, khoảng cách từ điểm M đến đường thẳng ∆ được tính theo công thức: d(M,∆) = |Ax₀+By₀+C| / √(A²+B²)."
+  },
+  {
+    "topic": "PHƯƠNG PHÁP TỌA ĐỘ TRONG MẶT PHẲNG",
+    "lesson": "Bài 2: Phương trình đường thẳng",
+    "task type": "Dạng 5: Viết phương trình đường phân giác của góc",
+    "task type solving strategies": "Để viết phương trình đường phân giác trong của góc BAC ta có nhiều cách. Dưới đây là 3 cách thường sử dụng:\nCách 1: Dựa vào tính chất đường phân giác là tập hợp các điểm cách đều hai đường thẳng AB: ax+by+c=0 và AC: mx+ny+p=0, ta có: |ax+by+c|/√(a²+b²) = |mx+ny+p|/√(m²+n²). Hai đường thu được là phân giác trong và phân giác ngoài của góc ABC. Sau đó, ta cần dựa vào vị trí tương đối của hai điểm B, C với hai đường vừa tìm được để phân biệt phân giác trong, phân giác ngoài. Cụ thể, nếu B, C ở cùng một phía thì đó là phân giác ngoài, ở khác phía thì là phân giác trong.\nCách 2: Lấy B', C' lần lượt thuộc AB, AC sao cho: AB' = (1/|AB|) * AB_vector; AC' = (1/|AC|) * AC_vector. Giả sử AD_vector = AB'_vector + AC'_vector. Khi đó tứ giác AB'DC' là hình thoi. Do đó, AD_vector là vectơ chỉ phương của đường phân giác cần tìm.\nCách 3: Giả sử u⃗=(a;b) là vectơ chỉ phương của đường phân giác cần tìm. Ta có: cos(AB_vector, u⃗) = cos(AC_vector, u⃗) ⇔ (AB_vector • u⃗)/|AB_vector| = (AC_vector • u⃗)/|AC_vector|."
+  },
+  {
+    "topic": "PHƯƠNG PHÁP TỌA ĐỘ TRONG MẶT PHẲNG",
+    "lesson": "Bài 2: Phương trình đường thẳng",
+    "task type": "Dạng 6: Phương trình đường thẳng trong tam giác",
+    "task type solving strategies": "Ta có công thức viết nhanh phương trình đường thẳng qua hai điểm A(x_A; y_A) và B(x_B; y_B) là: (x - x_A)/(x_B - x_A) = (y - y_A)/(y_B - y_A).\nChú ý: Công thức phương trình đường thẳng ∆ qua M(x₀;y₀) và vuông góc với đường thẳng d: Ax+By+C=0 là: B(x-x₀) - A(y-y₀) = 0."
+  },
+  {
+    "topic": "PHƯƠNG PHÁP TỌA ĐỘ TRONG MẶT PHẲNG",
+    "lesson": "Bài 3: Phương trình đường tròn",
+    "task type": "Dạng 1: Nhận diện phương trình, tìm tâm và bán kính",
+    "task type solving strategies": "Phương pháp giải:\nCách 1. Đưa phương trình về dạng: (C): x² + y² - 2ax - 2by + c = 0 (1). Xét dấu biểu thức P = a² + b² - c.\n- Nếu P > 0 thì (1) là phương trình đường tròn (C) có tâm I(a;b) và bán kính R = √(a²+b²-c).\n- Nếu P ≤ 0 thì (1) không phải là phương trình đường tròn.\nCách 2. Đưa phương trình về dạng: (x - a)² + (y - b)² = P (2).\n- Nếu P > 0 thì (2) là phương trình đường tròn có tâm I(a;b) và bán kính R = √P.\n- Nếu P ≤ 0 thì (2) không phải là phương trình đường tròn."
+  },
+  {
+    "topic": "PHƯƠNG PHÁP TỌA ĐỘ TRONG MẶT PHẲNG",
+    "lesson": "Bài 3: Phương trình đường tròn",
+    "task type": "Dạng 2: Lập phương trình đường tròn",
+    "task type solving strategies": "Phương pháp giải:\nCách 1.\n- Tìm toạ độ tâm I(a;b) của đường tròn (C).\n- Tìm bán kính R của đường tròn (C).\n- Viết phương trình của (C) theo dạng (x-a)² + (y-b)² = R².\nCách 2.\n- Giả sử phương trình đường tròn (C) là: x² + y² - 2ax - 2by + c = 0.\n- Từ điều kiện của đề bài thiết lập hệ phương trình với ba ẩn là a, b, c.\n- Giải hệ để tìm a,b,c, từ đó tìm được phương trình đường tròn (C).\nChú ý:\n- A ∈ (C) ⇔ IA = R.\n- (C) tiếp xúc với đường thẳng ∆ tại A ⇔ IA = d(I;∆) = R.\n- (C) tiếp xúc với hai đường thẳng ∆₁ và ∆₂ ⇔ d(I;∆₁) = d(I;∆₂) = R.\n- (C) cắt đường thẳng ∆₃ theo dây cung có độ dài a ⇔ (d(I;∆₃))² + a²/4 = R²."
+  },
+  {
+    "topic": "PHƯƠNG PHÁP TỌA ĐỘ TRONG MẶT PHẲNG",
+    "lesson": "Bài 3: Phương trình đường tròn",
+    "task type": "Dạng 3: Viết phương trình tiếp tuyến của đường tròn",
+    "task type solving strategies": "Trường hợp 1: Viết phương trình tiếp tuyến (∆) tại điểm M(x₀,y₀) ∈ (C).\n- Tìm tâm I(a,b) của (C). Vectơ pháp tuyến của ∆ là IM_vector = (x₀-a; y₀-b).\n- Phương trình ∆: (x₀-a)(x-x₀) + (y₀-b)(y-y₀) = 0.\nTrường hợp 2: Viết phương trình tiếp tuyến (∆) đi qua điểm M(x₀,y₀) không thuộc (C).\n- Gọi phương trình tiếp tuyến (∆) đi qua M có dạng m(x-x₀) + n(y-y₀) = 0, (m² + n² ≠ 0).\n- Dùng điều kiện tiếp xúc: d(I,∆) = R để tìm mối quan hệ giữa m và n.\nTrường hợp 3: Viết phương trình tiếp tuyến (∆) thỏa mãn điều kiện cho trước (song song hoặc vuông góc).\n- Viết dạng phương trình tổng quát của ∆ dựa vào điều kiện.\n- Dùng điều kiện tiếp xúc d(I,∆) = R để tìm hệ số còn lại."
+  },
+  {
+    "topic": "PHƯƠNG PHÁP TỌA ĐỘ TRONG MẶT PHẲNG",
+    "lesson": "Bài 3: Phương trình đường tròn",
+    "task type": "Dạng 4: Vị trí tương đối của đường thẳng và đường tròn",
+    "task type solving strategies": "Cho đường thẳng ∆ : ax + by + c = 0 và đường tròn (C) có tâm I(x₀;y₀), bán kính R. So sánh khoảng cách d(I,∆) và R:\n- d(I,∆) < R: ∆ và (C) cắt nhau tại hai điểm chung.\n- d(I,∆) = R: ∆ tiếp xúc với (C) (∆ là tiếp tuyến).\n- d(I,∆) > R: ∆ và (C) không có điểm chung.\nNếu ∆ cho bởi phương trình tham số, thế vào phương trình (C) để được phương trình bậc hai ẩn t. Số nghiệm của phương trình t quyết định vị trí tương đối (2 nghiệm-cắt, 1 nghiệm-tiếp xúc, vô nghiệm-không cắt)."
+  },
+  {
+    "topic": "PHƯƠNG PHÁP TỌA ĐỘ TRONG MẶT PHẲNG",
+    "lesson": "Bài 3: Phương trình đường tròn",
+    "task type": "Dạng 5: Vị trí tương đối của hai đường tròn",
+    "task type solving strategies": "Cho đường tròn (C) tâm I, bán kính R và (C') tâm I', bán kính R'.\n- II' > R + R' ⇔ Hai đường tròn ở ngoài nhau.\n- II' < |R - R'| ⇔ Hai đường tròn lồng vào nhau.\n- II' = R + R' ⇔ Hai đường tròn tiếp xúc ngoài.\n- II' = |R - R'| ⇔ Hai đường tròn tiếp xúc trong.\n- |R – R'| < II' < R + R' ⇔ Hai đường tròn cắt nhau tại hai điểm phân biệt."
+  },
+  {
+    "topic": "PHƯƠNG PHÁP TỌA ĐỘ TRONG MẶT PHẲNG",
+    "lesson": "Bài 3: Phương trình đường tròn",
+    "task type": "Dạng 6: Tìm tọa độ một điểm thỏa điều kiện cho trước",
+    "task type solving strategies": "Để tìm điểm M thuộc đường tròn (C) : (x − a)² + (y − b)² = R² thỏa điều kiện:\nCách 1:\n- Gọi M(x₀;y₀) ∈ (C) ⇒ (x₀ − a)² + (y₀ − b)² = R².\n- Dựa vào điều kiện cho trước để có thêm hệ thức liên hệ giữa x₀ và y₀, từ đó giải hệ tìm tọa độ M.\nCách 2:\n- Tham số hóa tọa độ điểm M theo phương trình đường tròn: { x₀=a+Rsint, y₀=b+Rcost }.\n- Sử dụng điều kiện cho trước để xác định sint và cost, từ đó tìm tọa độ M."
+  },
+  {
+    "topic": "PHƯƠNG PHÁP TỌA ĐỘ TRONG MẶT PHẲNG",
+    "lesson": "Bài 4: Ba đường Conic",
+    "task type": "Dạng 1: Đường Elip",
+    "task type solving strategies": "Phương trình chính tắc: (E): x²/a² + y²/b² = 1 với a > b > 0 và b² = a² - c².\nCác yếu tố trong Elip:\n» Tiêu điểm F₁(−c;0), F₂(c;0).\n» Tọa độ các đỉnh A₁(−a;0), A₂(a;0), B₁(0;−b), B₂(0;b).\n» Độ dài trục lớn 2a.\n» Độ dài trục bé 2b.\n» Tiêu cự 2c.\nĐể viết phương trình elip, cần tìm a, b từ giả thiết."
+  },
+  {
+    "topic": "PHƯƠNG PHÁP TỌA ĐỘ TRONG MẶT PHẲNG",
+    "lesson": "Bài 4: Ba đường Conic",
+    "task type": "Dạng 2: Đường Hypebol",
+    "task type solving strategies": "Phương trình chính tắc: x²/a² - y²/b² = 1, với a,b > 0 và c² = a² + b².\nCác yếu tố trong Hypebol:\n» Tiêu điểm F₁(−c;0), F₂(c;0).\n» Tọa độ các đỉnh A₁(−a;0), A₂(a;0).\n» Độ dài trục thực: 2a, độ dài trục ảo: 2b.\n» Tiêu cự: 2c."
+  },
+  {
+    "topic": "PHƯƠNG PHÁP TỌA ĐỘ TRONG MẶT PHẲNG",
+    "lesson": "Bài 4: Ba đường Conic",
+    "task type": "Dạng 3: Đường Parabol",
+    "task type solving strategies": "Phương trình chính tắc: y²=2px, với p>0.\nCác yếu tố trong Parabol:\n» p gọi là tham số tiêu.\n» Tiêu điểm F(p/2;0) và đường chuẩn Δ:x=−p/2."
+  },
+  {
+    "topic": "Quy tắc đếm",
+    "lesson": "Quy tắc cộng và nhân",
+    "task type": "Bài toán lựa chọn cơ bản",
+    "task type solving strategies": "- Phân tích công việc thành các phương án độc lập, riêng biệt (quy tắc cộng 'HOẶC').\n- Phân tích công việc thành các công đoạn nối tiếp, phụ thuộc (quy tắc nhân 'VÀ').\n- Đối với bài toán phức tạp, kết hợp cả hai quy tắc: chia thành các trường hợp lớn (cộng), và mỗi trường hợp lại chia thành các bước nhỏ (nhân)."
+  },
+  {
+    "topic": "Quy tắc đếm",
+    "lesson": "Bài toán đếm số",
+    "task type": "Lập số tự nhiên từ một tập hợp cho trước",
+    "task type solving strategies": "- Sử dụng phương pháp các ô trống tương ứng với các chữ số của số cần lập.\n- Ưu tiên xét các vị trí có điều kiện ràng buộc trước: chữ số hàng đơn vị (cho tính chẵn/lẻ), chữ số hàng đầu tiên (phải khác 0).\n- Nếu một chữ số (như số 0) có thể ảnh hưởng đến nhiều vị trí, hãy chia thành các trường hợp riêng biệt để xét (ví dụ: trường hợp chữ số cuối là 0 và trường hợp chữ số cuối khác 0).\n- Áp dụng các quy tắc về dấu hiệu chia hết (cho 2, 3, 4, 5, 9, 11) để giới hạn các lựa chọn."
+  },
+  {
+    "topic": "Quy tắc đếm",
+    "lesson": "Bài toán chọn và sắp xếp",
+    "task type": "Bài toán chọn đồ vật hoặc người",
+    "task type solving strategies": "- Xác định rõ số lượng cần chọn và tổng số đối tượng.\n- Chia bài toán thành các trường hợp nếu có các điều kiện loại trừ hoặc các lựa chọn khác nhau (ví dụ: chọn đủ 3 màu, chọn ít nhất 1 nam).\n- Sử dụng quy tắc nhân để chọn các đối tượng từ các nhóm khác nhau (chọn 1 sách Toán VÀ 1 sách Lý).\n- Sử dụng quy tắc cộng để tính tổng kết quả từ các trường hợp riêng biệt."
+  },
+  {
+    "topic": "Quy tắc đếm",
+    "lesson": "Bài toán chọn và sắp xếp",
+    "task type": "Bài toán sắp xếp vị trí",
+    "task type solving strategies": "- Sắp xếp cơ bản n người vào n vị trí có n! cách.\n- Nếu có điều kiện 'A và B ngồi cạnh nhau', coi (A, B) là một 'khối'. Hoán vị khối này với các phần tử khác, sau đó hoán vị các phần tử trong khối.\n- Nếu có điều kiện 'A và B không ngồi cạnh nhau', dùng phương pháp phần bù: lấy tổng số cách xếp trừ đi số cách xếp mà A và B ngồi cạnh nhau.\n- Nếu xếp xen kẽ (nam-nữ), xếp một nhóm trước để tạo ra các 'khe', sau đó xếp nhóm còn lại vào các 'khe' đó."
+  },
+  {
+    "topic": "Hoán vị - Chỉnh hợp - Tổ hợp",
+    "lesson": "Hoán vị",
+    "task type": "Bài toán đại số (Phương trình, Bất phương trình, Chứng minh)",
+    "task type solving strategies": "- Sử dụng công thức hoán vị Pn = n! và các tính chất của giai thừa để biến đổi biểu thức.\n- Giải phương trình, bất phương trình đại số thu được sau khi rút gọn.\n- Luôn kiểm tra điều kiện của biến (phải là số nguyên không âm)."
+  },
+  {
+    "topic": "Hoán vị - Chỉnh hợp - Tổ hợp",
+    "lesson": "Hoán vị",
+    "task type": "Hoán vị lặp và Hoán vị vòng quanh",
+    "task type solving strategies": "- Đối với hoán vị lặp (sắp xếp n phần tử trong đó có n₁, n₂, ... nk phần tử giống nhau): áp dụng công thức Pn(n₁; n₂; ...) = n! / (n₁!n₂!...nk!).\n- Đối với hoán vị vòng quanh (sắp xếp n phần tử quanh một bàn tròn): cố định một phần tử, hoán vị (n-1) phần tử còn lại, có (n-1)! cách."
+  },
+  {
+    "topic": "Hoán vị - Chỉnh hợp - Tổ hợp",
+    "lesson": "Chỉnh hợp",
+    "task type": "Bài toán đại số (Phương trình, Bất phương trình)",
+    "task type solving strategies": "- Sử dụng công thức chỉnh hợp Aₖⁿ = n! / (n-k)! để khai triển biểu thức.\n- Rút gọn và giải phương trình/bất phương trình đại số.\n- Đối chiếu nghiệm với điều kiện n ≥ k và n, k là số nguyên."
+  },
+  {
+    "topic": "Hoán vị - Chỉnh hợp - Tổ hợp",
+    "lesson": "Chỉnh hợp",
+    "task type": "Bài toán đếm (Chọn có thứ tự)",
+    "task type solving strategies": "- Xác định bài toán yêu cầu chọn k phần tử từ n phần tử VÀ sắp xếp chúng theo một thứ tự nhất định.\n- Áp dụng công thức chỉnh hợp Aₖⁿ hoặc quy tắc nhân.\n- Các bài toán như lập số có các chữ số khác nhau, xếp người vào các vị trí cụ thể, trao giải thưởng (nhất, nhì, ba) là các ứng dụng điển hình."
+  },
+  {
+    "topic": "Hoán vị - Chỉnh hợp - Tổ hợp",
+    "lesson": "Tổ hợp",
+    "task type": "Bài toán đại số (Phương trình, Bất phương trình, Hệ phương trình)",
+    "task type solving strategies": "- Sử dụng công thức tổ hợp Cₖⁿ = n! / (k!(n-k)!) và các tính chất quan trọng: Cₖⁿ = Cₙ₋ₖⁿ, Cₖⁿ + Cₖ₊₁ⁿ = Cₖ₊₁ⁿ⁺¹ (công thức Pascal).\n- Biến đổi và giải các phương trình, bất phương trình, hệ phương trình.\n- Luôn kiểm tra điều kiện n ≥ k ≥ 0."
+  },
+  {
+    "topic": "Hoán vị - Chỉnh hợp - Tổ hợp",
+    "lesson": "Tổ hợp",
+    "task type": "Bài toán đếm (Chọn không có thứ tự)",
+    "task type solving strategies": "- Xác định bài toán yêu cầu chọn k phần tử từ n phần tử mà KHÔNG quan tâm đến thứ tự.\n- Áp dụng công thức tổ hợp Cₖⁿ.\n- Kết hợp quy tắc cộng (cho các trường hợp loại trừ nhau) và quy tắc nhân (cho các bước lựa chọn liên tiếp).\n- Sử dụng phương pháp phần bù cho các bài toán có cụm từ 'ít nhất một'."
+  },
+  {
+    "topic": "Hoán vị - Chỉnh hợp - Tổ hợp",
+    "lesson": "Tổ hợp",
+    "task type": "Bài toán hình học",
+    "task type solving strategies": "- Tạo một đường thẳng từ n điểm: C₂ⁿ.\n- Tạo một vector từ n điểm: A₂ⁿ.\n- Tạo một tam giác từ n điểm không đồng phẳng: C₃ⁿ.\n- Tính số đường chéo của đa giác n cạnh: C₂ⁿ - n.\n- Nếu có các điểm thẳng hàng, sử dụng phương pháp phần bù: trừ đi số tổ hợp các điểm thẳng hàng."
+  },
+  {
+    "topic": "Nhị thức Newton",
+    "lesson": "Khai triển và Tìm hệ số/số hạng",
+    "task type": "Tìm hệ số hoặc số hạng thỏa mãn điều kiện",
+    "task type solving strategies": "- Viết ra số hạng tổng quát của khai triển (a+b)ⁿ là Tₖ₊₁ = Cₖⁿ * aⁿ⁻ᵏ * bᵏ.\n- Rút gọn số hạng tổng quát để đưa về dạng (hệ số) * xᵐ.\n- Dựa vào yêu cầu bài toán (tìm hệ số của xᵖ, tìm số hạng không chứa x,...) để lập phương trình với số mũ m (ví dụ: m = p, m = 0).\n- Giải phương trình tìm k, sau đó thay k trở lại để tìm hệ số hoặc toàn bộ số hạng."
+  },
+  {
+    "topic": "Nhị thức Newton",
+    "lesson": "Tính tổng và Chứng minh đẳng thức",
+    "task type": "Tính tổng các biểu thức chứa tổ hợp",
+    "task type solving strategies": "- Nhận dạng tổng cần tính là một dạng đặc biệt của khai triển (1+x)ⁿ.\n- Thay các giá trị đặc biệt của x (thường là 1, -1, hoặc các số khác) vào khai triển.\n- Sử dụng đạo hàm hai vế của khai triển (1+x)ⁿ để tạo ra các tổng có dạng k*Cₖⁿ.\n- Sử dụng tích phân hai vế của khai triển (1+x)ⁿ để tạo ra các tổng có dạng (1/(k+1))*Cₖⁿ.\n- Để tính tổng các số hạng chẵn (C₀, C₂, C₄,...) hoặc lẻ (C₁, C₃, C₅,...), cộng hoặc trừ vế theo vế của khai triển (1+1)ⁿ và (1-1)ⁿ."
+  },
+  {
+    "topic": "VECTƠ",
+    "lesson": "Bài 3. KHÁI NIỆM VECTƠ",
+    "task type": "Các bài toán về khái niệm vectơ",
+    "task type solving strategies": "Áp dụng các định nghĩa cơ bản về vectơ: điểm đầu, điểm cuối, giá của vectơ, độ dài, hai vectơ cùng phương, cùng hướng, ngược hướng, hai vectơ bằng nhau, vectơ-không."
+  },
+  {
+    "topic": "VECTƠ",
+    "lesson": "Bài 4. TỔNG VÀ HIỆU HAI VECTƠ",
+    "task type": "Dạng 1. Cộng trừ véc tơ",
+    "task type solving strategies": "Sử dụng quy tắc ba điểm, quy tắc hình bình hành, và tính chất của các hình hình học để cộng, trừ các vectơ."
+  },
+  {
+    "topic": "VECTƠ",
+    "lesson": "Bài 4. TỔNG VÀ HIỆU HAI VECTƠ",
+    "task type": "Dạng 2. Xác định điểm thỏa mãn điều kiện",
+    "task type solving strategies": "Biến đổi đẳng thức vectơ về dạng AM = v, trong đó A là điểm cố định và v là vectơ cố định. Từ đó suy ra vị trí của điểm M."
+  },
+  {
+    "topic": "VECTƠ",
+    "lesson": "Bài 4. TỔNG VÀ HIỆU HAI VECTƠ",
+    "task type": "Dạng 3. Tính độ dài véc tơ",
+    "task type solving strategies": "Rút gọn biểu thức vectơ về một vectơ duy nhất. Sau đó tính độ dài của vectơ đó dựa vào các tính chất hình học."
+  },
+  {
+    "topic": "VECTƠ",
+    "lesson": "Bài 5. TÍCH CỦA MỘT SỐ VỚI MỘT VECTƠ",
+    "task type": "Dạng 1. Dựng và tính độ dài véc – tơ",
+    "task type solving strategies": "Sử dụng định nghĩa và tính chất của phép nhân vectơ với một số để dựng hình và tính toán độ dài."
+  },
+  {
+    "topic": "VECTƠ",
+    "lesson": "Bài 5. TÍCH CỦA MỘT SỐ VỚI MỘT VECTƠ",
+    "task type": "Dạng 2. Phân tích véc-tơ",
+    "task type solving strategies": "Sử dụng các tính chất phép toán véc-tơ, ba quy tắc phép toán véc-tơ (quy tắc ba điểm, quy tắc hình bình hành, quy tắc hiệu) và tính chất trung điểm, trọng tâm trong tam giác để biểu diễn một vectơ qua các vectơ khác."
+  },
+  {
+    "topic": "VECTƠ",
+    "lesson": "Bài 5. TÍCH CỦA MỘT SỐ VỚI MỘT VECTƠ",
+    "task type": "Dạng 3. Chứng minh đẳng thức véc-tơ",
+    "task type solving strategies": "Sử dụng kiến thức sau để biến đổi vế này thành vế kia hoặc cả hai biểu thức ở hai vế cùng bằng biểu thức thứ ba hoặc biến đổi tương đương về đẳng thức đúng:\n- Các tính chất phép toán véc-tơ\n- Các quy tắc: quy tắc ba điểm, quy tắc hình bình hành và quy tắc phép trừ.\n- Tính chất trung điểm\n- Tính chất trọng tâm"
+  },
+  {
+    "topic": "VECTƠ",
+    "lesson": "Bài 5. TÍCH CỦA MỘT SỐ VỚI MỘT VECTƠ",
+    "task type": "Dạng 4. Chứng minh một biểu thức véc – tơ không phụ thuộc vào điểm di động",
+    "task type solving strategies": "Biến đổi biểu thức vectơ đã cho bằng cách sử dụng các quy tắc và tính chất của vectơ để loại bỏ sự phụ thuộc vào điểm di động, đưa về một biểu thức chỉ chứa các điểm cố định."
+  },
+  {
+    "topic": "VECTƠ",
+    "lesson": "Bài 5. TÍCH CỦA MỘT SỐ VỚI MỘT VECTƠ",
+    "task type": "Dạng 5. Chứng minh hai điểm trùng nhau, hai tam giác có cùng trọng tâm",
+    "task type solving strategies": "Để chứng minh hai điểm A1, A2 trùng nhau, ta lựa chọn một trong hai cách sau:\nCách 1. Chứng minh A1A2 = 0.\nCách 2. Chứng minh OA1 = OA2 với O là điểm tùy ý.\nĐể chứng minh hai tam giác ABC và A’B’C’ có cùng trọng tâm ta làm như sau:\nCách 1. Chứng minh G là trọng tâm ∆ABC trùng với G’ là trọng tâm ∆A'B'C'.\nCách 2. Gọi G là trọng tâm ∆ABC ( tức là có GA+GB+GC = 0) ta đi chứng minh G'A+G'B+G'C = 0."
+  },
+  {
+    "topic": "VECTƠ",
+    "lesson": "Bài 5. TÍCH CỦA MỘT SỐ VỚI MỘT VECTƠ",
+    "task type": "Dạng 6: Thẳng hàng, cố định, đồng qui",
+    "task type solving strategies": "- Ba điểm A, B, C thẳng hàng khi AB = k.AC\n- Hai đường thẳng AB và MN song song khi AB = k.MN và điểm A không thuộc đường thẳng MN\nChú ý: Việc chọn cơ sở để biểu diễn là 2 véc- tơ cùng gốc và không cùng phương"
+  },
+  {
+    "topic": "VECTƠ",
+    "lesson": "Bài 5. TÍCH CỦA MỘT SỐ VỚI MỘT VECTƠ",
+    "task type": "Dạng 7. Xác định điểm, tập hợp điểm thỏa mãn đẳng thức vec tơ.",
+    "task type solving strategies": "Để tìm tập hợp điểm M thoả mãn điều kiện vecto ta quy về một trong các dạng sau:\n- Nếu |MA|=|MB|, với A, B phân biệt cho trước thì M thuộc đường trung trực của đoạn AB.\n- Nếu |MC|=k|AB|, với A, B, C phân biệt cho trước thì M thuộc đường tròn tâm C, bán kính bằng k|AB|.\n- Nếu MA = k.BC, với A, B, C phân biệt và k là số thực thay đổi thì:\n  + M thuộc đường thẳng qua A song song với BC với k ∈ R.\n  + M thuộc nửa đường thẳng qua A song song với BC và cùng hướng với BC với k > 0.\n  + M thuộc nửa đường thẳng qua A song song với BC và ngược hướng với BC với k < 0.\n- Nếu MA=k.BC, B ≠ C với A, B, C thẳng hàng và k thay đổi thì tập hợp điểm M là đường thẳng BC."
+  },
+  {
+    "topic": "VECTƠ",
+    "lesson": "Bài 6. TÍCH VÔ HƯỚNG CỦA HAI VECTƠ",
+    "task type": "Dạng 1. Tính tích vô hướng của hai vectơ, tính góc giữa hai vectơ",
+    "task type solving strategies": "Sử dụng công thức định nghĩa a.b = |a|.|b|.cos(a,b) và các tính chất của tích vô hướng."
+  },
+  {
+    "topic": "VECTƠ",
+    "lesson": "Bài 6. TÍCH VÔ HƯỚNG CỦA HAI VECTƠ",
+    "task type": "Dạng 2. Tính độ dài của một đoạn thẳng",
+    "task type solving strategies": "Sử dụng tính chất AB^2 = vector(AB)^2. Bình phương vô hướng một biểu thức vectơ để tính độ dài."
+  },
+  {
+    "topic": "VECTƠ",
+    "lesson": "Bài 6. TÍCH VÔ HƯỚNG CỦA HAI VECTƠ",
+    "task type": "Dạng 3. Chứng minh đẳng thức về tích vô hướng",
+    "task type solving strategies": "Sử dụng định nghĩa a.b = |a|.|b|.cos(a,b). Sử dụng quy tắc chèn điểm, quy tắc cộng trừ các vectơ và một số quy tắc trung điểm, trọng tâm, tính chất hình bình hành… Tính chất giao hoán và phân phối về tích vô hướng. Nếu trong đẳng thức chứa bình phương độ dài của đoạn thẳng, ta chú ý có thể chuyển về vectơ nhờ đẳng thức AB^2 = vector(AB)^2."
+  },
+  {
+    "topic": "VECTƠ",
+    "lesson": "Bài 6. TÍCH VÔ HƯỚNG CỦA HAI VECTƠ",
+    "task type": "Dạng 4. Chứng minh sự vuông góc của hai vectơ, hai đường thẳng",
+    "task type solving strategies": "Điều kiện a ⊥ b ⇔ a.b=0. Điều kiện AB ⊥ CD ⇔ vector(AB).vector(CD)=0. Lưu ý chọn gốc, chọn hệ cơ sở để biểu diễn và chứng minh vuông góc."
+  },
+  {
+    "topic": "VECTƠ",
+    "lesson": "Bài 6. TÍCH VÔ HƯỚNG CỦA HAI VECTƠ",
+    "task type": "Dạng 5. Tập hợp điểm",
+    "task type solving strategies": "Biến đổi đẳng thức vectơ đã cho về các dạng quen thuộc:\n- Dạng 1: MA.MB = k (A, B là hai điểm cố định).\n- Dạng 2: AM.v = k (A cố định, v có hướng, độ dài xác định).\n- Dạng 3: αMA^2 + βMB^2 = k (A, B cố định α, β là hằng số và α + β ≠ 0)."
+  },
+  {
+    "topic": "THỐNG KÊ VÀ XÁC SUẤT",
+    "lesson": "Bài 1. SỐ GẦN ĐÚNG VÀ SAI SỐ",
+    "task type": "Dạng 1. Xác định sai số tuyệt đối của số gần đúng",
+    "task type solving strategies": "- Xác định giá trị đúng ā và giá trị gần đúng a.\n- Áp dụng công thức tính sai số tuyệt đối: ∆a = |a − ā|.\n- Trong trường hợp không biết giá trị đúng ā nhưng biết số gần đúng có độ chính xác d (cho dưới dạng a ± d), thì sai số tuyệt đối không vượt quá d, tức là ∆a ≤ d."
+  },
+  {
+    "topic": "THỐNG KÊ VÀ XÁC SUẤT",
+    "lesson": "Bài 1. SỐ GẦN ĐÚNG VÀ SAI SỐ",
+    "task type": "Dạng 2. Xác định sai số tương đối của số gần đúng",
+    "task type solving strategies": "- Xác định giá trị gần đúng a và sai số tuyệt đối ∆a (hoặc độ chính xác d).\n- Áp dụng công thức tính sai số tương đối: δa = ∆a / |a|.\n- Để ước lượng sai số tương đối khi biết độ chính xác d, ta dùng công thức δa ≤ d / |a|. Sai số tương đối càng nhỏ thì chất lượng đo đạc hoặc tính toán càng cao."
+  },
+  {
+    "topic": "THỐNG KÊ VÀ XÁC SUẤT",
+    "lesson": "Bài 1. SỐ GẦN ĐÚNG VÀ SAI SỐ",
+    "task type": "Dạng 3. Xác định số quy tròn của số gần đúng với độ chính xác cho trước",
+    "task type solving strategies": "- Xác định hàng làm tròn dựa vào độ chính xác d: Nếu độ chính xác đến hàng phần nghìn (ví dụ 0,001) thì làm tròn đến hàng phần trăm. Nếu độ chính xác đến hàng trăm (ví dụ 300) thì làm tròn đến hàng nghìn.\n- Áp dụng quy tắc làm tròn số thập phân: Nếu chữ số đầu tiên ở phần bỏ đi nhỏ hơn 5 thì giữ nguyên bộ phận còn lại. Nếu chữ số đó lớn hơn hoặc bằng 5 thì cộng thêm 1 vào chữ số cuối cùng của bộ phận còn lại."
+  },
+  {
+    "topic": "THỐNG KÊ VÀ XÁC SUẤT",
+    "lesson": "Bài 2. CÁC SỐ ĐẶC TRƯNG ĐO XU THẾ TRUNG TÂM",
+    "task type": "Dạng 1. Xác định số trung bình của mẫu số liệu",
+    "task type solving strategies": "- Đối với mẫu số liệu không phân nhóm: Tính tổng tất cả các giá trị trong mẫu rồi chia cho số lượng các giá trị. Công thức: x̄ = (x₁ + x₂ + ... + xn) / n.\n- Đối với mẫu số liệu cho dưới dạng bảng tần số: Lấy từng giá trị nhân với tần số tương ứng, cộng tất cả các kết quả đó lại rồi chia cho tổng số các giá trị (tổng các tần số). Công thức: x̄ = (n₁x₁ + n₂x₂ + ... + nₖxₖ) / n, với n là cỡ mẫu."
+  },
+  {
+    "topic": "THỐNG KÊ VÀ XÁC SUẤT",
+    "lesson": "Bài 2. CÁC SỐ ĐẶC TRƯNG ĐO XU THẾ TRUNG TÂM",
+    "task type": "Dạng 2. Xác định số trung vị của mẫu số liệu",
+    "task type solving strategies": "Bước 1: Sắp xếp mẫu số liệu theo thứ tự không giảm.\nBước 2: Tìm giá trị ở vị trí chính giữa của mẫu số liệu.\n- Nếu cỡ mẫu n là số lẻ, số trung vị (Me) là giá trị đứng ở vị trí thứ (n + 1) / 2.\n- Nếu cỡ mẫu n là số chẵn, số trung vị (Me) là trung bình cộng của hai giá trị đứng ở vị trí n/2 và n/2 + 1."
+  },
+  {
+    "topic": "THỐNG KÊ VÀ XÁC SUẤT",
+    "lesson": "Bài 2. CÁC SỐ ĐẶC TRƯNG ĐO XU THẾ TRUNG TÂM",
+    "task type": "Dạng 3. Xác định tứ phân vị dựa vào mẫu số liệu",
+    "task type solving strategies": "Bước 1: Sắp xếp mẫu số liệu theo thứ tự không giảm và tìm số trung vị, giá trị này là tứ phân vị thứ hai (Q₂).\nBước 2: Tìm tứ phân vị thứ nhất (Q₁) bằng cách tìm trung vị của nửa dãy số liệu phía dưới Q₂ (không bao gồm Q₂ nếu cỡ mẫu lẻ).\nBước 3: Tìm tứ phân vị thứ ba (Q₃) bằng cách tìm trung vị của nửa dãy số liệu phía trên Q₂ (không bao gồm Q₂ nếu cỡ mẫu lẻ)."
+  },
+  {
+    "topic": "THỐNG KÊ VÀ XÁC SUẤT",
+    "lesson": "Bài 2. CÁC SỐ ĐẶC TRƯNG ĐO XU THẾ TRUNG TÂM",
+    "task type": "Dạng 4. Xác định mốt dựa vào mẫu số liệu",
+    "task type solving strategies": "- Xác định tần số của mỗi giá trị trong mẫu số liệu.\n- Mốt (Mₒ) là giá trị có tần số xuất hiện lớn nhất trong bảng phân bố tần số.\n- Lưu ý: Một mẫu số liệu có thể có một hoặc nhiều mốt."
+  },
+  {
+    "topic": "THỐNG KÊ VÀ XÁC SUẤT",
+    "lesson": "Bài 3. CÁC SỐ ĐẶC TRƯNG ĐO ĐỘ PHÂN TÁN",
+    "task type": "Dạng 1. Xác định khoảng biến thiên dựa vào mẫu số liệu",
+    "task type solving strategies": "- Xác định giá trị lớn nhất (max) và giá trị nhỏ nhất (min) trong mẫu số liệu.\n- Khoảng biến thiên (R) được tính bằng hiệu số giữa giá trị lớn nhất và giá trị nhỏ nhất: R = max - min."
+  },
+  {
+    "topic": "THỐNG KÊ VÀ XÁC SUẤT",
+    "lesson": "Bài 3. CÁC SỐ ĐẶC TRƯNG ĐO ĐỘ PHÂN TÁN",
+    "task type": "Dạng 2. Xác định khoảng tứ phân vị dựa vào mẫu số liệu",
+    "task type solving strategies": "Bước 1: Xác định các tứ phân vị Q₁ và Q₃ của mẫu số liệu.\nBước 2: Khoảng tứ phân vị (∆Q) được tính bằng hiệu số giữa Q₃ và Q₁: ∆Q = Q₃ − Q₁."
+  },
+  {
+    "topic": "THỐNG KÊ VÀ XÁC SUẤT",
+    "lesson": "Bài 3. CÁC SỐ ĐẶC TRƯNG ĐO ĐỘ PHÂN TÁN",
+    "task type": "Dạng 3. Xác định phương sai, độ lệch chuẩn dựa vào mẫu số liệu",
+    "task type solving strategies": "Bước 1: Tính số trung bình (x̄) của mẫu số liệu.\nBước 2: Tính phương sai (s²) bằng cách lấy tổng bình phương của các độ lệch từ mỗi giá trị đến số trung bình, rồi chia cho cỡ mẫu n. Công thức: s² = [Σ(xᵢ − x̄)²] / n.\nBước 3: Tính độ lệch chuẩn (s) bằng cách lấy căn bậc hai của phương sai: s = √s²."
+  },
+  {
+    "topic": "THỐNG KÊ VÀ XÁC SUẤT",
+    "lesson": "Bài 4. BIẾN CỐ VÀ CÁC PHÉP TOÁN TRÊN BIẾN CỐ",
+    "task type": "Dạng 1. Mô tả không gian mẫu",
+    "task type solving strategies": "- Không gian mẫu (Ω): Liệt kê tất cả các kết quả có thể xảy ra của phép thử. Có thể dùng sơ đồ cây hoặc các quy tắc đếm (quy tắc cộng, quy tắc nhân).\n- Đếm số phần tử của không gian mẫu, ký hiệu là n(Ω)."
+  },
+  {
+    "topic": "THỐNG KÊ VÀ XÁC SUẤT",
+    "lesson": "Bài 4. BIẾN CỐ VÀ CÁC PHÉP TOÁN TRÊN BIẾN CỐ",
+    "task type": "Dạng 2. Mô tả biến cố",
+    "task type solving strategies": "- Biến cố (A): Xác định tập hợp con của không gian mẫu bao gồm các kết quả thuận lợi cho một sự kiện cụ thể.\n- Đếm số phần tử của biến cố A, tức là số kết quả thuận lợi n(A)."
+  },
+  {
+    "topic": "THỐNG KÊ VÀ XÁC SUẤT",
+    "lesson": "Bài 4. BIẾN CỐ VÀ CÁC PHÉP TOÁN TRÊN BIẾN CỐ",
+    "task type": "Dạng 3. Các phép toán trên biến cố",
+    "task type solving strategies": "- Biến cố đối (Ā): Tập hợp các kết quả không thuận lợi cho A.\n- Hợp hai biến cố (A ∪ B): Biến cố \"Ít nhất một trong hai biến cố A hoặc B xảy ra\".\n- Giao hai biến cố (A ∩ B hoặc AB): Biến cố \"Cả hai biến cố A và B đồng thời xảy ra\".\n- Biến cố xung khắc: Hai biến cố A và B được gọi là xung khắc nếu chúng không thể cùng xảy ra (A ∩ B = ∅)."
+  },
+  {
+    "topic": "THỐNG KÊ VÀ XÁC SUẤT",
+    "lesson": "Bài 5. XÁC SUẤT CỦA BIẾN CỐ",
+    "task type": "Dạng 1. Tính xác suất bằng định nghĩa cổ điển",
+    "task type solving strategies": "Bước 1: Xác định không gian mẫu Ω và tính số phần tử của nó là n(Ω).\nBước 2: Xác định biến cố A và đếm số phần tử của A, tức là số kết quả thuận lợi n(A).\nBước 3: Áp dụng công thức xác suất cổ điển: P(A) = n(A) / n(Ω)."
+  },
+  {
+    "topic": "THỐNG KÊ VÀ XÁC SUẤT",
+    "lesson": "Bài 5. XÁC SUẤT CỦA BIẾN CỐ",
+    "task type": "Dạng 2. Tính xác suất bằng quy tắc cộng",
+    "task type solving strategies": "- Phân tích sự kiện cần tính xác suất thành hợp của các biến cố (A ∪ B).\n- Nếu A và B xung khắc: P(A ∪ B) = P(A) + P(B).\n- Nếu A và B không xung khắc: P(A ∪ B) = P(A) + P(B) - P(A ∩ B)."
+  },
+  {
+    "topic": "THỐNG KÊ VÀ XÁC SUẤT",
+    "lesson": "Bài 5. XÁC SUẤT CỦA BIẾN CỐ",
+    "task type": "Dạng 3. Tính xác suất bằng quy tắc nhân",
+    "task type solving strategies": "- Phân tích sự kiện cần tính xác suất thành giao của các biến cố (A ∩ B hoặc AB).\n- Nếu A và B độc lập, áp dụng quy tắc nhân: P(AB) = P(A) · P(B)."
+  },
+  {
+    "topic": "THỐNG KÊ VÀ XÁC SUẤT",
+    "lesson": "Bài 5. XÁC SUẤT CỦA BIẾN CỐ",
+    "task type": "Dạng 4. Sử dụng biến cố đối để tính xác suất",
+    "task type solving strategies": "Bước 1: Xác định biến cố A cần tính xác suất (Thường áp dụng cho các bài toán có cụm từ 'ít nhất một').\nBước 2: Xác định biến cố đối Ā (thường là trường hợp 'không có ... nào').\nBước 3: Tính xác suất của biến cố đối P(Ā).\nBước 4: Tính xác suất của biến cố A bằng công thức: P(A) = 1 - P(Ā)."
+  }
+]

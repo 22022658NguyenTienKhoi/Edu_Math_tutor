@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MathMaster - AI Integrated</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        window.MathJax = {
+            tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+            svg: { fontCache: 'global' }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        .chat-scroll::-webkit-scrollbar { width: 6px; }
+        .chat-scroll::-webkit-scrollbar-thumb { background-color: #cbd5e1; border-radius: 4px; }
+        .fade-in { animation: fadeIn 0.5s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans h-screen flex flex-col">
+
+    <header class="bg-indigo-600 text-white p-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold flex items-center gap-2"><span>📐</span> MathMaster AI</h1>
+            <div class="text-sm">Connected to Python Backend</div>
+        </div>
+    </header>
+
+    <main class="container mx-auto flex-grow p-6 flex flex-col md:flex-row gap-6 relative">
+        <!-- Sidebar -->
+        <aside class="w-full md:w-1/4 bg-white p-6 rounded-xl shadow-sm border border-slate-200 h-fit">
+            <h2 class="text-lg font-semibold mb-4 text-slate-700">Select Exercise</h2>
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-slate-600 mb-1">Topic</label>
+                    <select id="lessonSelect" class="w-full p-2 border border-slate-300 rounded-lg outline-none">
+                        <option value="geometry">Geometry (Vectors/Circles)</option>
+                        <option value="algebra">Algebra</option>
+                    </select>
+                </div>
+                <button onclick="loadExercise()" id="startBtn" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 rounded-lg transition">
+                    Start New Exercise
+                </button>
+            </div>
+        </aside>
+
+        <!-- Workspace -->
+        <section class="w-full md:w-3/4 flex flex-col gap-6 relative">
+            <!-- Loading Indicator -->
+            <div id="loader" class="hidden absolute inset-0 bg-white/80 z-10 flex items-center justify-center">
+                <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600"></div>
+            </div>
+
+            <!-- Problem Box -->
+            <div id="problemBox" class="bg-white p-8 rounded-xl shadow-sm border border-slate-200 hidden fade-in">
+                <div class="flex justify-between items-start mb-4">
+                    <span class="bg-indigo-100 text-indigo-700 text-xs font-bold px-2 py-1 rounded uppercase tracking-wide">Problem</span>
+                </div>
+                <div id="mathQuestion" class="text-xl text-slate-800 mb-2 font-medium"></div>
+            </div>
+
+            <!-- Solution Input -->
+            <div id="solutionBox" class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hidden fade-in flex-grow flex flex-col">
+                <div class="flex justify-between items-end mb-2">
+                    <label class="block text-sm font-medium text-slate-700">Your Solution</label>
+                    <button id="historyBtn" onclick="toggleHistoryModal()" class="hidden text-xs text-slate-500 hover:text-indigo-600 underline">
+                        🕒 View Past Attempts (<span id="attemptCount">0</span>)
+                    </button>
+                </div>
+                
+                <textarea id="studentAnswer" class="w-full flex-grow h-48 p-4 border border-slate-300 rounded-lg font-mono text-sm focus:ring-2 focus:ring-indigo-500 outline-none resize-none"></textarea>
+                
+                <div class="flex items-center justify-between mt-4">
+                    <button onclick="openChat()" class="text-indigo-600 text-sm font-medium hover:underline flex items-center gap-1">
+                        ✨ Open AI Tutor Chat
+                    </button>
+                    <button onclick="submitSolution()" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg font-medium transition shadow-sm">
+                        Submit & Analyze
+                    </button>
+                </div>
+            </div>
+
+            <!-- Feedback -->
+            <div id="feedbackArea" class="hidden rounded-xl p-4 border-l-4">
+                <h3 id="feedbackTitle" class="font-bold text-lg"></h3>
+                <p id="feedbackMessage" class="text-sm mt-1"></p>
+                <button onclick="resetFeedback()" class="mt-3 text-sm underline font-medium">Edit Solution</button>
+            </div>
+            
+            <div id="emptyState" class="flex flex-col items-center justify-center h-full text-slate-400">
+                <div class="text-6xl mb-4">📝</div>
+                <p class="text-lg">Select a topic to fetch data from Python.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Chat Widget -->
+    <div id="aiChatContainer" class="fixed bottom-20 right-6 w-96 bg-white rounded-2xl shadow-2xl border border-slate-200 hidden flex flex-col overflow-hidden z-50 h-[500px]">
+        <div class="bg-gradient-to-r from-indigo-600 to-purple-600 p-4 text-white flex justify-between items-center">
+            <span class="font-semibold text-sm">🤖 Thầy Tích Hợp (AI Tutor)</span>
+            <button onclick="toggleAI()" class="hover:bg-white/20 rounded p-1">✕</button>
+        </div>
+        <div id="chatHistory" class="p-4 flex-grow overflow-y-auto chat-scroll bg-slate-50 flex flex-col gap-3 text-sm"></div>
+        <div class="p-3 border-t border-slate-200 bg-white flex gap-2">
+            <input id="aiInput" type="text" placeholder="Ask for help..." class="flex-grow text-sm p-2 border border-slate-300 rounded-md focus:outline-none focus:border-indigo-500" onkeypress="if(event.key==='Enter') sendChatMessage()">
+            <button onclick="sendChatMessage()" class="bg-indigo-600 text-white p-2 rounded-md hover:bg-indigo-700">➤</button>
+        </div>
+    </div>
+
+    <!-- History Modal -->
+    <div id="historyModal" class="fixed inset-0 bg-black/50 z-50 hidden flex items-center justify-center backdrop-blur-sm">
+        <div class="bg-white w-full max-w-2xl rounded-xl shadow-2xl flex flex-col max-h-[80vh] m-4">
+            <div class="p-4 border-b flex justify-between">
+                <h3 class="font-bold">Previous Failed Attempts</h3>
+                <button onclick="toggleHistoryModal()">&times;</button>
+            </div>
+            <div id="historyList" class="p-6 overflow-y-auto bg-slate-100 space-y-4"></div>
+        </div>
+    </div>
+
+    <script>
+        // Configuration
+        const API_URL = "https://symmetrical-orbit-4j5qv9rx45rgc576q-8000.app.github.dev"; 
+        let currentSessionId = null;
+        let attempts = [];
+
+        // --- API Functions ---
+        
+        let isChatInitialized = false; // Track if we already fetched the greeting
+
+        // Function 1: Called when clicking "Stuck? Ask AI" or the Robot Icon
+        async function toggleAI() {
+            const chatBox = document.getElementById('aiChatContainer');
+            const isHidden = chatBox.classList.contains('hidden');
+
+            if (isHidden) {
+                // OPENING CHAT
+                chatBox.classList.remove('hidden');
+                
+                // If this is the first time opening it for this session/problem, 
+                // ask the AI to speak first.
+                if (!isChatInitialized && currentSessionId) {
+                    await initChatWithGreeting();
+                }
+            } else {
+                // CLOSING CHAT
+                chatBox.classList.add('hidden');
+            }
+        }
+
+        // Function 2: The actual API call to get the first message
+        async function initChatWithGreeting() {
+            if (!currentSessionId) return;
+            
+            // Show a temporary "typing" indicator
+            addMsgToUI('ai', '<i>Bot is reviewing your solution...</i>');
+            isChatInitialized = true; 
+
+            try {
+                const response = await fetch(`${API_URL}/chat/start`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ session_id: currentSessionId })
+                });
+                
+                const data = await response.json();
+                
+                // Remove the "typing" message (optional: simpler to just clear last child)
+                const history = document.getElementById('chatHistory');
+                history.lastChild.remove(); 
+
+                // Add the real AI greeting
+                addMsgToUI('ai', data.message);
+
+            } catch (error) {
+                console.error("Chat Init Error:", error);
+                addMsgToUI('ai', "Hello! I'm here to help. What's confusing you?");
+            }
+        }
+
+        // Update the "Open AI Tutor Chat" button in the workspace to use toggleAI
+        function openChat() {
+            toggleAI();
+        }
+
+    // ... (rest of your code: loadExercise, submitSolution, etc.) ...
+    
+    // IMPORTANT: Reset the chat flag when loading a NEW exercise
+        async function loadExercise() {
+            const topic = document.getElementById('lessonSelect').value;
+            toggleLoader(true);
+            
+            try {
+                const response = await fetch(`${API_URL}/start`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ topic: topic })
+                });
+                const data = await response.json();
+                
+                currentSessionId = data.session_id;
+                
+                // Update UI
+                document.getElementById('emptyState').classList.add('hidden');
+                document.getElementById('problemBox').classList.remove('hidden');
+                document.getElementById('solutionBox').classList.remove('hidden');
+                document.getElementById('feedbackArea').classList.add('hidden');
+                document.getElementById('mathQuestion').innerHTML = data.question; // Assumes formatted Math
+                document.getElementById('studentAnswer').value = "";
+                
+                // Clear History
+                attempts = [];
+                document.getElementById('chatHistory').innerHTML = ""; 
+                isChatInitialized = false; 
+                document.getElementById('aiChatContainer').classList.add('hidden');
+                document.getElementById('historyBtn').classList.add('hidden');
+                document.getElementById('chatHistory').innerHTML = ""; // Clear chat
+                
+                MathJax.typesetPromise();
+            } catch (error) {
+                alert("Error connecting to Python backend: " + error);
+            } finally {
+                toggleLoader(false);
+            }
+        }
+
+        async function submitSolution() {
+            const input = document.getElementById('studentAnswer').value;
+            if (!input.trim()) return alert("Please type a solution.");
+            
+            toggleLoader(true);
+            try {
+                const response = await fetch(`${API_URL}/submit`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ 
+                        session_id: currentSessionId,
+                        student_solution: input 
+                    })
+                });
+                const data = await response.json();
+
+                const feedbackArea = document.getElementById('feedbackArea');
+                feedbackArea.classList.remove('hidden', 'bg-green-50', 'bg-red-50', 'border-green-500', 'border-red-500');
+                
+                if (data.is_correct) {
+                    feedbackArea.classList.add('bg-green-50', 'border-green-500', 'text-green-800');
+                } else {
+                    saveAttempt(input); // Save history
+                    feedbackArea.classList.add('bg-red-50', 'border-red-500', 'text-red-800');
+                }
+                
+                document.getElementById('feedbackTitle').innerText = data.title;
+                document.getElementById('feedbackMessage').innerText = data.message;
+
+            } catch (error) {
+                alert("Error submitting: " + error);
+            } finally {
+                toggleLoader(false);
+            }
+        }
+
+        async function sendChatMessage() {
+            const inputField = document.getElementById('aiInput');
+            const msg = inputField.value;
+            if (!msg.trim()) return;
+
+            // Add user message to UI immediately
+            addMsgToUI('user', msg);
+            inputField.value = '';
+
+            try {
+                const response = await fetch(`${API_URL}/chat`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ 
+                        session_id: currentSessionId,
+                        message: msg 
+                    })
+                });
+                const data = await response.json();
+                
+                // Add AI response
+                addMsgToUI('ai', data.message);
+                
+                if(data.is_correct) {
+                    alert("Congratulations! The tutor confirms you have mastered this step.");
+                }
+
+            } catch (error) {
+                addMsgToUI('ai', "Error: Could not reach the Tutor.");
+            }
+        }
+
+        // --- UI Helpers ---
+
+        function addMsgToUI(role, text) {
+            const history = document.getElementById('chatHistory');
+            const div = document.createElement('div');
+            div.className = role === 'user' 
+                ? "self-end bg-indigo-600 text-white p-3 rounded-xl max-w-[90%]" 
+                : "self-start bg-white border border-slate-200 p-3 rounded-xl text-slate-700 shadow-sm max-w-[90%]";
+            div.innerHTML = text.replace(/\n/g, '<br>'); // Simple formatting
+            history.appendChild(div);
+            history.scrollTop = history.scrollHeight;
+            MathJax.typesetPromise([div]); // Render math in chat
+        }
+
+        function toggleLoader(show) {
+            const loader = document.getElementById('loader');
+            show ? loader.classList.remove('hidden') : loader.classList.add('hidden');
+        }
+
+        // History Logic (Same as before)
+        function saveAttempt(txt) {
+            attempts.push({ id: attempts.length+1, time: new Date().toLocaleTimeString(), content: txt });
+            document.getElementById('attemptCount').innerText = attempts.length;
+            document.getElementById('historyBtn').classList.remove('hidden');
+        }
+
+        function toggleHistoryModal() {
+            const modal = document.getElementById('historyModal');
+            const list = document.getElementById('historyList');
+            if (modal.classList.contains('hidden')) {
+                list.innerHTML = attempts.map(a => `
+                    <div class="bg-white p-3 border rounded shadow-sm">
+                        <div class="flex justify-between text-xs mb-1">
+                            <span class="text-red-500 font-bold">Attempt #${a.id}</span>
+                            <span class="text-slate-400">${a.time}</span>
+                        </div>
+                        <pre class="text-sm bg-slate-50 p-2 rounded whitespace-pre-wrap">${a.content}</pre>
+                    </div>`).join('');
+                modal.classList.remove('hidden');
+            } else {
+                modal.classList.add('hidden');
+            }
+        }
+        
+        function resetFeedback() {
+            document.getElementById('feedbackArea').classList.add('hidden');
+            document.getElementById('studentAnswer').focus();
+        }
+    </script>
+</body>
+</html>

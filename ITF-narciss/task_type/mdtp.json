@@ -1,0 +1,62 @@
+[
+  {
+    "topic": "MỆNH ĐỀ VÀ TẬP HỢP",
+    "lesson": "§1. MỆNH ĐỀ",
+    "task type": "Dạng 1. Nhận diện, xét tính đúng sai của mệnh đề, mệnh đề chứa biến",
+    "task type solving strategies": "Mệnh đề phải là một câu khẳng định có tính đúng – sai rõ ràng. Có thể chưa biết nó đúng hay là sai, nhưng chắc chắn nó chỉ có thể đúng hay là sai. Có những mệnh đề mà tính đúng – sai của nó gắn với một thời gian, địa điểm cụ thể. Mệnh đề chứa biến là câu phụ thuộc vào biến x. Mệnh đề chứa biến chưa phải là mệnh đề."
+  },
+  {
+    "topic": "MỆNH ĐỀ VÀ TẬP HỢP",
+    "lesson": "§1. MỆNH ĐỀ",
+    "task type": "Dạng 2. Phủ định của một mệnh đề",
+    "task type solving strategies": "Thêm (hoặc bớt) từ “không” (hoặc “không phải”) vào trước vị ngữ của mệnh đề đó."
+  },
+  {
+    "topic": "MỆNH ĐỀ VÀ TẬP HỢP",
+    "lesson": "§1. MỆNH ĐỀ",
+    "task type": "Dạng 3. Mệnh đề kéo theo, mệnh đề đảo, mệnh đề tương đương",
+    "task type solving strategies": "Mệnh đề “nếu P thì Q” gọi là mệnh đề kéo theo. Ký hiệu là P ⇒ Q. Mệnh đề P ⇒ Q chỉ sai khi P đúng Q sai. Mệnh đề Q ⇒ P gọi là mệnh đề đảo của P ⇒ Q. Mệnh đề “P nếu và chỉ nếu Q” gọi là mệnh đề tương đương. Ký hiệu là P ⇔ Q. Mệnh đề P ⇔ Q đúng khi cả P ⇒ Q và Q ⇒ P cùng đúng."
+  },
+  {
+    "topic": "MỆNH ĐỀ VÀ TẬP HỢP",
+    "lesson": "§1. MỆNH ĐỀ",
+    "task type": "Dạng 4. Mệnh đề với kí hiệu ∀ và ∃ và phủ định",
+    "task type solving strategies": "Ta đọc ∀x ∈ X, ∃x ∈ X lần lượt là: Với mọi x thuộc X, tồn tại (có ít nhất) x thuộc X. Phủ định của mệnh đề “∀x ∈ X, P(x)” là mệnh đề “∃x ∈ X, P(x)”. Phủ định của mệnh đề “∃x ∈ X, P(x)” là mệnh đề “∀x ∈ X, P(x)”."
+  },
+  {
+    "topic": "MỆNH ĐỀ VÀ TẬP HỢP",
+    "lesson": "§2. TẬP HỢP",
+    "task type": "Dạng 1. Tập hợp và phần tử của tập hợp",
+    "task type solving strategies": "Liệt kê các phần tử của tập hợp (giải phương trình nếu cần). Nêu đặc trưng của tập hợp."
+  },
+  {
+    "topic": "MỆNH ĐỀ VÀ TẬP HỢP",
+    "lesson": "§2. TẬP HỢP",
+    "task type": "Dạng 2. Tập con. Tập bằng nhau",
+    "task type solving strategies": "Tập hợp A là tập con của tập hợp B nếu mọi phần tử của A đều có trong B. A ⊂ B ⇔ (∀x ∈ A ⇒ x ∈ B). Ø ⊂ A, với mọi tập hợp A. A ⊂ A, với mọi tập hợp A. Có tập A gồm có n phần tử (n ∈ N). Khi đó, tập A có 2ⁿ tập con."
+  },
+  {
+    "topic": "MỆNH ĐỀ VÀ TẬP HỢP",
+    "lesson": "§2. TẬP HỢP",
+    "task type": "Dạng 3. Thực hiện các phép toán trên tập hợp",
+    "task type solving strategies": "Dựa vào định nghĩa các phép toán trên tập hợp để tìm kết quả. Chú ý: Nếu A ⊂ B thì B\\A = C_B A. Nếu A = Ø thì A\\B = Ø với mọi tập hợp B."
+  },
+  {
+    "topic": "MỆNH ĐỀ VÀ TẬP HỢP",
+    "lesson": "§2. TẬP HỢP",
+    "task type": "Dạng 4. Dùng biểu đồ Ven và công thức tính số phần tử của tập hợp A ∪ B",
+    "task type solving strategies": "Phương pháp biểu đồ Ven: Sử dụng các biểu đồ Ven để mô tả các đại lượng và mối quan hệ giữa chúng. Biểu đồ Ven cho ta cách nhìn trực quan về mối quan hệ giữa các đại lượng, từ đó tìm ra các yếu tố chưa biết. Công thức tính số phần tử n(A ∪ B) = n(A) + n(B) – n(A ∩ B)."
+  },
+  {
+    "topic": "MỆNH ĐỀ VÀ TẬP HỢP",
+    "lesson": "§2. TẬP HỢP",
+    "task type": "Dạng 5. Xác định giao - hợp của hai tập hợp.",
+    "task type solving strategies": "a) Xác định giao của hai tập hợp ta làm như sau: Biểu diễn các tập hợp lên trục số. Dùng định nghĩa giao để xác định các phần tử của tập hợp. b) Cho hai tập con của tập số thực A và B. Tìm A ∪ B ta làm như sau: Biểu diễn tập A trên trục số, gạch chéo phần không thuộc A. Làm tương tự đối với tập B. Phần không gạch chéo trên hình là A ∪ B. c) Đối với hai tập A và B khác rỗng để tìm A ∪ B ta nhớ rằng x ∈ A ∪ B ⇔ {x ∈ A hoặc x ∈ B}."
+  },
+  {
+    "topic": "MỆNH ĐỀ VÀ TẬP HỢP",
+    "lesson": "§2. TẬP HỢP",
+    "task type": "Dạng 6. Xác định hiệu và phần bù của hai tập hợp.",
+    "task type solving strategies": "Biểu diễn các tập hợp lên trục số. Dùng định nghĩa các phép toán hiệu, phần bù để xác định các phần tử của tập hợp."
+  }
+]

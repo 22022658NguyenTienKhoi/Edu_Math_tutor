@@ -1,0 +1,104 @@
+[
+  {
+    "topic": "PHƯƠNG PHÁP TỌA ĐỘ TRONG MẶT PHẲNG",
+    "lesson": "Bài 1: Tọa độ vectơ trong mặt phẳng",
+    "task type": "Dạng 1: Tọa độ trên trục",
+    "task type solving strategies": "Tọa độ trên trục của điểm & vecto:\n» Cho vectơ u⃗ nằm trên trục (O;i⃗) khi đó số a được gọi là tọa độ của vectơ u⃗ trên trục (O;i⃗) khi và chỉ khi u⃗=a.i⃗.\n» Cho điểm M nằm trên trục (O;i⃗) khi đó số m được gọi là tọa độ của điểm M trên trục (O;i⃗) khi và chỉ khi OM−→−=mi⃗.\nNhư vậy tọa điểm M là tọa độ vectơ OM−→−."
+  },
+  {
+    "topic": "PHƯƠNG PHÁP TỌA ĐỘ TRONG MẶT PHẲNG",
+    "lesson": "Bài 1: Tọa độ vectơ trong mặt phẳng",
+    "task type": "Dạng 2: Tọa độ trên hệ trục",
+    "task type solving strategies": "⑴ M là trung điểm của đoạn AB ⇔ { xM = (xA+xB)/2, yM = (yA+yB)/2 }.\n⑵ G là trọng tâm tam giác ABC ⇔ { xG = (xA+xB+xC)/3, yG = (yA+yB+yC)/3 }.\n» Cho u⃗=(x;y);u'⃗=(x';y') và số thực k. Khi đó ta có:\n⑴ u⃗=u'⃗⇔{x=x', y=y'}.\n⑵ u⃗±u'⃗=(x±x';y±y').\n⑶ ku⃗=(kx;ky).\n⑷ u⃗ cùng phương với u'⃗ (u'⃗≠0⃗) ⇔ tồn tại số k sao cho {x'=kx, y'=ky}.\n⑸ u⃗⊥u'⃗⇔u⃗.u'⃗=0⇔x.x'+y.y'=0.\n⑹ cos(u⃗,u'⃗) = (u⃗.u'⃗)/(|u⃗|.|u'⃗|) = (x.x'+y.y')/(√(x²+y²)√(x'²+y'²)) (u⃗,u'⃗ đều khác 0⃗).\n⑺ Cho hai điểm A(xA;yA), B(xB;yB) thì AB−→−=(xB−xA;yB−yA).\n⑻ AB = |AB−→−| = √((xB−xA)²+(yB−yA)²)."
+  },
+  {
+    "topic": "PHƯƠNG PHÁP TỌA ĐỘ TRONG MẶT PHẲNG",
+    "lesson": "Bài 2: Phương trình đường thẳng",
+    "task type": "Dạng 1: Viết phương trình tham số của đường thẳng",
+    "task type solving strategies": "Để lập phương trình tham số của đường thẳng ∆, ta cần xác định một điểm M(x₀;y₀) ∈ ∆ và một véc-tơ chỉ phương u⃗ = (u₁;u₂). Vậy phương trình tham số đường thẳng ∆: { x = x₀ + tu₁, y = y₀ + tu₂ }."
+  },
+  {
+    "topic": "PHƯƠNG PHÁP TỌA ĐỘ TRONG MẶT PHẲNG",
+    "lesson": "Bài 2: Phương trình đường thẳng",
+    "task type": "Dạng 2: Viết phương trình tổng quát của đường thẳng",
+    "task type solving strategies": "Để lập phương trình tổng quát của đường thẳng ∆, ta cần xác định một điểm M(x₀;y₀) ∈ ∆ và một véc-tơ pháp tuyến n⃗ = (A;B). Vậy phương trình đường thẳng ∆: A(x-x₀) + B(y-y₀) = 0. Vậy phương trình tổng quát đường thẳng ∆: Ax + By + C = 0 với C = -(Ax₀ + By₀)."
+  },
+  {
+    "topic": "PHƯƠNG PHÁP TỌA ĐỘ TRONG MẶT PHẲNG",
+    "lesson": "Bài 2: Phương trình đường thẳng",
+    "task type": "Dạng 3: Vị trí tương đối và góc giữa hai đường thẳng",
+    "task type solving strategies": "Cho các đường thẳng ∆: Ax + By + C = 0 và ∆': A'x + B'y + C' = 0. Khi đó ta có n⃗=(A,B) và n'⃗=(A',B') lần lượt là véc-tơ pháp tuyến của ∆ và ∆'.\na) Để xét vị trí tương đối của ∆ và ∆' trước hết ta dựa vào các véc-tơ n⃗ và n'⃗. Nếu các véc-tơ n⃗ và n'⃗ không cùng phương thì ∆ và ∆' cắt nhau. Nếu véc-tơ n⃗ và n'⃗ cùng phương, nghĩa là A/A' = B/B' thì ∆ và ∆' là hai đường thẳng song song hoặc trùng nhau. Cụ thể ta có:\n- ∆ cắt ∆' khi và chỉ khi A/A' ≠ B/B', hơn nữa nếu AA' + BB' = 0 thì ∆ ⊥ ∆'.\n- ∆ ≡ ∆' khi và chỉ khi A/A' = B/B' = C/C'.\n- ∆ || ∆' khi và chỉ khi A/A' = B/B' ≠ C/C'.\nb) Nếu ∆ cắt ∆' và gọi φ là góc giữa các đường thẳng ∆, ∆' thì cosφ = |cos(n⃗, n'⃗)|.\nChú ý rằng việc xét vị trí tương đối của hai đường thẳng cũng được xét qua số điểm chung của ∆ và ∆'. Việc xét vị trí tương đối và tính góc giữa hai đường thẳng cắt nhau cũng được thực hiện qua các véc-tơ chỉ phương của ∆ và ∆'."
+  },
+  {
+    "topic": "PHƯƠNG PHÁP TỌA ĐỘ TRONG MẶT PHẲNG",
+    "lesson": "Bài 2: Phương trình đường thẳng",
+    "task type": "Dạng 4: Khoảng cách từ một điểm đến một đường thẳng",
+    "task type solving strategies": "Cho điểm M(x₀;y₀) và đường thẳng ∆: Ax + By + C = 0. Khi đó, khoảng cách từ điểm M đến đường thẳng ∆ được tính theo công thức: d(M,∆) = |Ax₀+By₀+C| / √(A²+B²)."
+  },
+  {
+    "topic": "PHƯƠNG PHÁP TỌA ĐỘ TRONG MẶT PHẲNG",
+    "lesson": "Bài 2: Phương trình đường thẳng",
+    "task type": "Dạng 5: Viết phương trình đường phân giác của góc",
+    "task type solving strategies": "Để viết phương trình đường phân giác trong của góc BAC ta có nhiều cách. Dưới đây là 3 cách thường sử dụng:\nCách 1: Dựa vào tính chất đường phân giác là tập hợp các điểm cách đều hai đường thẳng AB: ax+by+c=0 và AC: mx+ny+p=0, ta có: |ax+by+c|/√(a²+b²) = |mx+ny+p|/√(m²+n²). Hai đường thu được là phân giác trong và phân giác ngoài của góc ABC. Sau đó, ta cần dựa vào vị trí tương đối của hai điểm B, C với hai đường vừa tìm được để phân biệt phân giác trong, phân giác ngoài. Cụ thể, nếu B, C ở cùng một phía thì đó là phân giác ngoài, ở khác phía thì là phân giác trong.\nCách 2: Lấy B', C' lần lượt thuộc AB, AC sao cho: AB' = (1/|AB|) * AB_vector; AC' = (1/|AC|) * AC_vector. Giả sử AD_vector = AB'_vector + AC'_vector. Khi đó tứ giác AB'DC' là hình thoi. Do đó, AD_vector là vectơ chỉ phương của đường phân giác cần tìm.\nCách 3: Giả sử u⃗=(a;b) là vectơ chỉ phương của đường phân giác cần tìm. Ta có: cos(AB_vector, u⃗) = cos(AC_vector, u⃗) ⇔ (AB_vector • u⃗)/|AB_vector| = (AC_vector • u⃗)/|AC_vector|."
+  },
+  {
+    "topic": "PHƯƠNG PHÁP TỌA ĐỘ TRONG MẶT PHẲNG",
+    "lesson": "Bài 2: Phương trình đường thẳng",
+    "task type": "Dạng 6: Phương trình đường thẳng trong tam giác",
+    "task type solving strategies": "Ta có công thức viết nhanh phương trình đường thẳng qua hai điểm A(x_A; y_A) và B(x_B; y_B) là: (x - x_A)/(x_B - x_A) = (y - y_A)/(y_B - y_A).\nChú ý: Công thức phương trình đường thẳng ∆ qua M(x₀;y₀) và vuông góc với đường thẳng d: Ax+By+C=0 là: B(x-x₀) - A(y-y₀) = 0."
+  },
+  {
+    "topic": "PHƯƠNG PHÁP TỌA ĐỘ TRONG MẶT PHẲNG",
+    "lesson": "Bài 3: Phương trình đường tròn",
+    "task type": "Dạng 1: Nhận diện phương trình, tìm tâm và bán kính",
+    "task type solving strategies": "Phương pháp giải:\nCách 1. Đưa phương trình về dạng: (C): x² + y² - 2ax - 2by + c = 0 (1). Xét dấu biểu thức P = a² + b² - c.\n- Nếu P > 0 thì (1) là phương trình đường tròn (C) có tâm I(a;b) và bán kính R = √(a²+b²-c).\n- Nếu P ≤ 0 thì (1) không phải là phương trình đường tròn.\nCách 2. Đưa phương trình về dạng: (x - a)² + (y - b)² = P (2).\n- Nếu P > 0 thì (2) là phương trình đường tròn có tâm I(a;b) và bán kính R = √P.\n- Nếu P ≤ 0 thì (2) không phải là phương trình đường tròn."
+  },
+  {
+    "topic": "PHƯƠNG PHÁP TỌA ĐỘ TRONG MẶT PHẲNG",
+    "lesson": "Bài 3: Phương trình đường tròn",
+    "task type": "Dạng 2: Lập phương trình đường tròn",
+    "task type solving strategies": "Phương pháp giải:\nCách 1.\n- Tìm toạ độ tâm I(a;b) của đường tròn (C).\n- Tìm bán kính R của đường tròn (C).\n- Viết phương trình của (C) theo dạng (x-a)² + (y-b)² = R².\nCách 2.\n- Giả sử phương trình đường tròn (C) là: x² + y² - 2ax - 2by + c = 0.\n- Từ điều kiện của đề bài thiết lập hệ phương trình với ba ẩn là a, b, c.\n- Giải hệ để tìm a,b,c, từ đó tìm được phương trình đường tròn (C).\nChú ý:\n- A ∈ (C) ⇔ IA = R.\n- (C) tiếp xúc với đường thẳng ∆ tại A ⇔ IA = d(I;∆) = R.\n- (C) tiếp xúc với hai đường thẳng ∆₁ và ∆₂ ⇔ d(I;∆₁) = d(I;∆₂) = R.\n- (C) cắt đường thẳng ∆₃ theo dây cung có độ dài a ⇔ (d(I;∆₃))² + a²/4 = R²."
+  },
+  {
+    "topic": "PHƯƠNG PHÁP TỌA ĐỘ TRONG MẶT PHẲNG",
+    "lesson": "Bài 3: Phương trình đường tròn",
+    "task type": "Dạng 3: Viết phương trình tiếp tuyến của đường tròn",
+    "task type solving strategies": "Trường hợp 1: Viết phương trình tiếp tuyến (∆) tại điểm M(x₀,y₀) ∈ (C).\n- Tìm tâm I(a,b) của (C). Vectơ pháp tuyến của ∆ là IM_vector = (x₀-a; y₀-b).\n- Phương trình ∆: (x₀-a)(x-x₀) + (y₀-b)(y-y₀) = 0.\nTrường hợp 2: Viết phương trình tiếp tuyến (∆) đi qua điểm M(x₀,y₀) không thuộc (C).\n- Gọi phương trình tiếp tuyến (∆) đi qua M có dạng m(x-x₀) + n(y-y₀) = 0, (m² + n² ≠ 0).\n- Dùng điều kiện tiếp xúc: d(I,∆) = R để tìm mối quan hệ giữa m và n.\nTrường hợp 3: Viết phương trình tiếp tuyến (∆) thỏa mãn điều kiện cho trước (song song hoặc vuông góc).\n- Viết dạng phương trình tổng quát của ∆ dựa vào điều kiện.\n- Dùng điều kiện tiếp xúc d(I,∆) = R để tìm hệ số còn lại."
+  },
+  {
+    "topic": "PHƯƠNG PHÁP TỌA ĐỘ TRONG MẶT PHẲNG",
+    "lesson": "Bài 3: Phương trình đường tròn",
+    "task type": "Dạng 4: Vị trí tương đối của đường thẳng và đường tròn",
+    "task type solving strategies": "Cho đường thẳng ∆ : ax + by + c = 0 và đường tròn (C) có tâm I(x₀;y₀), bán kính R. So sánh khoảng cách d(I,∆) và R:\n- d(I,∆) < R: ∆ và (C) cắt nhau tại hai điểm chung.\n- d(I,∆) = R: ∆ tiếp xúc với (C) (∆ là tiếp tuyến).\n- d(I,∆) > R: ∆ và (C) không có điểm chung.\nNếu ∆ cho bởi phương trình tham số, thế vào phương trình (C) để được phương trình bậc hai ẩn t. Số nghiệm của phương trình t quyết định vị trí tương đối (2 nghiệm-cắt, 1 nghiệm-tiếp xúc, vô nghiệm-không cắt)."
+  },
+  {
+    "topic": "PHƯƠNG PHÁP TỌA ĐỘ TRONG MẶT PHẲNG",
+    "lesson": "Bài 3: Phương trình đường tròn",
+    "task type": "Dạng 5: Vị trí tương đối của hai đường tròn",
+    "task type solving strategies": "Cho đường tròn (C) tâm I, bán kính R và (C') tâm I', bán kính R'.\n- II' > R + R' ⇔ Hai đường tròn ở ngoài nhau.\n- II' < |R - R'| ⇔ Hai đường tròn lồng vào nhau.\n- II' = R + R' ⇔ Hai đường tròn tiếp xúc ngoài.\n- II' = |R - R'| ⇔ Hai đường tròn tiếp xúc trong.\n- |R – R'| < II' < R + R' ⇔ Hai đường tròn cắt nhau tại hai điểm phân biệt."
+  },
+  {
+    "topic": "PHƯƠNG PHÁP TỌA ĐỘ TRONG MẶT PHẲNG",
+    "lesson": "Bài 3: Phương trình đường tròn",
+    "task type": "Dạng 6: Tìm tọa độ một điểm thỏa điều kiện cho trước",
+    "task type solving strategies": "Để tìm điểm M thuộc đường tròn (C) : (x − a)² + (y − b)² = R² thỏa điều kiện:\nCách 1:\n- Gọi M(x₀;y₀) ∈ (C) ⇒ (x₀ − a)² + (y₀ − b)² = R².\n- Dựa vào điều kiện cho trước để có thêm hệ thức liên hệ giữa x₀ và y₀, từ đó giải hệ tìm tọa độ M.\nCách 2:\n- Tham số hóa tọa độ điểm M theo phương trình đường tròn: { x₀=a+Rsint, y₀=b+Rcost }.\n- Sử dụng điều kiện cho trước để xác định sint và cost, từ đó tìm tọa độ M."
+  },
+  {
+    "topic": "PHƯƠNG PHÁP TỌA ĐỘ TRONG MẶT PHẲNG",
+    "lesson": "Bài 4: Ba đường Conic",
+    "task type": "Dạng 1: Đường Elip",
+    "task type solving strategies": "Phương trình chính tắc: (E): x²/a² + y²/b² = 1 với a > b > 0 và b² = a² - c².\nCác yếu tố trong Elip:\n» Tiêu điểm F₁(−c;0), F₂(c;0).\n» Tọa độ các đỉnh A₁(−a;0), A₂(a;0), B₁(0;−b), B₂(0;b).\n» Độ dài trục lớn 2a.\n» Độ dài trục bé 2b.\n» Tiêu cự 2c.\nĐể viết phương trình elip, cần tìm a, b từ giả thiết."
+  },
+  {
+    "topic": "PHƯƠNG PHÁP TỌA ĐỘ TRONG MẶT PHẲNG",
+    "lesson": "Bài 4: Ba đường Conic",
+    "task type": "Dạng 2: Đường Hypebol",
+    "task type solving strategies": "Phương trình chính tắc: x²/a² - y²/b² = 1, với a,b > 0 và c² = a² + b².\nCác yếu tố trong Hypebol:\n» Tiêu điểm F₁(−c;0), F₂(c;0).\n» Tọa độ các đỉnh A₁(−a;0), A₂(a;0).\n» Độ dài trục thực: 2a, độ dài trục ảo: 2b.\n» Tiêu cự: 2c."
+  },
+  {
+    "topic": "PHƯƠNG PHÁP TỌA ĐỘ TRONG MẶT PHẲNG",
+    "lesson": "Bài 4: Ba đường Conic",
+    "task type": "Dạng 3: Đường Parabol",
+    "task type solving strategies": "Phương trình chính tắc: y²=2px, với p>0.\nCác yếu tố trong Parabol:\n» p gọi là tham số tiêu.\n» Tiêu điểm F(p/2;0) và đường chuẩn Δ:x=−p/2."
+  }
+]
