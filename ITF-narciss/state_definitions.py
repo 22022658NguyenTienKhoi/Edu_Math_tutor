@@ -19,7 +19,8 @@ class GraphState(TypedDict):
     instructional_context: Optional[Dict] # Remains Dict (structured data from DB/File)
     error_analysis: Optional[str]         # CHANGED: Direct text analysis
     learner_profile: Optional[str]        # CHANGED: Direct text assessment
-    master_prompt: Optional[str]          # Direct text prompt
+    tutor_thought: Optional[str]          # Direct text prompt
+    student_thought: Optional[str]        # Direct text prompt
     presentation: Optional[str]          # CHANGED: Direct text presentation
     # === Conversation Management ===
     conversation_history: Annotated[list, operator.add]

@@ -17,14 +17,14 @@ load_dotenv()
 try:
     print("---(Setup) Initializing Gemini...---")
     client = genai.Client()
-    model="models/gemini-flash-lite-latest"
+    model="models/gemini-flash-latest"
 except Exception as e:
     print(f"Error initializing LLM: {e}")
     exit()
 
 STORE_MAPPING = {
     "task_type": ['fileSearchStores/math10tasktypes-6ywhsgmh52fd'],
-    "textbook": ['fileSearchStores/math10knowledgeandskills-ezvt0h7ud27n']
+    "textbook": ['AIzaSyA6KuCKTOeH-8-hMdpnN2GzJMsM6ZPn0lk']
 }
 
 def call_gemini_model(prompt: str, knowledge=None) -> str:
@@ -99,10 +99,19 @@ def retriever_node(state: GraphState) -> dict:
     print(question['task_type'])
     task_type = task_type_df.loc[task_type_df['task type'] == question['task_type']].iloc[0]
     print(f'task_type{task_type}')
+    prompt = f'''retrieve chunks relevant to the following question and solution.
+    Question: {question['question']}
+    Correct Answer: {question['solution']}
+    Task_type: {question['task_type']}
+    Task: retrieve relevant textbook content to support tutor on error analysis and teaching.
+    If no relevant content found, respond with "NO RELEVANT CONTENT".
+    '''
+    chunks = call_gemini_model(prompt)
     context = {
         "question_data": question['question'],
         "correct_answer": question['solution'],
-        "task_info": task_type
+        "task_info": task_type,
+        "retrieved_chunks": chunks
     }
     return {"instructional_context": context}
 
@@ -120,14 +129,14 @@ def error_detector_node(state: GraphState) -> dict:
     Correct Answer: {context.get("correct_answer", {})}
     Student Answer: "{student_solution}"
     Task_type: {context.get("task_info", {})}
+    Relevant Textbook Chunks: {context.get("retrieved_chunks", {})}
     Task: 
-    Retrieve relevant textbook content to support the analysis.
     Verify correctness of the solution. If incorrect, identify the source of the error based on mathematical theory and explain why.
     Output Format: Short concrete plain text paragraph around 50 words.
     """
     print(prompt)
     # Get text result
-    analysis_text = call_gemini_model(prompt, knowledge="textbook")
+    analysis_text = call_gemini_model(prompt)
     
     # Return directly as string (matches GraphState type)
     return {"error_analysis": analysis_text}

@@ -9,6 +9,7 @@ from google.genai import types
 from google import genai
 from dotenv import load_dotenv
 from utils import save_conversation_json
+from student_simulation import parse_simulation_output
 load_dotenv()
 client = genai.Client()
 model="models/gemini-flash-latest"
@@ -23,13 +24,6 @@ def invoke(prompt, system_prompt):
                             temperature= 0.2,
                             #response_mime_type= 'application/json',
                             system_instruction=system_prompt,
-                            tools=[
-                                types.Tool(
-                                    file_search=types.FileSearch(
-                                    file_search_store_names=['fileSearchStores/math10tasktypes-6ywhsgmh52fd']
-                        )
-                    )
-                ]
             )
         )
     return response.text
@@ -37,26 +31,43 @@ def invoke(prompt, system_prompt):
 # Đây là phần "Non-fixable part" bạn yêu cầu, được gắn cứng vào logic của giáo viên.
 
 FIXED_ITF_PROMPT = """
-You are a Socratic tutor.
-Your role is to guide the student in reflecting on their own thinking and planning an approach, not to teach or solve problems for them.
-
-Goal:
-Help the student recognize correct concepts, reasoning patterns, and strategies through metacognitive questioning upon their errors. 
-Your purpose is to stimulate awareness—not to complete the task.
-
-Resources:
-1.Student error analysis records provided.
-2.Do not introduce new concepts, definitions, formulas, or problem-solving methods that the student has not already mentioned.
-Your questions must arise strictly from what the student has already expressed.
-
-Behavior Constraints:
-1.Maintain a supportive, encouraging tone throughout.
-2.Never perform the requested task or solve the problem.
-3.Your questions must guide the student’s thinking—helping them examine assumptions, evaluate strategies, or clarify reasoning.
-4.Your questions should not require the student to finish solving the problem; they should stimulate reflection.
-Stopping Condition:
-End the dialogue immediately when the student demonstrates that their metacognitive understanding—how they plan, reason, or conceptualize—aligns with the task-type solving strategy, even if fewer than five questions have been asked.
-"""
+Role: Socratic Tutor 
+Goal: 
+Guide the student to reflect fully on their own reasoning about an error they have already identified, ensuring they: 
+Recognize the error. Understand why it occurred. Can reason about how to correct it. 
+Do not: teach, explain, solve, or extend beyond this purpose. 
+Student State: 
+The student already has the error analysis. 
+They may partially understand it or have doubts.
+Your questions are solely for clarifying their thinking. 
+Core Rules: 
+Never provide the solution. 
+Never introduce new concepts or methods the student hasn’t mentioned. 
+Only use the error analysis as a source for reflective questions. 
+Do not praise correctness; focus entirely on metacognitive reflection. 
+Keep questions brief and anchored in the student’s own words. 
+Stop immediately once the student demonstrates full awareness and reasoning about the next step. 
+Tutor Thought Process (Internal): 
+For each turn: Examine student input. Identify gaps in awareness, reasoning, or understanding. 
+Select one action from: 
+Clarification: make question probing the ambiguities of a thought: “When you said X, what exactly did you mean?” 
+Probing Assumptions: make question probing the assumptions behind a thought.: “What made you assume that X?” 
+Probing Reasons & Evidence: make question probing the justifications or concrete evidences that have supported a thought.: “Why do you think that led to Y?” 
+Probing Implications: make question probing the impacts or implications of a thought: “If this idea is true, what does it imply about…?” 
+Probing Alternatives: make question probing other possible viewpoints: “Is there another way to interpret this step?” 
+STOP: make a statement indicate student fully recognizes the error, understands why, and can reason next steps. 
+ELSE: make a motivational response to handle unexpected input like: student frustration, unrelated request, forceful disagreement. 
+Output Format: 
+[INTERNAL_THOUGHT] 
+(Brief reasoning: compare, internal assessment, action decision) 
+[ACTION] 
+(Chosen action: Clarification / Probing Assumptions / Probing Reasons & Evidence / Probing Implications / Probing Alternatives / STOP/ ELSE) 
+[RESPONSE] 
+(Short, reflective response appropriate to action, in Vietnamese) 
+Output Example: 
+[INTERNAL_THOUGHT] The student has correctly identified... [/INTERNAL_THOUGHT] 
+[ACTION] Probing Assumptions [/ACTION] 
+[RESPONSE] Khi bạn giả định P(x) phải có dạng (ax^2+bx+c)^2 ... [/RESPONSE]"""
 
 # --- CÁC NÚT (NODES) ---
 
@@ -75,6 +86,7 @@ def teacher_agent_node(state: GraphState) -> dict:
     
     history = state["conversation_history"]
     master_prompt_dynamic = state.get("error_analysis", "")
+    context = state.get("instructional_context", {})
     #{master_prompt_dynamic}
     # 1. Xây dựng System Prompt hỗn hợp
     # Kết hợp Prompt được craft từ bước phân tích + Các tiêu chuẩn cố định
@@ -111,9 +123,10 @@ def teacher_agent_node(state: GraphState) -> dict:
         print(f"Error calling Gemini: {e}")
     
     print(f" -> Phản hồi: {tutor_response[:100]}...") # In gọn
-    
+    response_parsed = parse_simulation_output(tutor_response)   
     # Trả về tin nhắn mới để lưu vào state
-    return {"conversation_history": [{'role': 'assistant', 'content': tutor_response}]}
+    return {"conversation_history": [{'role': 'assistant', 'content': response_parsed["response"]}],
+            "tutor_thought": response_parsed["thought"],}
 
 def response_evaluator_node(state: GraphState) -> dict:
     """Đánh giá ngữ nghĩa câu trả lời (Sử dụng LLM JSON)."""

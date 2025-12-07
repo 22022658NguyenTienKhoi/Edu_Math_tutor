@@ -18,7 +18,7 @@ if __name__ == "__main__":
     
     initial_state = {
         "student_id": "An",
-        "question_id": "QB_01_01_01",
+        "question": "Viết phương trình tiếp tuyến của đường tròn (C): $(x+2)^2 + (y-3)^2 = 5$ tại điểm M(-1;1).",
         "initial_student_solution": initial_solution,
         "student_input": initial_solution, # Ban đầu, input coi như là bài làm
         "round": 0,

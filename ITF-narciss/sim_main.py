@@ -28,7 +28,7 @@ if __name__ == "__main__":
     
     initial_state = {
         "student_id": "An (Simulated)",
-        "question_id": "QB_01_01_01",
+        "question": question_text,
         "initial_student_solution": initial_solution,
         "student_input": initial_solution, 
         "round": 0,
@@ -82,20 +82,17 @@ if __name__ == "__main__":
         # Lưu ý: Logic check đúng sai cần đảm bảo evaluator_node đã chạy
         # (Trong code graph_conversation hiện tại của bạn evaluator đang tạm tắt hoặc chạy sau input,
         # hãy chắc chắn output_state có trường is_correct được cập nhật)
-        if output_state.get('is_correct'):
-            print("\n🎉 [HỆ THỐNG]: Học sinh đã hiểu bài! Kết thúc phiên dạy.")
-            break
         
         # --- B. HỌC SINH AI (ITF SIMULATION) ---
         print("\n🧠 [ITF Internal Processing] Học sinh đang xử lý thông tin...")
-        time.sleep(1) # Delay nhỏ tạo cảm giác thực
+        time.sleep(3) # Delay nhỏ tạo cảm giác thực
         print(f"Bloom level:{input_solution['bloom_level']}")
         raw_simulation = generate_simulated_student_response(
             conversation_history=output_state["conversation_history"],
             question_text=question_text,
             current_misconception=input_solution['explanation'],
             competency_level=input_solution['bloom_level'],
-            motivation_level="disengaged"
+            motivation_level= "LOW"
         )
         
         sim_data = parse_simulation_output(raw_simulation)

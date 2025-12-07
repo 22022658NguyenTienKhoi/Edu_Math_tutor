@@ -28,16 +28,21 @@
         </div>
     </header>
 
-    <main class="container mx-auto flex-grow p-6 flex flex-col md:flex-row gap-6 relative">
-        <!-- Sidebar -->
+    <!-- Sidebar -->
         <aside class="w-full md:w-1/4 bg-white p-6 rounded-xl shadow-sm border border-slate-200 h-fit">
             <h2 class="text-lg font-semibold mb-4 text-slate-700">Select Exercise</h2>
             <div class="space-y-4">
                 <div>
                     <label class="block text-sm font-medium text-slate-600 mb-1">Topic</label>
                     <select id="lessonSelect" class="w-full p-2 border border-slate-300 rounded-lg outline-none">
-                        <option value="geometry">Geometry (Vectors/Circles)</option>
-                        <option value="algebra">Algebra</option>
+                        <option value="hamsodothi">Hàm số & Đồ thị</option>
+                        <option value="hethucluong">Hệ thức lượng trong tam giác</option>
+                        <option value="md-th">Mệnh đề - Tập hợp</option>
+                        <option value="toado">Phương pháp Tọa độ</option>
+                        <option value="vecto">Vectơ</option>
+                        <option value="xacsuat">Xác suất</option>
+                        <option value="tohop">Đại số tổ hợp</option>
+                        <option value="bpt">Bất phương trình</option>
                     </select>
                 </div>
                 <button onclick="loadExercise()" id="startBtn" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 rounded-lg transition">
@@ -122,7 +127,7 @@
 
     <script>
         // Configuration
-        const API_URL = "https://symmetrical-orbit-4j5qv9rx45rgc576q-8000.app.github.dev"; 
+        const API_URL = "https://glowing-space-orbit-5wqpvp9vgrwc4jv4-8000.app.github.dev"; 
         let currentSessionId = null;
         let attempts = [];
 

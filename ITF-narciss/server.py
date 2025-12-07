@@ -75,32 +75,43 @@ async def root():
 
 @app.post("/start")
 async def start_exercise(req: InitRequest):
+    """
+    Selects a random question filtered by the requested topic.
+    """
     session_id = str(uuid.uuid4())
     
-    # Pick a question
-    if not DF.empty:
-        # Optional: Filter by req.topic if your CSV has a topic column
-        row = DF.sample(1).iloc[0]
-        q_text = row['question']
-        q_meta = row.to_dict()
-    else:
-        q_text = "Calculate the derivative of x^2."
-        q_meta = {}
+    # Check if main Dataframe is loaded
+    if DF.empty:
+        raise HTTPException(status_code=500, detail="Database is empty")
+
+    # Filter DF by the requested topic
+    # We strip whitespace and lowercase just in case of formatting mismatch
+    print(f"Requested topic: {req.topic}")
+    topic_df = DF[DF['topic'] == req.topic]
+
+    if topic_df.empty:
+        # If no questions found for this topic, return 404
+        raise HTTPException(status_code=404, detail=f"No questions found for topic: {req.topic}")
+
+    # Sample from the filtered subset
+    row = topic_df.sample(1).iloc[0]
+    q_text = row['question']
+    q_meta = row.to_dict()
 
     # Initialize GraphState
-    # This structure must match what your agents expect in state_definitions.py
     initial_state = {
         "student_id": "Real_Web_User",
+        "question_id": str(uuid.uuid4()),
         "question": q_text,
-        "initial_student_solution": row['wrong_solution'] if not DF.empty else "",
+        "initial_student_solution": "",
         "student_input": "",
         "round": 0,
         "conversation_history": [],
         "is_correct": False,
         "is_final": False,
         "instructional_context": {},
-        "error_analysis": {}, # Will be filled by error agent
-        "presentation": "",   # Will be filled by presenter agent
+        "error_analysis": {}, 
+        "presentation": "",   
         "metadata": q_meta
     }
     

@@ -31,7 +31,7 @@ def call_gemini_model(prompt: str, knowledge=None) -> str:
     target_store = STORE_MAPPING.get(knowledge)
     
     config = types.GenerateContentConfig(
-        temperature=0, # Lower temperature helps with factual retrieval
+        temperature=1, # Lower temperature helps with factual retrieval
         response_mime_type='application/json'
     )
 
