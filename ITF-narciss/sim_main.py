@@ -20,7 +20,8 @@ if __name__ == "__main__":
     # 2. Dữ liệu ban đầu
     #question_text = "Viết phương trình tiếp tuyến của đường tròn (C): $(x+2)^2 + (y-3)^2 = 5$ tại điểm M(-1;1)."
     input_solution_df = pd.read_csv('final_dataset_with_topic.csv')
-    rand = random.randint(0, len(input_solution_df)-1)
+    rand = 105
+    #random.randint(0, len(input_solution_df)-1)
     print(f"Selected input index: {rand}")
     input_solution = input_solution_df.iloc[rand]
     question_text = input_solution['question']
@@ -100,10 +101,6 @@ if __name__ == "__main__":
         print(f"   💭 Suy nghĩ: {sim_data['thought']}")
         print(f"   ⚙️ Hành động: {sim_data['action']}")
         print(f"🧑‍🎓 An nói: {sim_data['response']}")
-        if sim_data['action'] == "CORRECTING":
-            save_conversation_json(output_state["conversation_history"])
-            print("\n🎉 [HỆ THỐNG]: Student understand. Break")
-            break
         # --- C. CẬP NHẬT TRẠNG THÁI CHO VÒNG SAU ---
         current_state = output_state
         
@@ -112,7 +109,11 @@ if __name__ == "__main__":
         
         # Tăng đếm vòng lặp
         current_state["round"] += 1
-        
+        if sim_data['action'] == "CORRECTING":
+            current_state["conversation_history"].append({'role': 'user', 'content': sim_data['response']}) 
+            save_conversation_json(current_state["conversation_history"])
+            print("\n🎉 [HỆ THỐNG]: Student understand. Break")
+            break
         # --- LƯU Ý QUAN TRỌNG ---
         # KHÔNG dùng lệnh append dưới đây nữa:
         # current_state["conversation_history"].append(...) 

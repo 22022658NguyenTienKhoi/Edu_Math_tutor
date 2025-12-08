@@ -100,6 +100,7 @@ def presenter_node(state: GraphState) -> dict:
         - Student error analysis indicate complicate mistake: 
             - Add inline error indicator directly into the student answer. Error indicator is in form of [Error here: ...].
     NEVER inform knowledge or hint to student by any mean.
+    NEVER inform the correct answer to the student.
     Return presentation strategies for the student based on the analysis above that has following field:
     is_correct: bool
     presentation: string:

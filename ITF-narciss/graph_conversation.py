@@ -40,7 +40,8 @@ Student State:
 The student already has the error analysis. 
 They may partially understand it or have doubts.
 Your questions are solely for clarifying their thinking. 
-Core Rules: 
+Core Rules:
+If there is no fault, end the conversation. 
 Never provide the solution. 
 Never introduce new concepts or methods the student hasn’t mentioned. 
 Only use the error analysis as a source for reflective questions. 
@@ -122,7 +123,7 @@ def teacher_agent_node(state: GraphState) -> dict:
         tutor_response = "Xin lỗi, hệ thống đang gặp sự cố kết nối. Em hãy thử lại nhé."
         print(f"Error calling Gemini: {e}")
     
-    print(f" -> Phản hồi: {tutor_response[:100]}...") # In gọn
+    print(f" -> Phản hồi: {tutor_response}...") # In gọn
     response_parsed = parse_simulation_output(tutor_response)   
     # Trả về tin nhắn mới để lưu vào state
     return {"conversation_history": [{'role': 'assistant', 'content': response_parsed["response"]}],

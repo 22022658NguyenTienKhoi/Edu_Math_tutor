@@ -24,7 +24,7 @@ except Exception as e:
 
 STORE_MAPPING = {
     "task_type": ['fileSearchStores/math10tasktypes-6ywhsgmh52fd'],
-    "textbook": ['AIzaSyA6KuCKTOeH-8-hMdpnN2GzJMsM6ZPn0lk']
+    "textbook": ['fileSearchStores/math10knowledge-xwv7tlbc7xyb']
 }
 
 def call_gemini_model(prompt: str, knowledge=None) -> str:

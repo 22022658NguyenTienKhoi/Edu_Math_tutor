@@ -14,28 +14,30 @@ load_dotenv()
 # Nên dùng temperature cao hơn một chút để tạo ra sự đa dạng trong cách trả lời
 try:
     client = genai.Client()
-    model="models/gemini-flash-lite-latest"
+    model="models/gemini-flash-latest"
 except Exception as e:
     print(f"Lỗi khởi tạo Student LLM: {e}")
     exit()
 
-def invoke(prompt):
+def invoke(system_prompt, prompt: str) -> str:
     """Hàm tiện ích để gọi LLM và phân tích cú pháp JSON."""
     response = client.models.generate_content(
-                        model=model,
+                        model=model,   
                         contents=prompt,
                         config=types.GenerateContentConfig(
-                            temperature= 0.5,
-                        )
+                            temperature= 0.2,
+                            #response_mime_type= 'application/json',
+                            system_instruction=system_prompt,
             )
+        )
     return response.text
 
 def generate_simulated_student_response(
     conversation_history: list, 
     question_text: str, 
-    current_misconception: str = "None",
-    competency_level: str = "NOVICE (Người mới bắt đầu)",
-    motivation_level: str = "MEDIUM (Muốn học nhưng dễ nản)"
+    current_misconception: str = None,
+    competency_level: str = None,
+    motivation_level: str = None
 ) -> str:
     """
     Tạo câu trả lời mô phỏng dựa trên mô hình ITF (Interactive Tutoring Feedback).
@@ -52,7 +54,7 @@ def generate_simulated_student_response(
         dialogue_text += f"{role}: {msg['content']}\n"
 
     # --- XÂY DỰNG PROMPT DỰA TRÊN ITF MODEL ---
-    
+    #Current Representation of Standards (Hiểu biết nội tại): Bạn quan niệm sai lầm của bạn nhất quán với nguyên nhân sai sau "{current_misconception}" 
     itf_prompt = f"""
     You are a learner who has access to error analysis for your solution. 
     You understand your error partially or have doubts, but you do not yet fully know how to correct it. 
@@ -60,10 +62,10 @@ def generate_simulated_student_response(
     I. LEARNER CONDITIONS (CÁC YẾU TỐ NGƯỜI HỌC) 
     Prior Competency (Năng lực hiện tại): 
     Bloom level: {competency_level} 
-    Current Representation of Standards (Hiểu biết nội tại): Bạn quan niệm sai lầm của bạn nhất quán với nguyên nhân sai sau "{current_misconception}" 
     Error persisting level (Mức độ bạn tin tưởng vào lời giải mình là đúng): {motivation_level} 
     Error analysis of the solution provided by the system: (Thông tin phân tích lỗi do hệ thống cung cấp): 
-    {current_misconception} 
+    {current_misconception}
+
     When the error persists level is HIGH, you are more likely to choose PERSEVERING or REQUESTING_CLARIFICATION action. 
     In contrast, when the error persists level is LOW, you are more likely to choose ELABORATING or CORRECTING action. 
     II. TUTOR INTERACTION 
@@ -83,8 +85,8 @@ def generate_simulated_student_response(
     Choose one of the following actions based on your assessment: 
     ELABORATING: Expand on your reasoning or thought process to clarify your understanding. 
     REQUESTING_CLARIFICATION: Ask for more explanation if you don’t understand the tutor’s question. 
-    PERSEVERING: (Only if you strongly believe your current reasoning is correct and need to defend it briefly.) 
-    CORRECTING: (Only when you fully understand the error and why it occurred.) 
+    PERSEVERING: (If you strongly believe your current reasoning is correct and need to defend it briefly.) 
+    CORRECTING: (When you fully understand the error and why it occurred.) 
     Response Guidelines: 
     Always respond briefly but clearly, just enough for the tutor to understand your reasoning. 
     Focus on your thinking, assumptions, and doubts, not computations or solutions. 
@@ -105,7 +107,7 @@ def generate_simulated_student_response(
     """
 
     # Gọi LLM
-    response = invoke(itf_prompt)
+    response = invoke(itf_prompt,dialogue_text)
     full_content = response.strip()
     
     return full_content
