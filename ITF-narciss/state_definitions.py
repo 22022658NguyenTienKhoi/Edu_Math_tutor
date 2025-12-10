@@ -24,4 +24,5 @@ class GraphState(TypedDict):
     presentation: Optional[str]          # CHANGED: Direct text presentation
     # === Conversation Management ===
     conversation_history: Annotated[list, operator.add]
+    #student_conversation_history: Annotated[list, operator.add]
     is_correct: bool

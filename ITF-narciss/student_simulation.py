@@ -14,7 +14,7 @@ load_dotenv()
 # Nên dùng temperature cao hơn một chút để tạo ra sự đa dạng trong cách trả lời
 try:
     client = genai.Client()
-    model="models/gemini-flash-latest"
+    model="models/gemini-flash-lite-latest"
 except Exception as e:
     print(f"Lỗi khởi tạo Student LLM: {e}")
     exit()

@@ -20,7 +20,7 @@ if __name__ == "__main__":
     # 2. Dữ liệu ban đầu
     #question_text = "Viết phương trình tiếp tuyến của đường tròn (C): $(x+2)^2 + (y-3)^2 = 5$ tại điểm M(-1;1)."
     input_solution_df = pd.read_csv('final_dataset_with_topic.csv')
-    rand = 105
+    rand = 40
     #random.randint(0, len(input_solution_df)-1)
     print(f"Selected input index: {rand}")
     input_solution = input_solution_df.iloc[rand]
@@ -31,7 +31,7 @@ if __name__ == "__main__":
         "student_id": "An (Simulated)",
         "question": question_text,
         "initial_student_solution": initial_solution,
-        "student_input": initial_solution, 
+        "student_input":initial_solution, 
         "round": 0,
         "conversation_history": [],
         "is_correct": False,
@@ -105,12 +105,13 @@ if __name__ == "__main__":
         current_state = output_state
         
         # Cập nhật input mới của học sinh để node 'format_input' xử lý ở đầu vòng sau
-        current_state["student_input"] = sim_data['response']
+        current_state["student_input"] = sim_data
+        #['response']
         
         # Tăng đếm vòng lặp
         current_state["round"] += 1
         if sim_data['action'] == "CORRECTING":
-            current_state["conversation_history"].append({'role': 'user', 'content': sim_data['response']}) 
+            current_state["conversation_history"].append({'role': 'user', 'content': sim_data}) 
             save_conversation_json(current_state["conversation_history"])
             print("\n🎉 [HỆ THỐNG]: Student understand. Break")
             break

@@ -12,7 +12,7 @@ from utils import save_conversation_json
 from student_simulation import parse_simulation_output
 load_dotenv()
 client = genai.Client()
-model="models/gemini-flash-latest"
+model="models/gemini-flash-lite-latest"
 # --- CẤU HÌNH MÔ HÌNH ---
 # Sử dụng model Flash để phản hồi nhanh (Immediate feedback timing)
 def invoke(prompt, system_prompt):
@@ -75,8 +75,13 @@ Output Example:
 def format_student_input_node(state: GraphState) -> dict:
     """Định dạng input của học sinh và đưa vào lịch sử."""
     u_input = state.get("student_input", "")
-    if u_input:
-        return {"conversation_history": [{'role': 'user', 'content': u_input}]}
+    if u_input and not isinstance(u_input, dict):
+        student_input = {"response": u_input, "thought": "N/A", "action": "N/A"}
+    else:
+        student_input = u_input
+    #{"response": u_input, "thought": "N/A", "action": "N/A"}
+    if student_input:
+        return {"conversation_history": [{'role': 'user', 'content': student_input}]}
     return {}
 
 def teacher_agent_node(state: GraphState) -> dict:
@@ -110,9 +115,9 @@ def teacher_agent_node(state: GraphState) -> dict:
     for msg in history:
         #print(f"---(Conv) Lịch sử tin nhắn: {msg}---")
         if msg['role'] == 'user':
-            messages_to_send.append('user: ' + msg['content'])
+            messages_to_send.append('user: ' + msg['content']['response'])
         elif msg['role'] in ['assistant', 'model']:
-            messages_to_send.append('assistant: ' + msg['content'])
+            messages_to_send.append('assistant: ' + msg['content']['response'])
         # Bỏ qua 'system' cũ vì ta đã có combined_system_prompt mới nhất
     print(" -> Gửi yêu cầu đến Gemini (với các tiêu chuẩn ITF)...")
     try:
@@ -126,7 +131,7 @@ def teacher_agent_node(state: GraphState) -> dict:
     print(f" -> Phản hồi: {tutor_response}...") # In gọn
     response_parsed = parse_simulation_output(tutor_response)   
     # Trả về tin nhắn mới để lưu vào state
-    return {"conversation_history": [{'role': 'assistant', 'content': response_parsed["response"]}],
+    return {"conversation_history": [{'role': 'assistant', 'content': response_parsed}],
             "tutor_thought": response_parsed["thought"],}
 
 def response_evaluator_node(state: GraphState) -> dict:
