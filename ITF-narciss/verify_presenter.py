@@ -14,7 +14,7 @@ load_dotenv()
 try:
     print("---(Setup) Initializing Gemini...---")
     client = genai.Client()
-    model="models/gemini-flash-lite-latest"
+    model="models/gemini-flash-latest"
 except Exception as e:
     print(f"Error initializing LLM: {e}")
     exit()

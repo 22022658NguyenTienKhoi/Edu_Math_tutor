@@ -17,7 +17,7 @@ load_dotenv()
 try:
     print("---(Setup) Initializing Gemini...---")
     client = genai.Client()
-    model="models/gemini-flash-lite-latest"
+    model="models/gemini-flash-latest"
 except Exception as e:
     print(f"Error initializing LLM: {e}")
     exit()
@@ -131,8 +131,9 @@ def error_detector_node(state: GraphState) -> dict:
     Task_type: {context.get("task_info", {})}
     Relevant Textbook Chunks: {context.get("retrieved_chunks", {})}
     Task: 
-    Verify correctness of the solution. If incorrect, identify the source of the error based on mathematical theory and explain why.
-    Output Format: Short concrete plain text paragraph around 50 words.
+    Perform step by step error analysis on the student's answer based on the question, correct answer, task type, and relevant textbook content.
+    Find all of the errors in the student's solution, detailly explain the source of errors.
+    Output Format: Short concrete plain text paragraph around 100 words explain correctness and incorrectness of each step.
     """
     print(prompt)
     # Get text result

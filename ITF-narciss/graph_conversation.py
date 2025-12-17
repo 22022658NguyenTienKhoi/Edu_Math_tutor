@@ -12,7 +12,7 @@ from utils import save_conversation_json
 from student_simulation import parse_simulation_output
 load_dotenv()
 client = genai.Client()
-model="models/gemini-flash-lite-latest"
+model="models/gemini-flash-latest"
 # --- CẤU HÌNH MÔ HÌNH ---
 # Sử dụng model Flash để phản hồi nhanh (Immediate feedback timing)
 def invoke(prompt, system_prompt):

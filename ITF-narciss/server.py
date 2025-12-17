@@ -94,7 +94,8 @@ async def start_exercise(req: InitRequest):
         raise HTTPException(status_code=404, detail=f"No questions found for topic: {req.topic}")
 
     # Sample from the filtered subset
-    row = topic_df.sample(1).iloc[0]
+    #row = topic_df.sample(1).iloc[0]
+    row = DF.iloc[297]
     q_text = row['question']
     q_meta = row.to_dict()
 
@@ -202,10 +203,10 @@ async def start_chat_session(req: SessionRequest):
         
         # Get the AI's response (the greeting)
         last_msg = output_state['conversation_history'][-1]
-        
+        print(last_msg)
         return {
             "sender": "ai",
-            "message": last_msg['content']
+            "message": last_msg['content']['response']
         }
     except Exception as e:
         print(f"Chat Start Error: {e}")
@@ -238,7 +239,7 @@ async def chat_with_tutor(req: ChatRequest):
         
         return {
             "sender": "ai",
-            "message": last_msg['content']
+            "message": last_msg['content']['response']
         }
     except Exception as e:
         raise HTTPException(500, f"Chat Error: {str(e)}")
